@@ -1,0 +1,95 @@
+import { useLanguage } from '../../i18n/LanguageContext';
+import { useCart } from '../../context/CartContext';
+import { useCustomer } from '../../context/CustomerContext';
+import { useDrawer } from '../../context/DrawerContext';
+import { products } from '../../data/products';
+import { buildWhatsappMessage } from '../../utils/buildWhatsappMessage';
+import { Ltr } from '../../utils/Ltr';
+import { CartItemRow } from './CartItemRow';
+
+export function CartDrawer() {
+  const { lang, t } = useLanguage();
+  const { cart, branch, itemsTotal, deliveryFee, grandTotal, itemCount } = useCart();
+  const { customer } = useCustomer();
+  const { openDrawer, closeCart, openAccount } = useDrawer();
+
+  const ids = Object.keys(cart);
+  const isOpen = openDrawer === 'cart';
+
+  const handleOrder = () => {
+    if (!customer) {
+      // Require delivery info before an order can be sent — open the
+      // account drawer instead of sending. Marking this a pending checkout
+      // means finishing the form returns straight back to the cart.
+      openAccount(true);
+      return;
+    }
+    const { text, phone } = buildWhatsappMessage({ cart, products, branch, customer });
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+  };
+
+  const branchNote =
+    (lang === 'ar' ? 'سيتم إرسال الطلب إلى: ' : 'Order will be sent to: ') + t(branch.nameKey);
+
+  return (
+    <div className={'cart-drawer' + (isOpen ? ' show' : '')}>
+      <div className="cart-header">
+        <h3>{t('yourCart')}</h3>
+        <button className="close-btn" onClick={closeCart}>×</button>
+      </div>
+
+      <div className="cart-items">
+        {ids.length === 0 ? (
+          <div className="cart-empty">🛒<br /><br />{t('cartEmpty')}</div>
+        ) : (
+          ids.map((id) => {
+            const product = products.find((p) => p.id === id);
+            return <CartItemRow key={id} productId={id} product={product} qty={cart[id]} />;
+          })
+        )}
+      </div>
+
+      <div className="cart-footer">
+        <div
+          className="total-row"
+          style={{ fontWeight: 600, fontSize: '0.85rem', color: 'var(--muted)', marginBottom: 4 }}
+        >
+          <span>{t('subtotal')}</span>
+          <span><Ltr>{itemsTotal} <span>{t('egp')}</span></Ltr></span>
+        </div>
+        <div
+          className="total-row"
+          style={{ fontWeight: 600, fontSize: '0.85rem', color: 'var(--muted)', marginBottom: 4 }}
+        >
+          <span>{t('waMsgDelivery')}</span>
+          <span><Ltr>{deliveryFee} <span>{t('egp')}</span></Ltr></span>
+        </div>
+        <div className="total-row">
+          <span>{t('total')}</span>
+          <span><Ltr>{grandTotal} <span>{t('egp')}</span></Ltr></span>
+        </div>
+
+        <div style={{ fontSize: '0.75rem', color: 'var(--muted)', marginBottom: 10 }}>
+          <AccountSummaryText customer={customer} t={t} />
+        </div>
+
+        <button className="wa-order-btn" disabled={itemCount === 0} onClick={handleOrder}>
+          <span>📲</span>
+          <span>{t('orderViaWhatsapp')}</span>
+        </button>
+        <div className="branch-note">{branchNote}</div>
+      </div>
+    </div>
+  );
+}
+
+function AccountSummaryText({ customer, t }) {
+  if (!customer) return null;
+  if (customer.mode === 'code') return <>{t('accountLabelCode')}: {customer.code}</>;
+  if (customer.mode === 'new') {
+    return <>{t('accountLabelCode')}: {customer.demoCode} — {customer.name}</>;
+  }
+  if (customer.mode === 'guest') return <>{t('accountLabelGuest')} — {customer.address}</>;
+  return null;
+}
