@@ -115,6 +115,7 @@ export const translations = {
     stepDelivered: "تم التوصيل",
     stepDeliveredDesc: "تم تسليم طلبك بنجاح",
     trackOrderFor: "حالة الطلب لكود",
+    codeNumericOnly: "يرجى إدخال كودك المكوّن من أرقام فقط",
   },
   en: {
     pharmacyName: "Dr. Ahmed Maher Pharmacy",
@@ -230,5 +231,6 @@ export const translations = {
     stepDelivered: "Delivered",
     stepDeliveredDesc: "Your order was delivered successfully",
     trackOrderFor: "Order status for code",
+    codeNumericOnly: "Please provide your numeric code (numbers only)",
   },
 };

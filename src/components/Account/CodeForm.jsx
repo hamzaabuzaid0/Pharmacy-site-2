@@ -11,8 +11,11 @@ export function CodeForm({ onStatus, active }) {
 
   const submit = () => {
     const value = code.trim();
-    if (!value) {
-      onStatus(t('fillRequiredFields'));
+    // The input already strips non-digits as you type, so this only catches
+    // an empty submission — but the message explains *why* (must be a
+    // numeric code), not just that the field is required.
+    if (!value || !/^\d+$/.test(value)) {
+      onStatus(t('codeNumericOnly'));
       return;
     }
     setCode(value);
@@ -30,7 +33,7 @@ export function CodeForm({ onStatus, active }) {
         inputMode="numeric"
         placeholder="مثال: 5255"
         value={code}
-        onChange={(e) => setCodeInput(e.target.value)}
+        onChange={(e) => setCodeInput(e.target.value.replace(/\D/g, ''))}
       />
       <button type="button" className="account-submit" onClick={submit}>
         {t('confirmCode')}

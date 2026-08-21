@@ -22,8 +22,11 @@ export function TrackPage({ active }) {
 
   const submit = () => {
     const value = inputCode.trim();
-    if (!value) {
-      setError(t('trackEnterCodeFirst'));
+    // Input already strips non-digits as you type, so this only catches an
+    // empty submission — message explains it needs to be numeric, not just
+    // "required".
+    if (!value || !/^\d+$/.test(value)) {
+      setError(t('codeNumericOnly'));
       setTrackedCode(null);
       return;
     }
@@ -50,7 +53,7 @@ export function TrackPage({ active }) {
             inputMode="numeric"
             placeholder={t('trackCodePlaceholder')}
             value={inputCode}
-            onChange={(e) => setInputCode(e.target.value)}
+            onChange={(e) => setInputCode(e.target.value.replace(/\D/g, ''))}
             onKeyDown={(e) => { if (e.key === 'Enter') submit(); }}
           />
           <button
