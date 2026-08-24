@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback } from 'react';
+import { createContext, useContext, useState, useCallback, useRef } from 'react';
 
 const DrawerContext = createContext(null);
 
@@ -10,6 +10,12 @@ const DrawerContext = createContext(null);
 export function DrawerProvider({ children }) {
   const [openDrawer, setOpenDrawer] = useState(null); // null | 'cart' | 'account'
   const [pendingCheckout, setPendingCheckout] = useState(false);
+  // Guards finishAccountFlow against firing twice for the same account-drawer
+  // session (e.g. a fast double-click/double-tap on a form's submit button
+  // schedules two 900ms timers) — a second call used to read pendingCheckout
+  // as already-flipped-to-false and force-close the drawer the first call had
+  // just (correctly) reopened.
+  const finishedFlowRef = useRef(false);
 
   const openCart = useCallback(() => setOpenDrawer('cart'), []);
 
@@ -18,6 +24,7 @@ export function DrawerProvider({ children }) {
   }, []);
 
   const openAccount = useCallback((forCheckout = false) => {
+    finishedFlowRef.current = false;
     if (forCheckout) setPendingCheckout(true);
     setOpenDrawer('account');
   }, []);
@@ -31,6 +38,8 @@ export function DrawerProvider({ children }) {
   }, []);
 
   const finishAccountFlow = useCallback(() => {
+    if (finishedFlowRef.current) return;
+    finishedFlowRef.current = true;
     setPendingCheckout((wasPending) => {
       setOpenDrawer(wasPending ? 'cart' : null);
       return false;
