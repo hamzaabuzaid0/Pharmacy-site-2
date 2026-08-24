@@ -1,6 +1,7 @@
 import { useLanguage } from '../../i18n/LanguageContext';
 import { branches } from '../../data/branches';
 import { Ltr } from '../../utils/Ltr';
+import { WhatsAppIcon } from '../WhatsAppIcon';
 
 export function Footer() {
   const { t } = useLanguage();
@@ -14,7 +15,7 @@ export function Footer() {
             <br />
             {t(b.addrKey)}
             <br />
-            📱 <Ltr>{b.waDisplay}</Ltr> · ☎ <Ltr>{b.callDisplay}</Ltr>
+            <WhatsAppIcon /> <Ltr>{b.waDisplay}</Ltr> · ☎ <Ltr>{b.callDisplay}</Ltr>
           </div>
         ))}
       </div>

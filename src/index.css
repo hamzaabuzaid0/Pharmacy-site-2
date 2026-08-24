@@ -69,6 +69,11 @@ header{
   border:none;outline:none;flex:1;font-size:0.95rem;background:transparent;color:var(--ink);
 }
 .search-bar svg{width:20px;height:20px;color:var(--muted);flex-shrink:0;}
+.search-clear-btn{
+  background:none;border:none;cursor:pointer;color:var(--muted);flex-shrink:0;
+  padding:0 2px;font-size:1.3rem;line-height:1;
+}
+.search-clear-btn:hover{color:var(--ink);}
 
 /* ===== Branch strip ===== */
 .branch-strip{
@@ -176,16 +181,6 @@ main{max-width:1100px;margin:0 auto;padding:16px;}
 .hero-btn.primary{background:#fff;color:var(--teal-dark);}
 .hero-btn.secondary{background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.5);}
 
-.hero-search{
-  display:flex;align-items:center;background:#fff;border-radius:26px;
-  padding:12px 18px;box-shadow:0 6px 20px rgba(0,0,0,0.15);max-width:520px;margin-bottom:20px;gap:8px;
-}
-.hero-search svg{width:20px;height:20px;color:var(--muted);flex-shrink:0;}
-.hero-search input{border:none;outline:none;flex:1;font-size:0.92rem;background:transparent;color:var(--ink);font-family:inherit;min-width:0;}
-.hero-search button{
-  background:var(--teal);color:#fff;border:none;border-radius:20px;padding:9px 18px;
-  font-weight:700;font-size:0.82rem;flex-shrink:0;font-family:inherit;
-}
 .hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;}
 .hero-badge{
   background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.35);

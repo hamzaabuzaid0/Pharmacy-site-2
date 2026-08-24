@@ -3,6 +3,6 @@
 // from reordering space-separated digit groups.
 export function Ltr({ children }) {
   return (
-    <bdi style={{ direction: 'ltr', unicodeBidi: 'embed' }}>{children}</bdi>
+    <bdi style={{ direction: 'ltr', unicodeBidi: 'isolate' }}>{children}</bdi>
   );
 }

@@ -1,9 +1,10 @@
 import { useLanguage } from '../../i18n/LanguageContext';
+import { WhatsAppIcon } from '../WhatsAppIcon';
 
 const STEPS = [
   { icon: '🔍', titleKey: 'howStep1Title', textKey: 'howStep1Text' },
   { icon: '🛒', titleKey: 'howStep2Title', textKey: 'howStep2Text' },
-  { icon: '📲', titleKey: 'howStep3Title', textKey: 'howStep3Text' },
+  { icon: <WhatsAppIcon size={29} />, titleKey: 'howStep3Title', textKey: 'howStep3Text' },
 ];
 
 export function HowItWorks() {

@@ -2,10 +2,9 @@ import { createContext, useContext, useState, useCallback } from 'react';
 
 const NavigationContext = createContext(null);
 
-// Drives which of the 5 top-level pages (home/about/offers/shop/branches) is
-// visible, plus the shop page's search/category filters — since several
-// actions elsewhere (hero search, "shop by category" cards) need to jump to
-// the shop page pre-filtered.
+// Drives which top-level page is visible, plus the shop page's search/category
+// filters — the header search bar lives here (used from every page) and
+// "shop by category" cards need to jump to the shop page pre-filtered.
 export function NavigationProvider({ children }) {
   const [page, setPageState] = useState('home');
   const [searchQuery, setSearchQuery] = useState('');
@@ -15,12 +14,6 @@ export function NavigationProvider({ children }) {
     setPageState(id);
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
-
-  const goToShopWithSearch = useCallback((query) => {
-    setSearchQuery(query);
-    setActiveCat('all');
-    setPage('shop');
-  }, [setPage]);
 
   const goToShopWithCategory = useCallback((catId) => {
     setActiveCat(catId);
@@ -35,7 +28,6 @@ export function NavigationProvider({ children }) {
     setSearchQuery,
     activeCat,
     setActiveCat,
-    goToShopWithSearch,
     goToShopWithCategory,
   };
 

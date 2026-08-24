@@ -49,6 +49,16 @@ export function Header() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
+          {searchQuery && (
+            <button
+              type="button"
+              className="search-clear-btn"
+              aria-label={t('clearSearch')}
+              onClick={() => setSearchQuery('')}
+            >
+              ×
+            </button>
+          )}
         </div>
       </div>
     </header>

@@ -1,5 +1,6 @@
 import { useLanguage } from '../../i18n/LanguageContext';
 import { Ltr } from '../../utils/Ltr';
+import { WhatsAppIcon } from '../WhatsAppIcon';
 
 export function BranchDetailCard({ branch }) {
   const { t } = useLanguage();
@@ -26,7 +27,7 @@ export function BranchDetailCard({ branch }) {
           target="_blank"
           rel="noreferrer"
         >
-          📲 {t('orderWhatsapp')} (<Ltr>{branch.waDisplay}</Ltr>)
+          <WhatsAppIcon /> {t('orderWhatsapp')} (<Ltr>{branch.waDisplay}</Ltr>)
         </a>
         <a className="branch-action-btn call" href={`tel:+${branch.callPhone}`}>
           ☎ {t('callBranch')} (<Ltr>{branch.callDisplay}</Ltr>)

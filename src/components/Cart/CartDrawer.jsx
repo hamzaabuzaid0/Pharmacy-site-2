@@ -6,6 +6,7 @@ import { useOrderHistory } from '../../context/OrderHistoryContext';
 import { products } from '../../data/products';
 import { buildWhatsappMessage } from '../../utils/buildWhatsappMessage';
 import { Ltr } from '../../utils/Ltr';
+import { WhatsAppIcon } from '../WhatsAppIcon';
 import { CartItemRow } from './CartItemRow';
 
 export function CartDrawer() {
@@ -92,7 +93,7 @@ export function CartDrawer() {
         </div>
 
         <button className="wa-order-btn" disabled={itemCount === 0} onClick={handleOrder}>
-          <span>📲</span>
+          <WhatsAppIcon size={18} />
           <span>{t('orderViaWhatsapp')}</span>
         </button>
         <div className="branch-note">{branchNote}</div>
