@@ -2,6 +2,7 @@ import { useLanguage } from '../../i18n/LanguageContext';
 import { useCart } from '../../context/CartContext';
 import { useCustomer } from '../../context/CustomerContext';
 import { useDrawer } from '../../context/DrawerContext';
+import { useOrderHistory } from '../../context/OrderHistoryContext';
 import { products } from '../../data/products';
 import { buildWhatsappMessage } from '../../utils/buildWhatsappMessage';
 import { Ltr } from '../../utils/Ltr';
@@ -12,6 +13,7 @@ export function CartDrawer() {
   const { cart, branch, itemsTotal, deliveryFee, grandTotal, itemCount } = useCart();
   const { customer } = useCustomer();
   const { openDrawer, closeCart, openAccount } = useDrawer();
+  const { addOrder } = useOrderHistory();
 
   const ids = Object.keys(cart);
   const isOpen = openDrawer === 'cart';
@@ -26,6 +28,21 @@ export function CartDrawer() {
     }
     const { text, phone } = buildWhatsappMessage({ cart, products, branch, customer });
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+
+    addOrder({
+      id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
+      date: new Date().toISOString(),
+      branchId: branch.id,
+      branchNameKey: branch.nameKey,
+      items: ids.map((id) => {
+        const p = products.find((pp) => pp.id === id);
+        return { id, en: p.en, ar: p.ar, arabicOnly: !!p.arabicOnly, price: p.price, qty: cart[id] };
+      }),
+      itemsTotal,
+      deliveryFee,
+      grandTotal,
+    });
+
     window.open(url, '_blank');
   };
 
