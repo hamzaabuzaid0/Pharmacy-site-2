@@ -11,7 +11,7 @@ import { CartItemRow } from './CartItemRow';
 
 export function CartDrawer() {
   const { lang, t } = useLanguage();
-  const { cart, branch, itemsTotal, deliveryFee, grandTotal, itemCount } = useCart();
+  const { cart, branch, itemsTotal, deliveryFee, grandTotal, itemCount, substitutes } = useCart();
   const { customer } = useCustomer();
   const { openDrawer, closeCart, openAccount } = useDrawer();
   const { addOrder } = useOrderHistory();
@@ -27,7 +27,7 @@ export function CartDrawer() {
       openAccount(true);
       return;
     }
-    const { text, phone } = buildWhatsappMessage({ cart, products, branch, customer });
+    const { text, phone } = buildWhatsappMessage({ cart, products, branch, customer, substitutes });
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
     addOrder({
@@ -37,7 +37,14 @@ export function CartDrawer() {
       branchNameKey: branch.nameKey,
       items: ids.map((id) => {
         const p = products.find((pp) => pp.id === id);
-        return { id, en: p.en, ar: p.ar, arabicOnly: !!p.arabicOnly, price: p.price, qty: cart[id] };
+        const originalId = substitutes[id];
+        const original = originalId && products.find((pp) => pp.id === originalId);
+        return {
+          id, en: p.en, ar: p.ar, arabicOnly: !!p.arabicOnly, price: p.price, qty: cart[id],
+          substituteFor: original
+            ? { id: original.id, en: original.en, ar: original.ar, arabicOnly: !!original.arabicOnly }
+            : null,
+        };
       }),
       itemsTotal,
       deliveryFee,

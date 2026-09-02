@@ -5,24 +5,36 @@
 // English brand name (so it always displays in Arabic regardless of site
 // language — see displayName() in src/utils/displayName.js).
 //
+// activeIngredient = the real pharmacological active substance, used by
+// findAlternatives() to suggest an in-stock replacement when a product is
+// out of stock (see src/utils/findAlternatives.js). Only set on actual
+// medicines where "same active ingredient" is a meaningful, pharmacist-
+// verifiable claim — deliberately left unset on cosmetics/hygiene/hardware
+// items (skin creams, baby wipes, thermometers, etc.) where there's no
+// equivalent concept, so those never get an automated substitute suggested.
+// Set this from the real product's actual formulation, not guessed — an
+// exact-string match is intentional (see findAlternatives.js) so two
+// different salts/forms of a similar drug are never silently conflated.
+//
 // This is the file to edit once the pharmacy provides their real product
 // list and prices.
 const rawProducts = [
-  { ar: "بانادول", en: "Panadol", cat: 'pain', price: 25, stock: true, rx: false },
-  { ar: "بانادول اكسترا", en: "Panadol Extra", cat: 'pain', price: 32, stock: true, rx: false },
-  { ar: "بروفين 400", en: "Brufen 400 (Ibuprofen)", cat: 'pain', price: 28, stock: true, rx: false },
-  { ar: "فولتارين جل", en: "Voltaren Gel", cat: 'pain', price: 95, stock: false, rx: false },
-  { ar: "كتافلام", en: "Cataflam", cat: 'pain', price: 40, stock: true, rx: false },
+  { ar: "بانادول", en: "Panadol", cat: 'pain', price: 25, stock: true, rx: false, activeIngredient: 'Paracetamol 500mg' },
+  { ar: "بانادول اكسترا", en: "Panadol Extra", cat: 'pain', price: 32, stock: true, rx: false, activeIngredient: 'Paracetamol 500mg + Caffeine 65mg' },
+  { ar: "بروفين 400", en: "Brufen 400 (Ibuprofen)", cat: 'pain', price: 28, stock: true, rx: false, activeIngredient: 'Ibuprofen 400mg' },
+  { ar: "فولتارين جل", en: "Voltaren Gel", cat: 'pain', price: 95, stock: false, rx: false, activeIngredient: 'Diclofenac Diethylamine (topical)' },
+  { ar: "جل ديكلوفيناك - جينيريك", en: "Diclofenac Gel (Generic)", cat: 'pain', price: 75, stock: true, rx: false, activeIngredient: 'Diclofenac Diethylamine (topical)' },
+  { ar: "كتافلام", en: "Cataflam", cat: 'pain', price: 40, stock: true, rx: false, activeIngredient: 'Diclofenac Potassium (oral)' },
   { ar: "استربسلز", en: "Strepsils", cat: 'cold', price: 35, stock: true, rx: false },
   { ar: "فيكس فيبوراب", en: "Vicks Vaporub", cat: 'cold', price: 60, stock: true, rx: false },
-  { ar: "زيرتك", en: "Zyrtec (Antihistamine)", cat: 'cold', price: 45, stock: true, rx: false },
-  { ar: "كوديللار", en: "Coldrelief", cat: 'cold', price: 38, stock: false, rx: false, arabicOnly: true },
-  { ar: "أوجمنتين 1 جم", en: "Augmentin 1g (Antibiotic)", cat: 'cold', price: 110, stock: true, rx: true },
-  { ar: "فيتامين سي 1000", en: "Vitamin C 1000mg", cat: 'vit', price: 85, stock: true, rx: false },
+  { ar: "زيرتك", en: "Zyrtec (Antihistamine)", cat: 'cold', price: 45, stock: true, rx: false, activeIngredient: 'Cetirizine 10mg' },
+  { ar: "كوديللار", en: "Coldrelief", cat: 'cold', price: 38, stock: false, rx: false, arabicOnly: true, activeIngredient: 'Paracetamol + Phenylephrine + Chlorpheniramine' },
+  { ar: "أوجمنتين 1 جم", en: "Augmentin 1g (Antibiotic)", cat: 'cold', price: 110, stock: true, rx: true, activeIngredient: 'Amoxicillin + Clavulanic Acid 1g' },
+  { ar: "فيتامين سي 1000", en: "Vitamin C 1000mg", cat: 'vit', price: 85, stock: true, rx: false, activeIngredient: 'Ascorbic Acid 1000mg' },
   { ar: "سنتروم ملتي فيتامين", en: "Centrum Multivitamin", cat: 'vit', price: 250, stock: true, rx: false },
-  { ar: "أوميغا 3", en: "Omega 3", cat: 'vit', price: 180, stock: true, rx: false },
-  { ar: "فيتامين د3", en: "Vitamin D3", cat: 'vit', price: 120, stock: false, rx: false },
-  { ar: "زنك بلس", en: "Zinc Plus", cat: 'vit', price: 95, stock: true, rx: false },
+  { ar: "أوميغا 3", en: "Omega 3", cat: 'vit', price: 180, stock: true, rx: false, activeIngredient: 'Omega-3 Fish Oil' },
+  { ar: "فيتامين د3", en: "Vitamin D3", cat: 'vit', price: 120, stock: false, rx: false, activeIngredient: 'Cholecalciferol (Vitamin D3)' },
+  { ar: "زنك بلس", en: "Zinc Plus", cat: 'vit', price: 95, stock: true, rx: false, activeIngredient: 'Zinc' },
   { ar: "حليب نان 1", en: "Nan 1 Baby Formula", cat: 'baby', price: 320, stock: true, rx: false },
   { ar: "بامبرز مقاس 3", en: "Pampers Size 3", cat: 'baby', price: 210, stock: true, rx: false },
   { ar: "مناديل مبللة للأطفال", en: "Baby Wet Wipes", cat: 'baby', price: 45, stock: true, rx: false },

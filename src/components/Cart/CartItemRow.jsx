@@ -3,12 +3,15 @@ import { useCart } from '../../context/CartContext';
 import { displayName } from '../../utils/displayName';
 import { CategoryVisual } from '../../utils/categoryVisual';
 import { Ltr } from '../../utils/Ltr';
+import { products } from '../../data/products';
 
 export function CartItemRow({ productId, product, qty }) {
   const { t } = useLanguage();
-  const { changeQty, removeItem } = useCart();
+  const { changeQty, removeItem, substitutes } = useCart();
   const name = displayName(product);
   const lineTotal = product.price * qty;
+  const originalId = substitutes[productId];
+  const original = originalId ? products.find((p) => p.id === originalId) : null;
 
   return (
     <div className="cart-item">
@@ -17,6 +20,9 @@ export function CartItemRow({ productId, product, qty }) {
       </div>
       <div className="cart-item-info">
         <div className="cart-item-name">{name}</div>
+        {original && (
+          <div className="cart-item-sub-note">{t('substituteNoteLabel')}: {displayName(original)}</div>
+        )}
         <div className="cart-item-price">
           <Ltr>{product.price} {t('egp')} × {qty} = {lineTotal} {t('egp')}</Ltr>
         </div>

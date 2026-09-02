@@ -7,7 +7,14 @@ import { displayName } from './displayName';
 // since that's how products are usually labeled/packaged. Per-item prices
 // are intentionally left out — only the final total (items + delivery) is
 // shown, matching what the cart displays.
-export function buildWhatsappMessage({ cart, products, branch, customer }) {
+//
+// `substitutes` (productId -> originalOutOfStockProductId, from
+// CartContext) flags cart lines added via a "suggested alternative" —  see
+// findAlternatives.js. Each one gets an explicit note asking the pharmacist
+// to confirm it's actually suitable and to report back a restock date for
+// the item the customer originally wanted, rather than silently swapping
+// products with no disclosure.
+export function buildWhatsappMessage({ cart, products, branch, customer, substitutes = {} }) {
   const ar = translations.ar;
   const lines = [];
   lines.push(`${ar.waMsgIntro} ${ar[branch.nameKey]}:`);
@@ -29,15 +36,32 @@ export function buildWhatsappMessage({ cart, products, branch, customer }) {
   }
 
   let total = 0;
+  const substitutionNotes = [];
   Object.keys(cart).forEach((id) => {
     const p = products.find((pp) => pp.id === id);
     const qty = cart[id];
     total += p.price * qty;
     lines.push(`• ${displayName(p)} x${qty}`);
+
+    const originalId = substitutes[id];
+    const original = originalId && products.find((pp) => pp.id === originalId);
+    if (original) {
+      substitutionNotes.push(
+        `${ar.waMsgSubPrefix} ${displayName(original)} ${ar.waMsgSubUnavailable} ${displayName(p)} ${ar.waMsgSubSameIngredient}`
+      );
+    }
   });
   lines.push('');
   lines.push(`${ar.waMsgDelivery}: ${branch.deliveryFee} ${ar.egp}`);
   lines.push(`${ar.waMsgFinalTotal}: ${total + branch.deliveryFee} ${ar.egp}`);
+
+  if (substitutionNotes.length > 0) {
+    lines.push('');
+    lines.push(ar.waMsgSubNotesTitle);
+    substitutionNotes.forEach((note) => lines.push(`- ${note}`));
+  }
+
+  lines.push('');
   lines.push(ar.waMsgConfirm);
 
   return { text: lines.join('\n'), phone: branch.waPhone };

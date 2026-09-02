@@ -14,11 +14,14 @@ function formatDate(iso, lang) {
 export function OrdersPage({ active }) {
   const { lang, t } = useLanguage();
   const { orders } = useOrderHistory();
-  const { changeQty, setSelectedBranch } = useCart();
+  const { changeQty, markSubstitute, setSelectedBranch } = useCart();
   const { openCart } = useDrawer();
 
   const reorder = (order) => {
-    order.items.forEach((item) => changeQty(item.id, item.qty));
+    order.items.forEach((item) => {
+      changeQty(item.id, item.qty);
+      if (item.substituteFor) markSubstitute(item.id, item.substituteFor.id);
+    });
     setSelectedBranch(order.branchId);
     openCart();
   };
@@ -55,9 +58,16 @@ export function OrdersPage({ active }) {
 
               <div style={{ fontSize: '0.82rem', color: 'var(--ink)', lineHeight: 1.9 }}>
                 {order.items.map((item) => (
-                  <div key={item.id} style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <span>{displayName(item)} × {item.qty}</span>
-                    <span style={{ color: 'var(--muted)' }}><Ltr>{item.price * item.qty} {t('egp')}</Ltr></span>
+                  <div key={item.id}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                      <span>{displayName(item)} × {item.qty}</span>
+                      <span style={{ color: 'var(--muted)' }}><Ltr>{item.price * item.qty} {t('egp')}</Ltr></span>
+                    </div>
+                    {item.substituteFor && (
+                      <div style={{ fontSize: '0.72rem', color: 'var(--muted)', marginTop: -4, marginBottom: 4 }}>
+                        {t('substituteNoteLabel')}: {displayName(item.substituteFor)}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>

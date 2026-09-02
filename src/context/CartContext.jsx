@@ -7,17 +7,35 @@ const CartContext = createContext(null);
 export function CartProvider({ children }) {
   const [cart, setCart] = useState({}); // productId -> qty
   const [selectedBranch, setSelectedBranch] = useState(branches[0].id);
+  // substituteProductId -> originalOutOfStockProductId. Only set for cart
+  // lines added via an "alternative for X" suggestion (see ProductCard /
+  // findAlternatives.js) — used to disclose the swap to the pharmacist in
+  // the WhatsApp message and to note it in the cart/order-history UI.
+  const [substitutes, setSubstitutes] = useState({});
+
+  const clearSubstitute = useCallback((id) => {
+    setSubstitutes((prev) => {
+      if (!(id in prev)) return prev;
+      const copy = { ...prev };
+      delete copy[id];
+      return copy;
+    });
+  }, []);
 
   const changeQty = useCallback((id, delta) => {
     setCart((prev) => {
       const current = prev[id] || 0;
       const next = Math.max(0, current + delta);
       const copy = { ...prev };
-      if (next === 0) delete copy[id];
-      else copy[id] = next;
+      if (next === 0) {
+        delete copy[id];
+        clearSubstitute(id);
+      } else {
+        copy[id] = next;
+      }
       return copy;
     });
-  }, []);
+  }, [clearSubstitute]);
 
   const removeItem = useCallback((id) => {
     setCart((prev) => {
@@ -25,6 +43,14 @@ export function CartProvider({ children }) {
       delete copy[id];
       return copy;
     });
+    clearSubstitute(id);
+  }, [clearSubstitute]);
+
+  // Records that `substituteId` in the cart is standing in for the
+  // out-of-stock `originalId` — call alongside changeQty(substituteId, +n)
+  // when adding a suggested alternative, not as a replacement for it.
+  const markSubstitute = useCallback((substituteId, originalId) => {
+    setSubstitutes((prev) => ({ ...prev, [substituteId]: originalId }));
   }, []);
 
   const branch = useMemo(
@@ -51,6 +77,8 @@ export function CartProvider({ children }) {
     cart,
     changeQty,
     removeItem,
+    substitutes,
+    markSubstitute,
     selectedBranch,
     setSelectedBranch,
     branch,
