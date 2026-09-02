@@ -8,8 +8,12 @@ const DrawerContext = createContext(null);
 // so, finishing the account form re-opens the cart automatically instead of
 // leaving no drawer open at all (which used to read as broken).
 export function DrawerProvider({ children }) {
-  const [openDrawer, setOpenDrawer] = useState(null); // null | 'cart' | 'account'
+  const [openDrawer, setOpenDrawer] = useState(null); // null | 'cart' | 'account' | 'altModal'
   const [pendingCheckout, setPendingCheckout] = useState(false);
+  // The out-of-stock product an "alternatives" popup is currently showing
+  // suggestions for — set alongside openDrawer('altModal'), read by
+  // AlternativeModal. Left stale after close (harmless, not rendered).
+  const [altModalProduct, setAltModalProduct] = useState(null);
   // Guards finishAccountFlow against firing twice for the same account-drawer
   // session (e.g. a fast double-click/double-tap on a form's submit button
   // schedules two 900ms timers) — a second call used to read pendingCheckout
@@ -51,6 +55,15 @@ export function DrawerProvider({ children }) {
     setPendingCheckout(false);
   }, []);
 
+  const openAltModal = useCallback((product) => {
+    setAltModalProduct(product);
+    setOpenDrawer('altModal');
+  }, []);
+
+  const closeAltModal = useCallback(() => {
+    setOpenDrawer((prev) => (prev === 'altModal' ? null : prev));
+  }, []);
+
   const value = {
     openDrawer,
     pendingCheckout,
@@ -60,6 +73,9 @@ export function DrawerProvider({ children }) {
     closeAccount,
     finishAccountFlow,
     closeAll,
+    altModalProduct,
+    openAltModal,
+    closeAltModal,
   };
 
   return <DrawerContext.Provider value={value}>{children}</DrawerContext.Provider>;

@@ -18,6 +18,7 @@ import { Footer } from './components/Footer/Footer';
 import { Overlay } from './components/Overlay';
 import { CartDrawer } from './components/Cart/CartDrawer';
 import { AccountDrawer } from './components/Account/AccountDrawer';
+import { AlternativeModal } from './components/Shop/AlternativeModal';
 
 function Pages() {
   const { page } = useNavigation();
@@ -49,6 +50,7 @@ export default function App() {
                 <Overlay />
                 <CartDrawer />
                 <AccountDrawer />
+                <AlternativeModal />
               </DrawerProvider>
             </OrderHistoryProvider>
           </CustomerProvider>

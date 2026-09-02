@@ -1,5 +1,6 @@
 import { useLanguage } from '../../i18n/LanguageContext';
 import { useCart } from '../../context/CartContext';
+import { useDrawer } from '../../context/DrawerContext';
 import { displayName } from '../../utils/displayName';
 import { CategoryVisual } from '../../utils/categoryVisual';
 import { Ltr } from '../../utils/Ltr';
@@ -8,15 +9,11 @@ import { products } from '../../data/products';
 
 export function ProductCard({ product }) {
   const { t } = useLanguage();
-  const { cart, changeQty, markSubstitute } = useCart();
+  const { cart, changeQty } = useCart();
+  const { openAltModal } = useDrawer();
   const qty = cart[product.id] || 0;
   const name = displayName(product);
-  const alternatives = !product.stock && !product.rx ? findAlternatives(product, products) : [];
-
-  const addAlternative = (alt) => {
-    changeQty(alt.id, 1);
-    markSubstitute(alt.id, product.id);
-  };
+  const hasAlternative = !product.stock && !product.rx && findAlternatives(product, products).length > 0;
 
   return (
     <div className="product-card">
@@ -45,20 +42,10 @@ export function ProductCard({ product }) {
       ) : !product.stock ? (
         <>
           <button className="add-btn" disabled>{t('add')}</button>
-          {alternatives.length > 0 && (
-            <div className="alt-suggestion">
-              <div className="alt-suggestion-label">{t('altSuggestionLabel')}</div>
-              {alternatives.map((alt) => (
-                <button
-                  key={alt.id}
-                  type="button"
-                  className="alt-suggestion-btn"
-                  onClick={() => addAlternative(alt)}
-                >
-                  {displayName(alt)} · {t('addAlternative')}
-                </button>
-              ))}
-            </div>
+          {hasAlternative && (
+            <button type="button" className="see-alt-link" onClick={() => openAltModal(product)}>
+              {t('seeAlternative')}
+            </button>
           )}
         </>
       ) : qty > 0 ? (
