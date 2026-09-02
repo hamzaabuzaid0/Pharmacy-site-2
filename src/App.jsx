@@ -12,6 +12,7 @@ import { AboutPage } from './components/About/AboutPage';
 import { OffersPage } from './components/Offers/OffersPage';
 import { ShopPage } from './components/Shop/ShopPage';
 import { TrackPage } from './components/Track/TrackPage';
+import { ScanPage } from './components/Scan/ScanPage';
 import { OrdersPage } from './components/Orders/OrdersPage';
 import { BranchesPage } from './components/Branches/BranchesPage';
 import { Footer } from './components/Footer/Footer';
@@ -29,6 +30,7 @@ function Pages() {
       <OffersPage active={page === 'offers'} />
       <ShopPage active={page === 'shop'} />
       <TrackPage active={page === 'track'} />
+      <ScanPage active={page === 'scan'} />
       <OrdersPage active={page === 'orders'} />
       <BranchesPage active={page === 'branches'} />
     </>

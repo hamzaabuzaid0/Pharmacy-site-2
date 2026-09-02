@@ -388,6 +388,52 @@ footer .foot-note{opacity:0.65;margin-top:10px;}
 .track-step.upcoming .track-step-title{color:var(--muted);}
 .track-step-desc{font-size:0.78rem;color:var(--muted);margin-top:2px;line-height:1.5;}
 
+/* ===== Prescription scan (demo) ===== */
+.scan-upload-buttons{display:flex;gap:12px;flex-wrap:wrap;}
+.scan-upload-btn{
+  flex:1 1 160px;display:flex;flex-direction:column;align-items:center;gap:8px;
+  background:var(--bg);border:2px dashed var(--border);border-radius:var(--radius);
+  padding:22px 12px;color:var(--teal-dark);font-weight:700;font-size:0.85rem;
+}
+.scan-upload-btn:hover{border-color:var(--teal);background:#eef8f8;}
+.scan-preview{margin-top:16px;text-align:center;}
+.scan-preview img{width:220px;height:220px;max-width:100%;border-radius:var(--radius);box-shadow:var(--shadow);object-fit:cover;}
+.scan-analyzing{
+  display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;
+  color:var(--teal-dark);font-weight:700;font-size:0.85rem;
+}
+.scan-spinner{
+  width:16px;height:16px;border-radius:50%;border:2px solid var(--border);
+  border-top-color:var(--teal);animation:scan-spin .8s linear infinite;
+}
+@keyframes scan-spin{to{transform:rotate(360deg);}}
+.scan-result-row{
+  display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);
+  font-size:0.85rem;cursor:pointer;
+}
+.scan-result-row input{width:18px;height:18px;flex-shrink:0;accent-color:var(--teal);}
+.scan-result-name{flex:1;font-weight:600;}
+.scan-result-price{color:var(--muted);font-weight:700;}
+.scan-reset-link{
+  background:none;border:none;color:var(--teal-dark);font-size:0.8rem;font-weight:700;
+  text-decoration:underline;text-underline-offset:2px;
+}
+
+.scan-promo-section{max-width:1100px;margin:0 auto;padding:0 16px 8px;}
+.scan-promo-card{
+  width:100%;display:flex;align-items:center;gap:14px;text-align:start;
+  background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;
+  border:none;border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);
+}
+.scan-promo-icon{
+  flex-shrink:0;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,0.18);
+  display:flex;align-items:center;justify-content:center;
+}
+.scan-promo-text{flex:1;min-width:0;}
+.scan-promo-title{font-weight:800;font-size:0.92rem;}
+.scan-promo-sub{font-size:0.78rem;opacity:0.9;margin-top:2px;}
+.scan-promo-cta{font-weight:700;font-size:0.82rem;white-space:nowrap;text-decoration:underline;text-underline-offset:3px;}
+
 @media (max-width:480px){
   .brand-name{font-size:1rem;}
   .grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}

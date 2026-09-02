@@ -6,6 +6,7 @@ const NAV_ITEMS = [
   { id: 'about', key: 'navAbout' },
   { id: 'offers', key: 'navOffers' },
   { id: 'shop', key: 'navShop' },
+  { id: 'scan', key: 'navScan' },
   { id: 'track', key: 'navTrack' },
   { id: 'orders', key: 'navOrders' },
   { id: 'branches', key: 'navBranches' },
