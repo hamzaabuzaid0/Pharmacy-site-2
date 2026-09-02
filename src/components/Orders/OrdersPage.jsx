@@ -20,7 +20,7 @@ export function OrdersPage({ active }) {
   const reorder = (order) => {
     order.items.forEach((item) => {
       changeQty(item.id, item.qty);
-      if (item.substituteFor) markSubstitute(item.id, item.substituteFor.id);
+      if (item.substituteFor) markSubstitute(item.id, item.substituteFor.id, item.substituteFor.matchType);
     });
     setSelectedBranch(order.branchId);
     openCart();

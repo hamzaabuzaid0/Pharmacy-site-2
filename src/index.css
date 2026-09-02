@@ -159,6 +159,10 @@ main{max-width:1100px;margin:0 auto;padding:16px;}
   opacity:0;pointer-events:none;transition:opacity .18s, transform .18s;
 }
 .alt-modal.show{opacity:1;pointer-events:auto;transform:translate(-50%,-50%) scale(1);}
+.alt-modal-caution{
+  background:#fff4e0;color:#a8710a;border-radius:8px;padding:8px 10px;
+  font-size:0.72rem;line-height:1.6;margin-bottom:4px;
+}
 .alt-modal-row{
   display:flex;gap:10px;align-items:center;padding:12px 0;border-top:1px solid var(--border);
 }

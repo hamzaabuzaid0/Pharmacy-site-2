@@ -10,8 +10,8 @@ export function CartItemRow({ productId, product, qty }) {
   const { changeQty, removeItem, substitutes } = useCart();
   const name = displayName(product);
   const lineTotal = product.price * qty;
-  const originalId = substitutes[productId];
-  const original = originalId ? products.find((p) => p.id === originalId) : null;
+  const sub = substitutes[productId];
+  const original = sub ? products.find((p) => p.id === sub.originalId) : null;
 
   return (
     <div className="cart-item">

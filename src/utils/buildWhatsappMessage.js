@@ -8,12 +8,14 @@ import { displayName } from './displayName';
 // are intentionally left out — only the final total (items + delivery) is
 // shown, matching what the cart displays.
 //
-// `substitutes` (productId -> originalOutOfStockProductId, from
-// CartContext) flags cart lines added via a "suggested alternative" —  see
+// `substitutes` (productId -> { originalId, matchType }, from CartContext)
+// flags cart lines added via a "suggested alternative" — see
 // findAlternatives.js. Each one gets an explicit note asking the pharmacist
 // to confirm it's actually suitable and to report back a restock date for
 // the item the customer originally wanted, rather than silently swapping
-// products with no disclosure.
+// products with no disclosure. Wording depends on matchType: 'ingredient'
+// states the same-active-ingredient fact; 'similar' deliberately avoids
+// that claim (it wasn't matched on ingredient at all) and says so.
 export function buildWhatsappMessage({ cart, products, branch, customer, substitutes = {} }) {
   const ar = translations.ar;
   const lines = [];
@@ -43,11 +45,12 @@ export function buildWhatsappMessage({ cart, products, branch, customer, substit
     total += p.price * qty;
     lines.push(`• ${displayName(p)} x${qty}`);
 
-    const originalId = substitutes[id];
-    const original = originalId && products.find((pp) => pp.id === originalId);
+    const sub = substitutes[id];
+    const original = sub && products.find((pp) => pp.id === sub.originalId);
     if (original) {
+      const claim = sub.matchType === 'similar' ? ar.waMsgSubSimilarProduct : ar.waMsgSubSameIngredient;
       substitutionNotes.push(
-        `${ar.waMsgSubPrefix} ${displayName(original)} ${ar.waMsgSubUnavailable} ${displayName(p)} ${ar.waMsgSubSameIngredient}`
+        `${ar.waMsgSubPrefix} ${displayName(original)} ${ar.waMsgSubUnavailable} ${displayName(p)} ${claim}`
       );
     }
   });

@@ -37,12 +37,12 @@ export function CartDrawer() {
       branchNameKey: branch.nameKey,
       items: ids.map((id) => {
         const p = products.find((pp) => pp.id === id);
-        const originalId = substitutes[id];
-        const original = originalId && products.find((pp) => pp.id === originalId);
+        const sub = substitutes[id];
+        const original = sub && products.find((pp) => pp.id === sub.originalId);
         return {
           id, en: p.en, ar: p.ar, arabicOnly: !!p.arabicOnly, price: p.price, qty: cart[id],
           substituteFor: original
-            ? { id: original.id, en: original.en, ar: original.ar, arabicOnly: !!original.arabicOnly }
+            ? { id: original.id, en: original.en, ar: original.ar, arabicOnly: !!original.arabicOnly, matchType: sub.matchType }
             : null,
         };
       }),

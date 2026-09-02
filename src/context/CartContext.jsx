@@ -7,10 +7,13 @@ const CartContext = createContext(null);
 export function CartProvider({ children }) {
   const [cart, setCart] = useState({}); // productId -> qty
   const [selectedBranch, setSelectedBranch] = useState(branches[0].id);
-  // substituteProductId -> originalOutOfStockProductId. Only set for cart
-  // lines added via an "alternative for X" suggestion (see ProductCard /
-  // findAlternatives.js) — used to disclose the swap to the pharmacist in
+  // substituteProductId -> { originalId, matchType }. Only set for cart
+  // lines added via an "alternative for X" suggestion (see AlternativeModal
+  // / findAlternatives.js) — used to disclose the swap to the pharmacist in
   // the WhatsApp message and to note it in the cart/order-history UI.
+  // matchType ('ingredient' | 'similar') controls the wording used, since a
+  // same-active-ingredient claim and a looser same-category suggestion are
+  // not the same kind of promise.
   const [substitutes, setSubstitutes] = useState({});
 
   const clearSubstitute = useCallback((id) => {
@@ -49,8 +52,8 @@ export function CartProvider({ children }) {
   // Records that `substituteId` in the cart is standing in for the
   // out-of-stock `originalId` — call alongside changeQty(substituteId, +n)
   // when adding a suggested alternative, not as a replacement for it.
-  const markSubstitute = useCallback((substituteId, originalId) => {
-    setSubstitutes((prev) => ({ ...prev, [substituteId]: originalId }));
+  const markSubstitute = useCallback((substituteId, originalId, matchType) => {
+    setSubstitutes((prev) => ({ ...prev, [substituteId]: { originalId, matchType } }));
   }, []);
 
   const branch = useMemo(

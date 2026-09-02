@@ -13,7 +13,7 @@ export function ProductCard({ product }) {
   const { openAltModal } = useDrawer();
   const qty = cart[product.id] || 0;
   const name = displayName(product);
-  const hasAlternative = !product.stock && !product.rx && findAlternatives(product, products).length > 0;
+  const hasAlternative = !product.stock && !product.rx && findAlternatives(product, products).matches.length > 0;
 
   return (
     <div className="product-card">
