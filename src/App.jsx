@@ -21,20 +21,32 @@ import { CartDrawer } from './components/Cart/CartDrawer';
 import { AccountDrawer } from './components/Account/AccountDrawer';
 import { AlternativeModal } from './components/Shop/AlternativeModal';
 
+// Only the active page is mounted — previously all 8 pages (including
+// Shop's full product grid) were always rendered into the DOM and merely
+// hidden with CSS, which meant every first load paid the render cost for
+// pages the visitor might never open. Each page still takes an `active`
+// prop for its own page/active CSS class, which is now always true since
+// only the active one is ever rendered — harmless to leave as-is on each
+// page component, keeps this a one-file change. The trade-off: a page's
+// own local state (e.g. TrackPage's entered code, ScanPage's step) resets
+// when you navigate away and back, matching normal web navigation — nothing
+// here depended on it persisting (branch/category/search selections all
+// live in context, not page-local state, so those still persist).
+const PAGES = {
+  home: HomePage,
+  about: AboutPage,
+  offers: OffersPage,
+  shop: ShopPage,
+  track: TrackPage,
+  scan: ScanPage,
+  orders: OrdersPage,
+  branches: BranchesPage,
+};
+
 function Pages() {
   const { page } = useNavigation();
-  return (
-    <>
-      <HomePage active={page === 'home'} />
-      <AboutPage active={page === 'about'} />
-      <OffersPage active={page === 'offers'} />
-      <ShopPage active={page === 'shop'} />
-      <TrackPage active={page === 'track'} />
-      <ScanPage active={page === 'scan'} />
-      <OrdersPage active={page === 'orders'} />
-      <BranchesPage active={page === 'branches'} />
-    </>
-  );
+  const ActivePage = PAGES[page] || HomePage;
+  return <ActivePage active />;
 }
 
 export default function App() {

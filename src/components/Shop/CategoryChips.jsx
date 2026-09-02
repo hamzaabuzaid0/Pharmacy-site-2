@@ -8,20 +8,24 @@ export function CategoryChips() {
 
   return (
     <div className="cat-scroll">
-      <div
+      <button
+        type="button"
         className={'cat-chip' + (activeCat === 'all' ? ' active' : '')}
         onClick={() => setActiveCat('all')}
+        aria-pressed={activeCat === 'all'}
       >
         {t('all')}
-      </div>
+      </button>
       {categories.map((c) => (
-        <div
+        <button
+          type="button"
           key={c.id}
           className={'cat-chip' + (activeCat === c.id ? ' active' : '')}
           onClick={() => setActiveCat(c.id)}
+          aria-pressed={activeCat === c.id}
         >
           {lang === 'ar' ? c.ar : c.en}
-        </div>
+        </button>
       ))}
     </div>
   );

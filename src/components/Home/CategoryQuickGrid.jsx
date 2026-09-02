@@ -14,7 +14,8 @@ export function CategoryQuickGrid() {
       </div>
       <div className="cat-quick-grid">
         {categories.map((c) => (
-          <div
+          <button
+            type="button"
             key={c.id}
             className="cat-quick-card"
             onClick={() => goToShopWithCategory(c.id)}
@@ -23,7 +24,7 @@ export function CategoryQuickGrid() {
               <CategoryVisual catId={c.id} size="26px" />
             </div>
             <div className="cat-quick-label">{lang === 'ar' ? c.ar : c.en}</div>
-          </div>
+          </button>
         ))}
       </div>
     </section>
