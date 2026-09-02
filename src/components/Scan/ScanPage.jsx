@@ -5,6 +5,7 @@ import { useDrawer } from '../../context/DrawerContext';
 import { displayName } from '../../utils/displayName';
 import { products } from '../../data/products';
 import { Ltr } from '../../utils/Ltr';
+import { CameraIcon, UploadIcon } from './ScanIcons';
 
 // PITCH-DEMO NOTE: there is no OCR/AI reading the photo. This page exists to
 // demonstrate the *concept* of prescription-scan ordering to the pharmacy
@@ -24,24 +25,6 @@ import { Ltr } from '../../utils/Ltr';
 // id, since ids are just array-index based and shift whenever products.js
 // gains or loses an entry earlier in the list.
 const DEMO_ITEM_NAMES = ['Augmentin 1g (Antibiotic)', 'Panadol Extra', 'Vitamin C 1000mg'];
-
-function CameraIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
-      <circle cx="12" cy="13.5" r="3.5" />
-    </svg>
-  );
-}
-
-function UploadIcon() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 15V4M12 4l-4 4M12 4l4 4" />
-      <path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" />
-    </svg>
-  );
-}
 
 export function ScanPage({ active }) {
   const { t } = useLanguage();

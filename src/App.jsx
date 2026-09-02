@@ -1,4 +1,4 @@
-import { LanguageProvider } from './i18n/LanguageContext';
+import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
 import { CartProvider } from './context/CartContext';
 import { CustomerProvider } from './context/CustomerContext';
 import { DrawerProvider } from './context/DrawerContext';
@@ -49,6 +49,27 @@ function Pages() {
   return <ActivePage active />;
 }
 
+// Separate from App() so it can call useLanguage() — needed for the skip
+// link's label, and the skip link has to be the very first focusable
+// element in the DOM (before Header) to be reachable on the first Tab
+// press, which is what a screen-reader/keyboard user relies on it for.
+function AppShell() {
+  const { t } = useLanguage();
+  return (
+    <>
+      <a href="#main-content" className="skip-link">{t('skipToContent')}</a>
+      <Header />
+      <NavBar />
+      <div id="main-content"><Pages /></div>
+      <Footer />
+      <Overlay />
+      <CartDrawer />
+      <AccountDrawer />
+      <AlternativeModal />
+    </>
+  );
+}
+
 export default function App() {
   return (
     <LanguageProvider>
@@ -57,14 +78,7 @@ export default function App() {
           <CustomerProvider>
             <OrderHistoryProvider>
               <DrawerProvider>
-                <Header />
-                <NavBar />
-                <Pages />
-                <Footer />
-                <Overlay />
-                <CartDrawer />
-                <AccountDrawer />
-                <AlternativeModal />
+                <AppShell />
               </DrawerProvider>
             </OrderHistoryProvider>
           </CustomerProvider>

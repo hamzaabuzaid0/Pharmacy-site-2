@@ -3,6 +3,7 @@
 export const translations = {
   ar: {
     pharmacyName: "صيدلية د. أحمد ماهر",
+    skipToContent: "تخطَّ إلى المحتوى الرئيسي",
     tagline: "تحقق من توفر أدويتك واطلبها الآن",
     cart: "السلة",
     searchPlaceholder: "ابحث عن دواء أو منتج بالعربي أو بالإنجليزي...",
@@ -151,6 +152,7 @@ export const translations = {
   },
   en: {
     pharmacyName: "Dr. Ahmed Maher Pharmacy",
+    skipToContent: "Skip to main content",
     tagline: "Check medicine availability & order instantly",
     cart: "Cart",
     searchPlaceholder: "Search for a medicine or product in Arabic or English...",

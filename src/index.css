@@ -19,6 +19,19 @@ a{text-decoration:none;color:inherit;}
 img{max-width:100%;display:block;}
 button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;}
 :focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+.skip-link{
+  position:fixed;top:-100px;inset-inline-start:8px;z-index:200;
+  background:var(--teal-dark);color:#fff;padding:10px 16px;border-radius:8px;
+  font-weight:700;font-size:0.85rem;transition:top .15s;
+}
+.skip-link:focus{top:8px;}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:0.001ms !important;animation-iteration-count:1 !important;
+    transition-duration:0.001ms !important;scroll-behavior:auto !important;
+  }
+}
 
 /* ===== Header ===== */
 header{
