@@ -1,9 +1,10 @@
 import { useLanguage } from '../../i18n/LanguageContext';
-import { branches } from '../../data/branches';
+import { useCatalog } from '../../context/CatalogContext';
 import { BranchDetailCard } from './BranchDetailCard';
 
 export function BranchesPage({ active }) {
   const { t } = useLanguage();
+  const { branches } = useCatalog();
 
   return (
     <section

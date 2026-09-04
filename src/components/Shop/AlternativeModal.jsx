@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../../i18n/LanguageContext';
 import { useCart } from '../../context/CartContext';
+import { useCatalog } from '../../context/CatalogContext';
 import { useDrawer } from '../../context/DrawerContext';
 import { displayName } from '../../utils/displayName';
 import { findAlternatives } from '../../utils/findAlternatives';
-import { CategoryVisual } from '../../utils/categoryVisual';
+import { ProductVisual } from '../../utils/ProductVisual';
 import { Ltr } from '../../utils/Ltr';
-import { products } from '../../data/products';
 
 // A small centered popup (shares the drawers' overlay) rather than living
 // inline on the product card — keeps the shop grid clean, and only asks for
@@ -14,13 +14,14 @@ import { products } from '../../data/products';
 // ProductCard's "See alternative" link on an out-of-stock item.
 export function AlternativeModal() {
   const { t } = useLanguage();
-  const { changeQty, markSubstitute } = useCart();
+  const { changeQty, markSubstitute, selectedBranch } = useCart();
+  const { products } = useCatalog();
   const { openDrawer, altModalProduct, closeAltModal } = useDrawer();
   const [addedId, setAddedId] = useState(null);
 
   const isOpen = openDrawer === 'altModal';
   const { type, matches } = altModalProduct
-    ? findAlternatives(altModalProduct, products)
+    ? findAlternatives(altModalProduct, products, selectedBranch)
     : { type: null, matches: [] };
 
   // Reset the "added" flash whenever a new product's popup opens.
@@ -54,7 +55,7 @@ export function AlternativeModal() {
       {matches.map((alt) => (
         <div className="alt-modal-row" key={alt.id}>
           <div className="cart-item-icon">
-            <CategoryVisual catId={alt.cat} size="20px" />
+            <ProductVisual product={alt} size="20px" />
           </div>
           <div className="cart-item-info">
             <div className="cart-item-name">{displayName(alt)}</div>

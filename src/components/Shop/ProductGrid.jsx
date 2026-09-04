@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useLanguage } from '../../i18n/LanguageContext';
 import { useNavigation } from '../../context/NavigationContext';
-import { products } from '../../data/products';
+import { useCatalog } from '../../context/CatalogContext';
 import { ProductCard } from './ProductCard';
 
 // Matches typed Arabic or English against BOTH name fields, regardless of
@@ -16,13 +16,14 @@ function matchesSearch(p, query) {
 export function ProductGrid() {
   const { t } = useLanguage();
   const { activeCat, searchQuery } = useNavigation();
+  const { products } = useCatalog();
 
   const filtered = useMemo(() => {
     return products.filter((p) => {
       const catOk = activeCat === 'all' || p.cat === activeCat;
       return catOk && matchesSearch(p, searchQuery);
     });
-  }, [activeCat, searchQuery]);
+  }, [products, activeCat, searchQuery]);
 
   if (filtered.length === 0) {
     return <div className="no-results">{t('noResults')}</div>;

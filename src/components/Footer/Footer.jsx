@@ -1,19 +1,21 @@
 import { useLanguage } from '../../i18n/LanguageContext';
-import { branches } from '../../data/branches';
+import { useCatalog } from '../../context/CatalogContext';
+import { branchName, branchAddr } from '../../utils/branchText';
 import { Ltr } from '../../utils/Ltr';
 import { WhatsAppIcon } from '../WhatsAppIcon';
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
+  const { branches } = useCatalog();
 
   return (
     <footer>
       <div className="foot-branches">
         {branches.map((b) => (
           <div key={b.id}>
-            <strong>{t(b.nameKey)}</strong>
+            <strong>{branchName(b, lang)}</strong>
             <br />
-            {t(b.addrKey)}
+            {branchAddr(b, lang)}
             <br />
             <WhatsAppIcon /> <Ltr>{b.waDisplay}</Ltr> · ☎ <Ltr>{b.callDisplay}</Ltr>
           </div>

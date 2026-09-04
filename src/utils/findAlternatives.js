@@ -16,14 +16,21 @@
 // other), so similarGroup exists specifically to pair up items that are
 // actually comparable.
 //
+import { isInStock } from './stock';
+
 // Returns { type: 'ingredient' | 'similar' | null, matches: Product[] }.
 // Silently returns no matches rather than force a questionable one.
-export function findAlternatives(product, allProducts) {
+//
+// branchId matters: with per-branch stock, a product can be the correct
+// "same ingredient" match yet still be out of stock at THIS branch — never
+// suggest something the customer can't actually get from where their order
+// is going.
+export function findAlternatives(product, allProducts, branchId) {
   if (product.activeIngredient) {
     return {
       type: 'ingredient',
       matches: allProducts.filter(
-        (p) => p.id !== product.id && p.stock && p.activeIngredient === product.activeIngredient
+        (p) => p.id !== product.id && isInStock(p, branchId) && p.activeIngredient === product.activeIngredient
       ),
     };
   }
@@ -31,7 +38,7 @@ export function findAlternatives(product, allProducts) {
     return {
       type: 'similar',
       matches: allProducts.filter(
-        (p) => p.id !== product.id && p.stock && p.similarGroup === product.similarGroup
+        (p) => p.id !== product.id && isInStock(p, branchId) && p.similarGroup === product.similarGroup
       ),
     };
   }

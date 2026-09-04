@@ -1,12 +1,17 @@
 import { createContext, useContext, useState, useCallback, useMemo } from 'react';
-import { products } from '../data/products';
-import { branches } from '../data/branches';
+import { useCatalog } from './CatalogContext';
 
 const CartContext = createContext(null);
 
+// Both the live Supabase branches and the static-fallback ones use the same
+// 'b1'/'b2' ids (see supabase/schema.sql) specifically so a fixed default
+// here works either way, without waiting on the catalog to finish loading.
+const DEFAULT_BRANCH_ID = 'b1';
+
 export function CartProvider({ children }) {
+  const { products, branches } = useCatalog();
   const [cart, setCart] = useState({}); // productId -> qty
-  const [selectedBranch, setSelectedBranch] = useState(branches[0].id);
+  const [selectedBranch, setSelectedBranch] = useState(DEFAULT_BRANCH_ID);
   // substituteProductId -> { originalId, matchType }. Only set for cart
   // lines added via an "alternative for X" suggestion (see AlternativeModal
   // / findAlternatives.js) — used to disclose the swap to the pharmacist in

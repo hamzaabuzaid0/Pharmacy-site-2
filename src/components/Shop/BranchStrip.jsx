@@ -1,10 +1,12 @@
 import { useLanguage } from '../../i18n/LanguageContext';
 import { useCart } from '../../context/CartContext';
-import { branches } from '../../data/branches';
+import { useCatalog } from '../../context/CatalogContext';
+import { branchName, branchAddr } from '../../utils/branchText';
 
 export function BranchStrip() {
-  const { t } = useLanguage();
+  const { lang } = useLanguage();
   const { selectedBranch, setSelectedBranch } = useCart();
+  const { branches } = useCatalog();
 
   return (
     <div className="branch-strip">
@@ -16,8 +18,8 @@ export function BranchStrip() {
           onClick={() => setSelectedBranch(b.id)}
           aria-pressed={selectedBranch === b.id}
         >
-          <h4><span className="radio" />{t(b.nameKey)}</h4>
-          <p>{t(b.addrKey)}</p>
+          <h4><span className="radio" />{branchName(b, lang)}</h4>
+          <p>{branchAddr(b, lang)}</p>
         </button>
       ))}
     </div>

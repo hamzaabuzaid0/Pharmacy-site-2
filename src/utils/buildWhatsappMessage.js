@@ -19,7 +19,7 @@ import { displayName } from './displayName';
 export function buildWhatsappMessage({ cart, products, branch, customer, substitutes = {} }) {
   const ar = translations.ar;
   const lines = [];
-  lines.push(`${ar.waMsgIntro} ${ar[branch.nameKey]}:`);
+  lines.push(`${ar.waMsgIntro} ${branch.nameAr}:`);
   lines.push('');
 
   if (customer) {

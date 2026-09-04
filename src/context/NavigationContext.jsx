@@ -5,8 +5,15 @@ const NavigationContext = createContext(null);
 // Drives which top-level page is visible, plus the shop page's search/category
 // filters — the header search bar lives here (used from every page) and
 // "shop by category" cards need to jump to the shop page pre-filtered.
+// Staff panel entry point: visiting the site with a #staff hash lands there
+// directly, without needing a nav link a customer could stumble onto (see
+// App.jsx's Pages()). Just discretion, not the real security boundary.
+function initialPage() {
+  return window.location.hash === '#staff' ? 'staff' : 'home';
+}
+
 export function NavigationProvider({ children }) {
-  const [page, setPageState] = useState('home');
+  const [page, setPageState] = useState(initialPage);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCat, setActiveCat] = useState('all');
 

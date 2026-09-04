@@ -1,10 +1,11 @@
 import { useLanguage } from '../../i18n/LanguageContext';
 import { useCart } from '../../context/CartContext';
+import { useCatalog } from '../../context/CatalogContext';
 import { useCustomer } from '../../context/CustomerContext';
 import { useDrawer } from '../../context/DrawerContext';
 import { useOrderHistory } from '../../context/OrderHistoryContext';
-import { products } from '../../data/products';
 import { buildWhatsappMessage } from '../../utils/buildWhatsappMessage';
+import { branchName } from '../../utils/branchText';
 import { Ltr } from '../../utils/Ltr';
 import { WhatsAppIcon } from '../WhatsAppIcon';
 import { CartItemRow } from './CartItemRow';
@@ -12,6 +13,7 @@ import { CartItemRow } from './CartItemRow';
 export function CartDrawer() {
   const { lang, t } = useLanguage();
   const { cart, branch, itemsTotal, deliveryFee, grandTotal, itemCount, substitutes } = useCart();
+  const { products } = useCatalog();
   const { customer } = useCustomer();
   const { openDrawer, closeCart, openAccount } = useDrawer();
   const { addOrder } = useOrderHistory();
@@ -34,7 +36,8 @@ export function CartDrawer() {
       id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
       date: new Date().toISOString(),
       branchId: branch.id,
-      branchNameKey: branch.nameKey,
+      branchNameAr: branch.nameAr,
+      branchNameEn: branch.nameEn,
       items: ids.map((id) => {
         const p = products.find((pp) => pp.id === id);
         const sub = substitutes[id];
@@ -54,8 +57,9 @@ export function CartDrawer() {
     window.open(url, '_blank');
   };
 
-  const branchNote =
-    (lang === 'ar' ? 'سيتم إرسال الطلب إلى: ' : 'Order will be sent to: ') + t(branch.nameKey);
+  const branchNote = branch
+    ? (lang === 'ar' ? 'سيتم إرسال الطلب إلى: ' : 'Order will be sent to: ') + branchName(branch, lang)
+    : '';
 
   return (
     <div className={'cart-drawer' + (isOpen ? ' show' : '')}>
@@ -99,7 +103,7 @@ export function CartDrawer() {
           <AccountSummaryText customer={customer} t={t} />
         </div>
 
-        <button className="wa-order-btn" disabled={itemCount === 0} onClick={handleOrder}>
+        <button className="wa-order-btn" disabled={itemCount === 0 || !branch} onClick={handleOrder}>
           <WhatsAppIcon size={18} />
           <span>{t('orderViaWhatsapp')}</span>
         </button>

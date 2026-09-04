@@ -1,4 +1,5 @@
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
+import { CatalogProvider } from './context/CatalogContext';
 import { CartProvider } from './context/CartContext';
 import { CustomerProvider } from './context/CustomerContext';
 import { DrawerProvider } from './context/DrawerContext';
@@ -20,6 +21,7 @@ import { Overlay } from './components/Overlay';
 import { CartDrawer } from './components/Cart/CartDrawer';
 import { AccountDrawer } from './components/Account/AccountDrawer';
 import { AlternativeModal } from './components/Shop/AlternativeModal';
+import { StaffPage } from './components/Staff/StaffPage';
 
 // Only the active page is mounted — previously all 8 pages (including
 // Shop's full product grid) were always rendered into the DOM and merely
@@ -45,6 +47,13 @@ const PAGES = {
 
 function Pages() {
   const { page } = useNavigation();
+  // Staff panel is a real page, but deliberately not in NAV_ITEMS (NavBar) —
+  // reached only via a bookmarked #staff URL, not a link a customer would
+  // stumble onto. That's discretion, not the actual security boundary —
+  // Supabase Auth + RLS (see StaffPage.jsx / supabase/schema.sql) is what
+  // actually stops a non-staff visitor from changing anything even if they
+  // do find the URL.
+  if (page === 'staff') return <StaffPage />;
   const ActivePage = PAGES[page] || HomePage;
   return <ActivePage active />;
 }
@@ -74,15 +83,17 @@ export default function App() {
   return (
     <LanguageProvider>
       <NavigationProvider>
-        <CartProvider>
-          <CustomerProvider>
-            <OrderHistoryProvider>
-              <DrawerProvider>
-                <AppShell />
-              </DrawerProvider>
-            </OrderHistoryProvider>
-          </CustomerProvider>
-        </CartProvider>
+        <CatalogProvider>
+          <CartProvider>
+            <CustomerProvider>
+              <OrderHistoryProvider>
+                <DrawerProvider>
+                  <AppShell />
+                </DrawerProvider>
+              </OrderHistoryProvider>
+            </CustomerProvider>
+          </CartProvider>
+        </CatalogProvider>
       </NavigationProvider>
     </LanguageProvider>
   );

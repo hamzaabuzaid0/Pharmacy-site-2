@@ -65,4 +65,8 @@ const rawProducts = [
   { ar: "غسول فم - بديل", en: "Mouthwash (Alternative Brand)", cat: 'personal', price: 85, stock: true, rx: false, similarGroup: 'mouthwash' },
 ];
 
-export const products = rawProducts.map((p, i) => ({ ...p, id: 'p' + i }));
+// image: derived from the index the same way `id` is, rather than hand-added
+// per row — every product's photo is named to match its id exactly (see
+// public/images/products/ and docs-internal/product-photo-checklist.md), so
+// this can never drift out of sync the way 36 hand-typed paths could.
+export const products = rawProducts.map((p, i) => ({ ...p, id: 'p' + i, image: `/images/products/p${i}.jpg` }));

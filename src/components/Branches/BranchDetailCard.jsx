@@ -1,9 +1,10 @@
 import { useLanguage } from '../../i18n/LanguageContext';
 import { Ltr } from '../../utils/Ltr';
 import { WhatsAppIcon } from '../WhatsAppIcon';
+import { branchName, branchAddr } from '../../utils/branchText';
 
 export function BranchDetailCard({ branch }) {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
 
   return (
     <div
@@ -16,9 +17,9 @@ export function BranchDetailCard({ branch }) {
         boxShadow: 'var(--shadow)',
       }}
     >
-      <h4 style={{ margin: '0 0 6px', color: 'var(--teal-dark)' }}>{t(branch.nameKey)}</h4>
+      <h4 style={{ margin: '0 0 6px', color: 'var(--teal-dark)' }}>{branchName(branch, lang)}</h4>
       <p style={{ margin: '0 0 12px', fontSize: '0.85rem', color: 'var(--muted)', lineHeight: 1.6 }}>
-        {t(branch.addrKey)}
+        {branchAddr(branch, lang)}
       </p>
       <div className="branch-actions">
         <a

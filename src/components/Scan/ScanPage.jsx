@@ -1,9 +1,9 @@
 import { useState, useRef } from 'react';
 import { useLanguage } from '../../i18n/LanguageContext';
 import { useCart } from '../../context/CartContext';
+import { useCatalog } from '../../context/CatalogContext';
 import { useDrawer } from '../../context/DrawerContext';
 import { displayName } from '../../utils/displayName';
-import { products } from '../../data/products';
 import { Ltr } from '../../utils/Ltr';
 import { CameraIcon, UploadIcon } from './ScanIcons';
 
@@ -29,6 +29,7 @@ const DEMO_ITEM_NAMES = ['Augmentin 1g (Antibiotic)', 'Panadol Extra', 'Vitamin 
 export function ScanPage({ active }) {
   const { t } = useLanguage();
   const { changeQty } = useCart();
+  const { products } = useCatalog();
   const { openCart } = useDrawer();
 
   const [step, setStep] = useState('idle'); // idle | scanning | results | done

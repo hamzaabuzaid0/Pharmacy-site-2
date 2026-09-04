@@ -49,7 +49,7 @@ export function OrdersPage({ active }) {
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8, marginBottom: 10 }}>
                 <div style={{ fontSize: '0.8rem', color: 'var(--muted)' }}>
-                  <Ltr>{formatDate(order.date, lang)}</Ltr> · {t(order.branchNameKey)}
+                  <Ltr>{formatDate(order.date, lang)}</Ltr> · {lang === 'ar' ? order.branchNameAr : order.branchNameEn}
                 </div>
                 <div style={{ fontWeight: 800, fontSize: '0.9rem' }}>
                   <Ltr>{order.grandTotal} {t('egp')}</Ltr>

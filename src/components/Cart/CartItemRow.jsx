@@ -1,13 +1,14 @@
 import { useLanguage } from '../../i18n/LanguageContext';
 import { useCart } from '../../context/CartContext';
+import { useCatalog } from '../../context/CatalogContext';
 import { displayName } from '../../utils/displayName';
-import { CategoryVisual } from '../../utils/categoryVisual';
+import { ProductVisual } from '../../utils/ProductVisual';
 import { Ltr } from '../../utils/Ltr';
-import { products } from '../../data/products';
 
 export function CartItemRow({ productId, product, qty }) {
   const { t } = useLanguage();
   const { changeQty, removeItem, substitutes } = useCart();
+  const { products } = useCatalog();
   const name = displayName(product);
   const lineTotal = product.price * qty;
   const sub = substitutes[productId];
@@ -16,7 +17,7 @@ export function CartItemRow({ productId, product, qty }) {
   return (
     <div className="cart-item">
       <div className="cart-item-icon">
-        <CategoryVisual catId={product.cat} size="20px" />
+        <ProductVisual product={product} size="20px" />
       </div>
       <div className="cart-item-info">
         <div className="cart-item-name">{name}</div>
