@@ -10,14 +10,23 @@
     <meta name="apple-mobile-web-app-title" content="صيدلية أحمد ماهر" />
     <!-- Real files, not inline data: URIs — several webview/preview/share-card
          renderers (and iOS Safari, for the touch icon) don't reliably pick up
-         a data: URI favicon, only a fetchable URL. -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.json" />
+         a data: URI favicon, only a fetchable URL. Paths here are relative
+         (no leading "/") on purpose: this site deploys to
+         hamzaabuzaid0.github.io/Pharmacy-site-2/ — a subfolder, not the
+         domain root — so a leading "/" would resolve against the wrong
+         place (the domain root) and 404. Relative paths resolve against the
+         page's own URL instead, which is correct both here and on
+         localhost. og:image is the one exception: some link-preview
+         crawlers (WhatsApp, etc.) don't reliably resolve a relative
+         og:image against the page URL the way browsers do, so it needs the
+         full absolute address instead. -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
     <meta property="og:title" content="صيدلية د. أحمد ماهر" />
     <meta property="og:description" content="تصفح الأدوية والمستلزمات، اطمئن على توفرها، واطلبها مباشرة عبر واتساب." />
-    <meta property="og:image" content="/icon-512.png" />
+    <meta property="og:image" content="https://hamzaabuzaid0.github.io/Pharmacy-site-2/icon-512.png" />
     <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

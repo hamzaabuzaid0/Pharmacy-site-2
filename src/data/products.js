@@ -69,4 +69,9 @@ const rawProducts = [
 // per row — every product's photo is named to match its id exactly (see
 // public/images/products/ and docs-internal/product-photo-checklist.md), so
 // this can never drift out of sync the way 36 hand-typed paths could.
-export const products = rawProducts.map((p, i) => ({ ...p, id: 'p' + i, image: `/images/products/p${i}.jpg` }));
+// No leading slash: this site is deployed at hamzaabuzaid0.github.io/
+// Pharmacy-site-2/ (a subfolder, not the domain root) — a path starting
+// with "/" resolves against the domain root and misses the subfolder
+// entirely. A relative path resolves against the page's own URL instead,
+// which works correctly whether that's this subfolder or plain localhost.
+export const products = rawProducts.map((p, i) => ({ ...p, id: 'p' + i, image: `images/products/p${i}.jpg` }));
