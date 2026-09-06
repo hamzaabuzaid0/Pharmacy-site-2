@@ -1,0 +1,25 @@
+TOTAL 10405
+
+  6506  medicine
+   799  haircare
+   781  skincare
+   594  personal
+   351  baby
+   280  vitamins
+   225  fragrance
+   150  cosmetics
+   141  haircolor
+   137  oral
+   111  firstaid
+   110  devices
+    84  pain
+    67  cold
+    34  digestive
+    23  intimate
+    12  home
+
+rx-flagged: 144
+offers:     333
+out of stock: 48
+arabic-only: 6
+haircolor w/ swatch: 141 / 141

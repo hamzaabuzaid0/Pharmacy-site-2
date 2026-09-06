@@ -1,0 +1,730 @@
+{
+  "generated_from": "source-inventory.xlsx",
+  "image_source": {
+    "url": "https://instashop.com/en-eg/client/ahmed-maher-pharmacy-1st-dist-6th-of-october",
+    "status": "not accessible for automated use",
+    "detail": "instashop.com/robots.txt disallows /product/* and /search/* for all crawlers, and the store page returns HTTP 403 to non-browser requests. Per the task's own rule, automated acquisition was stopped rather than bypassed.",
+    "what_is_needed": "an authorised export of the InstaShop product images (the pharmacy can pull these from their InstaShop merchant dashboard), OR a folder of photos keyed by product code, OR written permission + API access from InstaShop. Once available, drop the files into public/images/products/<code>.jpg and list their codes in src/data/products.js (CODES_WITH_IMAGE)."
+  },
+  "counts": {
+    "total_products": 10405,
+    "with_image": 0,
+    "without_image": 10405,
+    "hair_colour_with_swatch": 141,
+    "data_quality_flags": 79
+  },
+  "note": "Every product currently renders a clean fallback (category illustration, or an accurate shade swatch for hair colour) — no product is shown a wrong image. The list below is only rows with a data problem in the source sheet that a human should look at.",
+  "flagged_products": [
+    {
+      "code": "n4",
+      "id": "n4",
+      "name": "ACCU-FINE NEEDLES 4 MM",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'n4'"
+      ]
+    },
+    {
+      "code": "n5",
+      "id": "n5",
+      "name": "ACCU-FINE NEEDLES 5 MM",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'n5'"
+      ]
+    },
+    {
+      "code": "swb",
+      "id": "swb",
+      "name": "ALCOHOL SWAB .......",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'swb'"
+      ]
+    },
+    {
+      "code": "BM6",
+      "id": "BM6",
+      "name": "BM AID DRESSING 6X7 CM ...",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'BM6'"
+      ]
+    },
+    {
+      "code": "BM20",
+      "id": "BM20",
+      "name": "BM POR DRESSING 9 X 20 1 PCS ...",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'BM20'"
+      ]
+    },
+    {
+      "code": "bm30",
+      "id": "bm30",
+      "name": "BM POR DRESSING 9CM X 30CM 1 PCS ...",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'bm30'"
+      ]
+    },
+    {
+      "code": "BM10",
+      "id": "BM10",
+      "name": "BM POR DRESSING 9X10CM 1 PCS ...",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'BM10'"
+      ]
+    },
+    {
+      "code": "BM15",
+      "id": "BM15",
+      "name": "BM POR DRESSING 9X15 ...",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'BM15'"
+      ]
+    },
+    {
+      "code": "BM25",
+      "id": "BM25",
+      "name": "BM POR DRESSING 9X25 ...",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'BM25'"
+      ]
+    },
+    {
+      "code": "BA4",
+      "id": "BA4",
+      "name": "BORIC ACID LOTION 4% .......",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'BA4'"
+      ]
+    },
+    {
+      "code": "C100",
+      "id": "C100",
+      "name": "C.M COTTON 100 GM ...",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'C100'"
+      ]
+    },
+    {
+      "code": "C250",
+      "id": "C250",
+      "name": "C.M COTTON 250 GM ...",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'C250'"
+      ]
+    },
+    {
+      "code": "C500",
+      "id": "C500",
+      "name": "C.M COTTON 500 GM ...",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'C500'"
+      ]
+    },
+    {
+      "code": "CAF",
+      "id": "CAF",
+      "name": "CAFLON ENGLAND EAR PIERCING ...",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'CAF'"
+      ]
+    },
+    {
+      "code": "CAN",
+      "id": "CAN",
+      "name": "CANULA G.14 ORANG ....",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'CAN'"
+      ]
+    },
+    {
+      "code": "CID",
+      "id": "CID",
+      "name": "CIDOPHAGE 500MG 10 TAB 50 STRIPS",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'CID'"
+      ]
+    },
+    {
+      "code": "Q",
+      "id": "Q",
+      "name": "COMPLETE HAIR OIL 60 ML",
+      "category": "haircare",
+      "reasons": [
+        "non-standard product code 'Q'"
+      ]
+    },
+    {
+      "code": "PL",
+      "id": "PL",
+      "name": "CURE-AID PLASTER 5 PCS",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'PL'"
+      ]
+    },
+    {
+      "code": "DP10",
+      "id": "DP10",
+      "name": "DERMA-PORE 10X12 ديرمابو غيار جروح لاصق",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'DP10'"
+      ]
+    },
+    {
+      "code": "DP20",
+      "id": "DP20",
+      "name": "DERMA-PORE 10X20 ديرمابو غيار جروح لاصق",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'DP20'"
+      ]
+    },
+    {
+      "code": "D175",
+      "id": "D175",
+      "name": "DETTOL ORIGINAL SOAP 165GM",
+      "category": "personal",
+      "reasons": [
+        "non-standard product code 'D175'"
+      ]
+    },
+    {
+      "code": "SD5",
+      "id": "SD5",
+      "name": "DIXY SYRINGE INJECTION 5 ML سرنجة2 سن",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'SD5'"
+      ]
+    },
+    {
+      "code": "plr",
+      "id": "plr",
+      "name": "DOCTOR AID 100 PCS ...",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'plr'"
+      ]
+    },
+    {
+      "code": "EYE",
+      "id": "EYE",
+      "name": "EYE PATCH CHILD SIZE STERILE ...",
+      "category": "skincare",
+      "reasons": [
+        "non-standard product code 'EYE'"
+      ]
+    },
+    {
+      "code": "FINE",
+      "id": "FINE",
+      "name": "FINE CARE ADULT DIAPER LARGE 9 PCS",
+      "category": "devices",
+      "reasons": [
+        "non-standard product code 'FINE'"
+      ]
+    },
+    {
+      "code": "FM",
+      "id": "FM",
+      "name": "FINE CARE ADULT DIAPER MEDIUM 11 PCS",
+      "category": "devices",
+      "reasons": [
+        "non-standard product code 'FM'"
+      ]
+    },
+    {
+      "code": "FS",
+      "id": "FS",
+      "name": "FINE CARE ADULT DIAPER SMALL 12 PCS",
+      "category": "devices",
+      "reasons": [
+        "non-standard product code 'FS'"
+      ]
+    },
+    {
+      "code": "G10",
+      "id": "G10",
+      "name": "GAUZE 10 CM ....",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'G10'"
+      ]
+    },
+    {
+      "code": "G15",
+      "id": "G15",
+      "name": "GAUZE 15 CM ....",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'G15'"
+      ]
+    },
+    {
+      "code": "G5",
+      "id": "G5",
+      "name": "GAUZE 5 CM....",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'G5'"
+      ]
+    },
+    {
+      "code": "G7",
+      "id": "G7",
+      "name": "GAUZE 7 CM ...",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'G7'"
+      ]
+    },
+    {
+      "code": "gi",
+      "id": "gi",
+      "name": "GILLETE BLUE2 PLUS",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'gi'"
+      ]
+    },
+    {
+      "code": "gil",
+      "id": "gil",
+      "name": "GILLETE BLUE2 PLUS WOMENS 5 PCS",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'gil'"
+      ]
+    },
+    {
+      "code": "glo",
+      "id": "glo",
+      "name": "GLORY BLACK HENNA 10 G",
+      "category": "haircolor",
+      "reasons": [
+        "non-standard product code 'glo'"
+      ]
+    },
+    {
+      "code": "0",
+      "id": "0",
+      "name": "INFUSION SET DISPOSABLE ....",
+      "category": "firstaid",
+      "reasons": [
+        "product code 0 appears 2x in the sheet"
+      ]
+    },
+    {
+      "code": "si",
+      "id": "si",
+      "name": "INSULIN SYRINGE 100 المصري",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'si'"
+      ]
+    },
+    {
+      "code": "KW",
+      "id": "KW",
+      "name": "K.N.95 MASK WHITE ...",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'KW'"
+      ]
+    },
+    {
+      "code": "L",
+      "id": "L",
+      "name": "LUNA LIP BALM MOISTURIZER",
+      "category": "skincare",
+      "reasons": [
+        "non-standard product code 'L'"
+      ]
+    },
+    {
+      "code": "INH",
+      "id": "INH",
+      "name": "LUNA INHALER STICK",
+      "category": "cold",
+      "reasons": [
+        "non-standard product code 'INH'"
+      ]
+    },
+    {
+      "code": "LU",
+      "id": "LU",
+      "name": "LUNA MEDICINAL SOAP SULPHUR 10% 55G",
+      "category": "personal",
+      "reasons": [
+        "non-standard product code 'LU'"
+      ]
+    },
+    {
+      "code": "MIOPAN S",
+      "id": "MIOPANS",
+      "name": "MIOPAN SYRUP 100ML",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'MIOPAN S'"
+      ]
+    },
+    {
+      "code": "n6",
+      "id": "n6",
+      "name": "NOVO FINE 6 MM 100 PCS",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'n6'"
+      ]
+    },
+    {
+      "code": "s33",
+      "id": "s33",
+      "name": "ORAL SYRING 5 CM DIXY BUBBLES",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 's33'"
+      ]
+    },
+    {
+      "code": "n3",
+      "id": "n3",
+      "name": "PIC INSUPEN 3.5MM NEEDLE 100.PCS",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'n3'"
+      ]
+    },
+    {
+      "code": "N66",
+      "id": "N66",
+      "name": "PIC INSUPEN 6 MM NEEDLE 100.PCS",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'N66'"
+      ]
+    },
+    {
+      "code": "POT",
+      "id": "POT",
+      "name": "POTASSIUM PERMENGANATE 100 GM .......",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'POT'"
+      ]
+    },
+    {
+      "code": "PY",
+      "id": "PY",
+      "name": "PYROSOL FLYING INSECTS KILER 300ML",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'PY'"
+      ]
+    },
+    {
+      "code": "R60",
+      "id": "R60",
+      "name": "RAID MATS 60 TAB",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'R60'"
+      ]
+    },
+    {
+      "code": "ra",
+      "id": "ra",
+      "name": "RANI-F EFF 6SACHETS NEW PRICE",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'ra'"
+      ]
+    },
+    {
+      "code": "SR50",
+      "id": "SR50",
+      "name": "RYLE SYRING 50.CM ....",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'SR50'"
+      ]
+    },
+    {
+      "code": "NACL",
+      "id": "NACL",
+      "name": "SODIUM CHLORIDE (NORMAL SALINE) 500 ML NEW",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'NACL'"
+      ]
+    },
+    {
+      "code": "SOFYX",
+      "id": "SOFYX",
+      "name": "SOFY MAXI EXTRA LONG WITH MUSK 14 PCS",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'SOFYX'"
+      ]
+    },
+    {
+      "code": "SOFYL",
+      "id": "SOFYL",
+      "name": "SOFY MAXI LONG WITH MUSK 16 PADS",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'SOFYL'"
+      ]
+    },
+    {
+      "code": "SHO",
+      "id": "SHO",
+      "name": "STREPSILS HONEY&LEMON LOZENGES 24 TAB",
+      "category": "cold",
+      "reasons": [
+        "non-standard product code 'SHO'"
+      ]
+    },
+    {
+      "code": "SOR",
+      "id": "SOR",
+      "name": "STREPSILS ORANGE VITAMIN C 24 TAB LOZENGES",
+      "category": "cold",
+      "reasons": [
+        "non-standard product code 'SOR'"
+      ]
+    },
+    {
+      "code": "S20",
+      "id": "S20",
+      "name": "SYRING 20 CM ...",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'S20'"
+      ]
+    },
+    {
+      "code": "S100",
+      "id": "S100",
+      "name": "SYRING 3ML CHILDRINE",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'S100'"
+      ]
+    },
+    {
+      "code": "s3",
+      "id": "s3",
+      "name": "SYRINGE 3 CM",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 's3'"
+      ]
+    },
+    {
+      "code": "s5",
+      "id": "s5",
+      "name": "SYRINGE 5CM IMP",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 's5'"
+      ]
+    },
+    {
+      "code": "T",
+      "id": "T",
+      "name": "TERRAMYCIN EYE OINT",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'T'"
+      ]
+    },
+    {
+      "code": "tr",
+      "id": "tr",
+      "name": "THERMOMETER LARGE ...",
+      "category": "devices",
+      "reasons": [
+        "non-standard product code 'tr'"
+      ]
+    },
+    {
+      "code": "wg",
+      "id": "wg",
+      "name": "TOUGHIE HD-27 GLOVES WORKERS XL ...",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'wg'"
+      ]
+    },
+    {
+      "code": "k00",
+      "id": "k00",
+      "name": "URINE BAG COLLECTOR USE ADULTE ....",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'k00'"
+      ]
+    },
+    {
+      "code": "V6",
+      "id": "V6",
+      "name": "VANO BANDAGE 6 CM..",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'V6'"
+      ]
+    },
+    {
+      "code": "V8",
+      "id": "V8",
+      "name": "VANO BANDAGE 8 CM..",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'V8'"
+      ]
+    },
+    {
+      "code": "V10",
+      "id": "V10",
+      "name": "VANO BANDAGE 10 CM..",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'V10'"
+      ]
+    },
+    {
+      "code": "V12",
+      "id": "V12",
+      "name": "VANO BANDAGE 12CM..",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'V12'"
+      ]
+    },
+    {
+      "code": "V15",
+      "id": "V15",
+      "name": "VANO BANDAGE 15 CM..",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'V15'"
+      ]
+    },
+    {
+      "code": "VIC",
+      "id": "VIC",
+      "name": "VICKS INHALER",
+      "category": "cold",
+      "reasons": [
+        "non-standard product code 'VIC'"
+      ]
+    },
+    {
+      "code": "CA",
+      "id": "CA",
+      "name": "VITACID CALCIUM EFF TAB",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'CA'"
+      ]
+    },
+    {
+      "code": "inj",
+      "id": "inj",
+      "name": "WATER FOR INJECTION",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'inj'"
+      ]
+    },
+    {
+      "code": "WA",
+      "id": "WA",
+      "name": "WATER SOLVENT- 50 ML",
+      "category": "medicine",
+      "reasons": [
+        "non-standard product code 'WA'"
+      ]
+    },
+    {
+      "code": "WHITE",
+      "id": "WHITE",
+      "name": "WHITE 210 TISSUES 4 BUY 1 FREE",
+      "category": "personal",
+      "reasons": [
+        "non-standard product code 'WHITE'"
+      ]
+    },
+    {
+      "code": "W120",
+      "id": "W120",
+      "name": "WHITE TISSUES SMART PACK 120.PCS",
+      "category": "personal",
+      "reasons": [
+        "non-standard product code 'W120'"
+      ]
+    },
+    {
+      "code": "Z100",
+      "id": "Z100",
+      "name": "ZI FLOSS PICKS 100 PICKS",
+      "category": "oral",
+      "reasons": [
+        "non-standard product code 'Z100'"
+      ]
+    },
+    {
+      "code": "Z30",
+      "id": "Z30",
+      "name": "ZI FLOSS PICKS 30 PICKS",
+      "category": "oral",
+      "reasons": [
+        "non-standard product code 'Z30'"
+      ]
+    },
+    {
+      "code": "S10",
+      "id": "S10",
+      "name": "سرنجة 10سم XSX",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'S10'"
+      ]
+    },
+    {
+      "code": "S50",
+      "id": "S50",
+      "name": "سرنجة 50 سم...",
+      "category": "firstaid",
+      "reasons": [
+        "non-standard product code 'S50'"
+      ]
+    },
+    {
+      "code": "0",
+      "id": "0-2",
+      "name": "قياس الضغط خارج الصيدلية",
+      "category": "medicine",
+      "reasons": [
+        "product code 0 appears 2x in the sheet"
+      ]
+    }
+  ]
+}

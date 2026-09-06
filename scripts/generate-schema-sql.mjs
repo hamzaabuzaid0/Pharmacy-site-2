@@ -3,16 +3,34 @@
 // seed rows are guaranteed to match products.js/branches.js exactly rather
 // than being hand-typed. Run with: node scripts/generate-schema-sql.mjs
 // Output: supabase/schema.sql
+//
+// NOTE: the catalog is now ~10k rows (see scripts/build-catalog.py). The
+// seed INSERTs below are chunked so Postgres accepts them, but pasting a
+// multi-MB script into the Supabase SQL editor is slow — for a first load
+// prefer importing supabase/seed-products.csv / seed-stock.csv via the
+// Table editor's CSV import, then run just the schema+RLS part of this file.
 import { products } from '../src/data/products.js';
 import { branches } from '../src/data/branches.js';
 import { translations } from '../src/i18n/translations.js';
 import { writeFileSync, mkdirSync } from 'fs';
 
 function sqlStr(v) {
-  if (v === null || v === undefined) return 'null';
+  if (v === null || v === undefined || v === '') return 'null';
   return `'${String(v).replace(/'/g, "''")}'`;
 }
 function sqlBool(v) { return v ? 'true' : 'false'; }
+
+// Emit `insert into T (cols) values (...),(...); ` in chunks of `size` rows.
+function chunkedInsert(table, cols, rows, size = 500) {
+  const out = [];
+  for (let i = 0; i < rows.length; i += size) {
+    const slice = rows.slice(i, i + size);
+    out.push(
+      `insert into ${table} (${cols}) values\n${slice.join(',\n')}\non conflict do nothing;`
+    );
+  }
+  return out.join('\n\n');
+}
 
 const branchRows = branches.map((b) => {
   const nameAr = translations.ar[b.nameKey];
@@ -20,11 +38,11 @@ const branchRows = branches.map((b) => {
   const addrAr = translations.ar[b.addrKey];
   const addrEn = translations.en[b.addrKey];
   return `(${sqlStr(b.id)}, ${sqlStr(nameAr)}, ${sqlStr(nameEn)}, ${sqlStr(addrAr)}, ${sqlStr(addrEn)}, ${sqlStr(b.waPhone)}, ${sqlStr(b.callPhone)}, ${sqlStr(b.waDisplay)}, ${sqlStr(b.callDisplay)}, ${b.deliveryFee})`;
-}).join(',\n');
+});
 
-const productRows = products.map((p) => {
-  return `(${sqlStr(p.id)}, ${sqlStr(p.ar)}, ${sqlStr(p.en)}, ${sqlStr(p.cat)}, ${p.price}, ${sqlBool(p.rx)}, ${sqlBool(!!p.arabicOnly)}, ${sqlStr(p.activeIngredient)}, ${sqlStr(p.similarGroup)}, ${sqlStr(p.image)})`;
-}).join(',\n');
+const productRows = products.map((p) =>
+  `(${sqlStr(p.id)}, ${sqlStr(p.code)}, ${sqlStr(p.ar)}, ${sqlStr(p.en)}, ${sqlStr(p.cat)}, ${p.price}, ${sqlBool(p.rx)}, ${sqlBool(!!p.arabicOnly)}, ${sqlBool(!!p.offer)}, ${sqlStr(p.company)}, ${sqlStr(p.unit)}, ${sqlStr(p.shade)}, ${sqlStr(p.swatch)}, ${sqlStr(p.activeIngredient)}, ${sqlStr(p.similarGroup)}, ${sqlStr(p.image)})`
+);
 
 const stockRows = [];
 products.forEach((p) => {
@@ -54,12 +72,18 @@ create table if not exists branches (
 
 create table if not exists products (
   id text primary key,
+  code text,
   ar text not null,
   en text not null,
   cat text not null,
   price numeric not null,
   rx boolean not null default false,
   arabic_only boolean not null default false,
+  offer boolean not null default false,
+  company text,
+  unit text,
+  shade text,
+  swatch text,
   active_ingredient text,
   similar_group text,
   image_url text,
@@ -74,6 +98,8 @@ create table if not exists branch_stock (
   updated_at timestamptz not null default now(),
   primary key (product_id, branch_id)
 );
+
+create index if not exists products_cat_idx on products (cat);
 
 -- ============================================================
 -- Row Level Security — public can read everything (the anon key is meant
@@ -125,19 +151,14 @@ create policy "Staff update product images" on storage.objects for update
   using (bucket_id = 'product-images' and auth.role() = 'authenticated');
 
 -- ============================================================
--- Seed data — current demo catalog, generated from products.js/branches.js
+-- Seed data — generated from src/data/ (catalog.generated.js + branches.js)
+-- ${products.length} products, ${stockRows.length} stock rows.
 -- ============================================================
-insert into branches (id, name_ar, name_en, addr_ar, addr_en, wa_phone, call_phone, wa_display, call_display, delivery_fee) values
-${branchRows}
-on conflict (id) do nothing;
+${chunkedInsert('branches', 'id, name_ar, name_en, addr_ar, addr_en, wa_phone, call_phone, wa_display, call_display, delivery_fee', branchRows)}
 
-insert into products (id, ar, en, cat, price, rx, arabic_only, active_ingredient, similar_group, image_url) values
-${productRows}
-on conflict (id) do nothing;
+${chunkedInsert('products', 'id, code, ar, en, cat, price, rx, arabic_only, offer, company, unit, shade, swatch, active_ingredient, similar_group, image_url', productRows)}
 
-insert into branch_stock (product_id, branch_id, in_stock) values
-${stockRows.join(',\n')}
-on conflict (product_id, branch_id) do nothing;
+${chunkedInsert('branch_stock', 'product_id, branch_id, in_stock', stockRows)}
 `;
 
 mkdirSync(new URL('../supabase', import.meta.url), { recursive: true });

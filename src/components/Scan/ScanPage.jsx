@@ -24,7 +24,7 @@ import { CameraIcon, UploadIcon } from './ScanIcons';
 // concern for a pharmacy. Referenced by product `en` name below rather than
 // id, since ids are just array-index based and shift whenever products.js
 // gains or loses an entry earlier in the list.
-const DEMO_ITEM_NAMES = ['Augmentin 1g (Antibiotic)', 'Panadol Extra', 'Vitamin C 1000mg'];
+const DEMO_ITEM_NAMES = ['AUGMENTIN 1GM TAB', 'PANADOL EXTRA 24 TAB', 'CATAFLAM 50MG 20TAB'];
 
 export function ScanPage({ active }) {
   const { t } = useLanguage();

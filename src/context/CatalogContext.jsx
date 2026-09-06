@@ -32,8 +32,12 @@ function staticBranchesNormalized() {
 function staticProductsNormalized() {
   const branchIds = staticBranchesRaw.map((b) => b.id);
   return staticProducts.map((p) => ({
-    id: p.id, ar: p.ar, en: p.en, cat: p.cat, price: p.price, rx: p.rx,
-    arabicOnly: !!p.arabicOnly, activeIngredient: p.activeIngredient || null,
+    id: p.id, code: p.code || p.id, ar: p.ar, en: p.en, cat: p.cat,
+    price: p.price, rx: !!p.rx,
+    arabicOnly: !!p.arabicOnly, offer: !!p.offer,
+    company: p.company || null, unit: p.unit || null,
+    shade: p.shade || null, swatch: p.swatch || null,
+    activeIngredient: p.activeIngredient || null,
     similarGroup: p.similarGroup || null, imageUrl: p.image || null,
     stockByBranch: Object.fromEntries(branchIds.map((id) => [id, !!p.stock])),
   }));
@@ -53,8 +57,12 @@ function normalizeProductRows(productRows, stockRows) {
     (stockByProduct[s.product_id] ||= {})[s.branch_id] = s.in_stock;
   });
   return (productRows || []).map((p) => ({
-    id: p.id, ar: p.ar, en: p.en, cat: p.cat, price: Number(p.price), rx: p.rx,
-    arabicOnly: p.arabic_only, activeIngredient: p.active_ingredient, similarGroup: p.similar_group,
+    id: p.id, code: p.code || p.id, ar: p.ar, en: p.en, cat: p.cat,
+    price: Number(p.price), rx: p.rx,
+    arabicOnly: p.arabic_only, offer: !!p.offer,
+    company: p.company || null, unit: p.unit || null,
+    shade: p.shade || null, swatch: p.swatch || null,
+    activeIngredient: p.active_ingredient, similarGroup: p.similar_group,
     imageUrl: p.image_url, stockByBranch: stockByProduct[p.id] || {},
   }));
 }

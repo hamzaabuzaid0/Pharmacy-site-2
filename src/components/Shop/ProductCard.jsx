@@ -18,8 +18,12 @@ export function ProductCard({ product }) {
   const inStock = isInStock(product, selectedBranch);
   const hasAlternative = !inStock && !product.rx && findAlternatives(product, products, selectedBranch).matches.length > 0;
 
+  const brand = product.company && !/غير معرفة|^unknown$/i.test(product.company) ? product.company : null;
+  const brandLine = [brand, product.unit].filter(Boolean).join(' · ');
+
   return (
     <div className="product-card">
+      {product.offer && <span className="offer-badge">{t('offerBadge')}</span>}
       <div className="product-icon">
         <ProductVisual product={product} size="38px" />
       </div>
@@ -33,6 +37,11 @@ export function ProductCard({ product }) {
       )}
 
       <div className="product-name">{name}</div>
+      {(brandLine || product.shade) && (
+        <div className="product-brand">
+          {product.shade ? `${t('shadeLabel')} ${product.shade}` : brandLine}
+        </div>
+      )}
 
       <div className="price-row">
         <span className="price"><Ltr>{product.price} {t('egp')}</Ltr></span>
