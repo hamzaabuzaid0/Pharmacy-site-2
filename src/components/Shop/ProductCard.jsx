@@ -19,38 +19,36 @@ export function ProductCard({ product }) {
   const hasAlternative = !inStock && !product.rx && findAlternatives(product, products, selectedBranch).matches.length > 0;
 
   const brand = product.company && !/غير معرفة|^unknown$/i.test(product.company) ? product.company : null;
-  const brandLine = [brand, product.unit].filter(Boolean).join(' · ');
+  const brandLine = product.shade
+    ? `${t('shadeLabel')} ${product.shade}`
+    : [brand, product.unit].filter(Boolean).join(' · ');
 
   return (
     <div className="product-card">
-      {product.offer && <span className="offer-badge">{t('offerBadge')}</span>}
-      <div className="product-icon">
-        <ProductVisual product={product} size="38px" />
+      <div className="product-media">
+        {product.offer && <span className="offer-badge">{t('offerBadge')}</span>}
+        <ProductVisual product={product} size="46px" />
+        <span
+          className={
+            'stock-chip ' +
+            (product.rx ? 'stock-rx' : inStock ? 'stock-yes' : 'stock-no')
+          }
+        >
+          {product.rx ? t('rxRequired') : inStock ? t('inStock') : t('outOfStock')}
+        </span>
       </div>
 
-      {product.rx ? (
-        <span className="stock-badge rx-badge">{t('rxRequired')}</span>
-      ) : inStock ? (
-        <span className="stock-badge stock-yes">{t('inStock')}</span>
-      ) : (
-        <span className="stock-badge stock-no">{t('outOfStock')}</span>
-      )}
-
-      <div className="product-name">{name}</div>
-      {(brandLine || product.shade) && (
-        <div className="product-brand">
-          {product.shade ? `${t('shadeLabel')} ${product.shade}` : brandLine}
-        </div>
-      )}
+      <div className="product-name" title={name}>{name}</div>
+      {brandLine && <div className="product-brand">{brandLine}</div>}
 
       <div className="price-row">
-        <span className="price"><Ltr>{product.price} {t('egp')}</Ltr></span>
+        <span className="price">
+          <Ltr><span className="price-num">{product.price}</span> <span className="price-cur">{t('egp')}</span></Ltr>
+        </span>
       </div>
 
       {product.rx ? (
-        <div style={{ fontSize: '0.7rem', color: 'var(--muted)', marginTop: 4 }}>
-          {t('visitPharmacy')}
-        </div>
+        <div className="product-rx-note">{t('visitPharmacy')}</div>
       ) : !inStock ? (
         <>
           <button className="add-btn" disabled>{t('add')}</button>

@@ -127,34 +127,41 @@ const iconPaths = {
   ),
 };
 
-// A category's icon + colour-tinted background, filling its parent
-// container. The universal visual stand-in wherever a product has no photo.
-export function CategoryVisual({ catId, size = '38px' }) {
+// A category's icon on a soft two-tone ground, filling its parent
+// container — a designed stand-in wherever a product has no photo, rather
+// than an obvious "missing image" box. A large faint glyph sits behind a
+// crisp centred one for a bit of depth.
+export function CategoryVisual({ catId, size = '44px' }) {
   const style = CATEGORY_STYLE[catId] || CATEGORY_STYLE.medicine;
   const paths = iconPaths[catId] || iconPaths.medicine;
+  const glyph = (props) => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      strokeLinecap="round" strokeLinejoin="round" {...props}>
+      {paths}
+    </svg>
+  );
   return (
     <div
       style={{
+        position: 'relative',
         width: '100%',
         height: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: style.bg,
+        overflow: 'hidden',
         color: style.fg,
+        background: `radial-gradient(120% 120% at 78% 12%, #fff9 0%, #fff0 42%), ${style.bg}`,
       }}
     >
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        style={{ width: size, height: size, display: 'block' }}
-      >
-        {paths}
-      </svg>
+      {glyph({
+        strokeWidth: 1.5,
+        style: {
+          position: 'absolute', width: '150%', height: '150%',
+          right: '-42%', bottom: '-46%', opacity: 0.13,
+        },
+      })}
+      {glyph({ strokeWidth: 1.7, style: { width: size, height: size, display: 'block' } })}
     </div>
   );
 }
