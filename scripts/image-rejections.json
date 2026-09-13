@@ -1,0 +1,12 @@
+{
+  "90126": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/hepta-panthenol-shower-gel-300ml-jnsp",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/hepta-panthenol-shower-gel-300ml-jado-01775112463.png",
+    "reason": "photo is an unbranded blue shower-gel bottle — nothing on it shows Hepta, so it can't be verified"
+  },
+  "64366": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/pampers-wipes-fresh-clean-64",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/pampers-wipes-fresh-clean-64-01701336744.png",
+    "reason": "photo shows Pampers COMPLETE Clean, a different line from the catalog's FRESH Clean (Chefaa mislabelled it)"
+  }
+}
