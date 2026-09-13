@@ -16,10 +16,17 @@ export function CartDrawer() {
   const { products } = useCatalog();
   const { customer } = useCustomer();
   const { openDrawer, closeCart, openAccount } = useDrawer();
-  const { addOrder } = useOrderHistory();
+  const { pendingOrder, beginOrder, confirmPendingOrder, discardPendingOrder } = useOrderHistory();
 
   const ids = Object.keys(cart);
   const isOpen = openDrawer === 'cart';
+
+  // Re-opens the same WhatsApp link without rebuilding the order — used by
+  // "Open WhatsApp again" if the first popup was blocked or got closed
+  // before the customer could hit Send there.
+  const reopenWhatsapp = () => {
+    if (pendingOrder) window.open(pendingOrder.waUrl, '_blank');
+  };
 
   const handleOrder = () => {
     if (!customer) {
@@ -32,9 +39,16 @@ export function CartDrawer() {
     const { text, phone } = buildWhatsappMessage({ cart, products, branch, customer, substitutes });
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
 
-    addOrder({
+    // Stage the order — it is NOT added to "My Orders" yet. wa.me only opens
+    // WhatsApp with the message pre-filled; whether the customer actually
+    // presses Send there is invisible to this page, so recording it here
+    // would log orders the pharmacy never received. The cart now asks for
+    // explicit confirmation after the redirect (see the pendingOrder block
+    // in the render below) — only that commits it to history.
+    beginOrder({
       id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
       date: new Date().toISOString(),
+      waUrl: url,
       branchId: branch.id,
       branchNameAr: branch.nameAr,
       branchNameEn: branch.nameEn,
@@ -103,11 +117,30 @@ export function CartDrawer() {
           <AccountSummaryText customer={customer} t={t} />
         </div>
 
-        <button className="wa-order-btn" disabled={itemCount === 0 || !branch} onClick={handleOrder}>
-          <WhatsAppIcon size={18} />
-          <span>{t('orderViaWhatsapp')}</span>
-        </button>
-        <div className="branch-note">{branchNote}</div>
+        {pendingOrder ? (
+          <div className="order-confirm">
+            <div className="order-confirm-text">{t('orderConfirmPrompt')}</div>
+            <div className="order-confirm-actions">
+              <button className="order-confirm-yes" onClick={confirmPendingOrder}>
+                {t('orderConfirmYes')}
+              </button>
+              <button className="order-confirm-no" onClick={discardPendingOrder}>
+                {t('orderConfirmNo')}
+              </button>
+            </div>
+            <button type="button" className="order-reopen-link" onClick={reopenWhatsapp}>
+              {t('orderReopenWhatsapp')}
+            </button>
+          </div>
+        ) : (
+          <>
+            <button className="wa-order-btn" disabled={itemCount === 0 || !branch} onClick={handleOrder}>
+              <WhatsAppIcon size={18} />
+              <span>{t('orderViaWhatsapp')}</span>
+            </button>
+            <div className="branch-note">{branchNote}</div>
+          </>
+        )}
       </div>
     </div>
   );

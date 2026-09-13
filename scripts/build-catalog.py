@@ -342,10 +342,18 @@ def hair_shade(name):
 OFFER_PAT = RX(r"(\boffer\b|\bspecial offer\b|\d+\s*%\s*(off|offer)|%\s*\d+|off\s*\d+\s*(l\.?e|le|egp)|"
                r"خصم|عرض|\d+%\s*خصم|buy\s*1\s*get\s*(one|1)|1\s*buy\s*get\s*1|\bb1g1\b|\bbogo\b|"
                r"\d\s*\.?\s*buy\s*\.?\s*1\s*free|1\s*\+\s*1\s*free|\bget\s*(one|1)\s*(free|50%))")
-# stripped from the display name (offer/marketing noise) — careful NOT to touch shade codes
+# Stripped from the display name (offer/marketing noise).
+#
+# A percentage is ONLY noise when it sits next to a discount word. A bare
+# "0.05%" / "0.1%" / "5%" is the strength of a medicine, not a discount —
+# stripping those turned "ACANTHAPROP 0.1% EYE DROP" into "ACANTHAPROP 0.
+# EYE DROP" across 58 products, destroying safety-critical dosage info. So
+# every percent rule below requires خصم / OFFER / OFF adjacent to it.
 NOISE_PAT = RX(r"(\bnew\s*price(s)?\b\s*\d*|\bnew\s*\d\b|\bspecial offer\b|\boffer\b|"
-               r"\d+\s*%\s*(offer|off)?|%\s*\d+|\boff\s*\d+\s*(l\.?e|le|egp)?|"
-               r"خصم\s*\d*%?|عرض|\d+%\s*خصم|buy\s*1\s*get\s*(one|1)( 50%| free)?|"
+               r"\d+\s*%\s*(offer|off)\b|\b(off|offer)\s*\d+\s*%|"
+               r"\d+\s*%\s*خصم|خصم\s*\d*\s*%?|%\s*\d+\s*خصم|عرض|"
+               r"\boff\s*\d+\s*(l\.?e|le|egp)|"
+               r"buy\s*1\s*get\s*(one|1)( 50%| free)?|"
                r"1\s*buy\s*get\s*1|\bb1g1\b|\bbogo\b|1\s*\+\s*1( free)?|\bU\.?K\b)")
 AR_CHARS = RX(r"[؀-ۿ]")
 LATIN = RX(r"[A-Za-z]")
@@ -364,10 +372,18 @@ def clean_name(name):
         return k
     s = SHADE_TOK.sub(_hold, s)
     s = NOISE_PAT.sub(" ", s)
-    s = re.sub(r"\s*\bCOD\.?\s*[A-Z0-9.\-]*$", "", s, flags=re.I)   # trailing "COD 137"
+    # NOTE: a trailing "COD 137" / "CODE.0293" is deliberately NOT stripped.
+    # It looks like barcode noise but it is the variant code — the only thing
+    # telling 93 different YOLO nail-polish colours apart, or four different
+    # A.Y hair combs. Removing it made them all display as the same product,
+    # so a customer could not tell which shade they were ordering, and the
+    # pharmacy could not tell which one was meant on the WhatsApp order.
     for k, v in holds.items():
         s = s.replace(k, v)
-    s = re.sub(r"\s+%\s*", " ", s)                                  # stray percent sign
+    # orphaned percent sign — but NOT one that belongs to a number ("5 %
+    # 10 GM" is a 5% cream), which is why this requires no digit before it
+    s = re.sub(r"(?<![\d\s])\s+%\s*", " ", s)
+    s = re.sub(r"(\d)\s+%", r"\1%", s)                              # "5 %" -> "5%"
     s = re.sub(r"(\b(?:[1-9]|10)[-.]\d{1,2})\s+\d{1,2}\b\s*$", r"\1", s)  # "7-17 20" -> "7-17"
     s = re.sub(r"\s{2,}", " ", s).strip(" .-–,%")
     s = re.sub(r"\s+", " ", s)
