@@ -421,6 +421,98 @@ RX_FLAG = RX(
 )
 
 
+# --------------------------------------------------------------------------
+# 4b. ALTERNATIVES DATA  (feeds src/utils/findAlternatives.js)
+# --------------------------------------------------------------------------
+# activeIngredient — set ONLY where the product is literally named after its
+# generic ingredient, which is how most Egyptian generics are labelled
+# ("ACYCLOVIR 400 MG TAB"). That gives findAlternatives an exact, verifiable
+# string to match on. A branded product whose ingredient is not in its name
+# gets nothing rather than a guess: suggesting one medicine as a substitute
+# for another on an inferred ingredient would be an unsafe claim to make
+# from an inventory sheet that never states the formulation.
+GENERIC_INGREDIENTS = [
+    "paracetamol", "acetaminophen", "ibuprofen", "diclofenac", "aspirin", "naproxen",
+    "ketoprofen", "mefenamic acid", "acyclovir", "amoxicillin", "ampicillin",
+    "azithromycin", "cefixime", "cephalexin", "ciprofloxacin", "clarithromycin",
+    "clindamycin", "doxycycline", "erythromycin", "levofloxacin", "metronidazole",
+    "ofloxacin", "cetirizine", "loratadine", "desloratadine", "fexofenadine",
+    "chlorpheniramine", "ranitidine", "omeprazole", "esomeprazole", "pantoprazole",
+    "lansoprazole", "famotidine", "domperidone", "metoclopramide", "simethicone",
+    "lactulose", "bisacodyl", "loperamide", "metformin", "glimepiride", "gliclazide",
+    "atorvastatin", "simvastatin", "rosuvastatin", "amlodipine", "bisoprolol",
+    "atenolol", "propranolol", "losartan", "valsartan", "enalapril", "captopril",
+    "lisinopril", "ramipril", "furosemide", "spironolactone", "hydrochlorothiazide",
+    "clopidogrel", "prednisolone", "dexamethasone", "betamethasone", "hydrocortisone",
+    "salbutamol", "montelukast", "levothyroxine", "tamsulosin", "finasteride",
+    "alfuzosin", "folic acid", "ferrous sulfate", "ascorbic acid", "cholecalciferol",
+    "methylprednisolone", "sertraline", "fluoxetine", "escitalopram", "amitriptyline",
+    "gabapentin", "pregabalin", "carbamazepine", "levetiracetam", "risperidone",
+    "olanzapine", "quetiapine", "ketoconazole", "fluconazole", "itraconazole",
+    "terbinafine", "clotrimazole", "miconazole", "mupirocin", "fusidic acid",
+    "betahistine", "cinnarizine", "silymarin", "acetylcysteine", "ambroxol",
+    "bromhexine", "guaifenesin", "dimenhydrinate", "hyoscine", "drotaverine",
+    "alverine", "mebeverine", "trimebutine", "nitrofurantoin", "allopurinol",
+    "colchicine", "diosmin", "pentoxifylline", "tranexamic acid", "vitamin c",
+]
+INGREDIENT_RX = RX(r"^\s*(" + "|".join(re.escape(g) for g in GENERIC_INGREDIENTS) + r")\b")
+STRENGTH_RX = RX(r"(\d+(?:\.\d+)?)\s*(mg|mcg|gm|g|iu|%)\b")
+
+# similarGroup — a much looser "these are comparable" tag, and deliberately
+# ONLY for retail goods where "similar product" is an honest thing to say
+# (the UI wording warns the composition may differ). Requires BOTH a
+# specific product type AND a matching pack size, so a 400ml shampoo is
+# never offered as a substitute for a 400ml body wash.
+SIMILAR_CATS = {"haircare", "skincare", "personal", "oral", "cosmetics"}
+SIMILAR_TYPES = [
+    ("shampoo", r"\bshampoo\b"),
+    ("conditioner", r"\bconditioner\b"),
+    ("hair-oil", r"\bhair oil\b"),
+    ("hair-serum", r"\bhair serum\b"),
+    ("hair-cream", r"\bhair cream\b"),
+    ("body-lotion", r"\bbody lotion\b"),
+    ("body-wash", r"\b(body wash|shower gel)\b"),
+    ("hand-cream", r"\bhand cream\b"),
+    ("face-wash", r"\b(face wash|facial wash|face cleanser)\b"),
+    ("micellar", r"\bmicellar\b"),
+    ("sunscreen", r"\b(sun ?screen|sun ?block)\b"),
+    ("toothpaste", r"\btooth ?paste\b"),
+    ("mouthwash", r"\bmouth ?wash\b"),
+    ("toothbrush", r"\btooth ?brush\b"),
+    ("deodorant", r"\b(deodorant|deodrant|roll[- ]?on)\b"),
+    ("bar-soap", r"\bsoap\b"),
+    ("nail-polish", r"\bnail polish\b"),
+    ("cotton-buds", r"\b(cotton buds?|ear buds?)\b"),
+    ("wet-wipes", r"\bwet wipes\b"),
+]
+SIMILAR_TYPE_RX = [(k, RX(p)) for k, p in SIMILAR_TYPES]
+SIZE_RX = RX(r"(\d+(?:\.\d+)?)\s*(ml|gm|g|pcs)\b")
+
+
+def alternatives_keys(name, cat):
+    """Return (activeIngredient, similarGroup) — either may be None."""
+    active = None
+    m = INGREDIENT_RX.search(name)
+    if m:
+        ing = m.group(1).lower()
+        s = STRENGTH_RX.search(name)
+        active = f"{ing} {s.group(1)}{s.group(2).lower()}" if s else ing
+
+    similar = None
+    if active is None and cat in SIMILAR_CATS:
+        for key, rx in SIMILAR_TYPE_RX:
+            if rx.search(name):
+                sz = SIZE_RX.search(name)
+                if sz:
+                    # normalise the unit so "100 GM" and "100 G" land in the
+                    # same group instead of two groups of one
+                    unit = sz.group(2).lower()
+                    unit = "g" if unit in ("g", "gm") else unit
+                    similar = f"{key}-{sz.group(1)}{unit}"
+                break
+    return active, similar
+
+
 def is_rx(name, cat):
     if RX_FLAG.search(name):
         return True
@@ -493,6 +585,11 @@ def main():
             p["shade"] = shade
         if swatch:
             p["swatch"] = swatch
+        active, similar = alternatives_keys(rec["name"], cat)
+        if active:
+            p["activeIngredient"] = active
+        if similar:
+            p["similarGroup"] = similar
         products.append(p)
 
         # ---- data-quality flags (for manual review) ----
@@ -510,6 +607,41 @@ def main():
                 "code": rec["code"], "id": code, "name": rec["name"],
                 "category": cat, "reasons": reasons,
             })
+
+    # ---- collapse same-product-twice rows ----
+    # The sheet carries a separate line per product code, and the same
+    # product routinely appears on two codes at two prices (an old line and
+    # a repriced one — "ALDOMET TAB" at 39 and at 111). Shown side by side
+    # in the shop those read as two different products at odd prices, so
+    # only one survives: an in-stock line beats an out-of-stock one, and
+    # among equals the cheaper wins — the WhatsApp message already asks the
+    # pharmacist to confirm availability and price, so the customer is never
+    # held to it. Every merge is written to the review file.
+    groups = defaultdict(list)
+    for p in products:
+        key = (re.sub(r"\s+", " ", p["en"]).strip().upper(), p["company"], p["unit"])
+        groups[key].append(p)
+
+    merged_away = []
+    keep_ids = set()
+    for key, group in groups.items():
+        if len(group) == 1:
+            keep_ids.add(group[0]["id"])
+            continue
+        winner = sorted(group, key=lambda x: (not x["stock"], x["price"]))[0]
+        keep_ids.add(winner["id"])
+        for other in group:
+            if other["id"] is winner["id"] or other["id"] == winner["id"]:
+                continue
+            merged_away.append({
+                "code": other["code"], "name": other["en"],
+                "merged_into_code": winner["code"],
+                "reason": (f"same product, company and pack as code {winner['code']} "
+                           f"({other['price']} vs {winner['price']} EGP) — kept the "
+                           f"{'in-stock, ' if winner['stock'] and not other['stock'] else ''}"
+                           f"cheaper line, confirm which price is current"),
+            })
+    products = [p for p in products if p["id"] in keep_ids]
 
     # ---- write JS ----
     header = (
@@ -532,6 +664,9 @@ def main():
         f.write(f"out of stock: {sum(1 for p in products if not p['stock'])}\n")
         f.write(f"arabic-only: {sum(1 for p in products if p.get('arabicOnly'))}\n")
         f.write(f"haircolor w/ swatch: {sum(1 for p in products if p.get('swatch'))} / {cat_count['haircolor']}\n")
+        f.write(f"activeIngredient set: {sum(1 for p in products if p.get('activeIngredient'))}\n")
+        f.write(f"similarGroup set:     {sum(1 for p in products if p.get('similarGroup'))}\n")
+        f.write(f"duplicate rows merged: {len(merged_away)}\n")
 
     print(io.open(a.report, encoding="utf-8").read())
 
@@ -569,6 +704,7 @@ def main():
                 "below is only rows with a data problem in the source sheet that a human should look at."
             ),
             "flagged_products": flagged,
+            "merged_duplicate_rows": merged_away,
         }
         with io.open(a.missing, "w", encoding="utf-8") as f:
             json.dump(payload, f, ensure_ascii=False, indent=2)

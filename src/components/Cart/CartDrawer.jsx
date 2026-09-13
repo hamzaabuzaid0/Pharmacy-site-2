@@ -12,7 +12,7 @@ import { CartItemRow } from './CartItemRow';
 
 export function CartDrawer() {
   const { lang, t } = useLanguage();
-  const { cart, branch, itemsTotal, deliveryFee, grandTotal, itemCount, substitutes } = useCart();
+  const { cart, branch, itemsTotal, deliveryFee, grandTotal, itemCount, substitutes, clearCart } = useCart();
   const { products } = useCatalog();
   const { customer } = useCustomer();
   const { openDrawer, closeCart, openAccount } = useDrawer();
@@ -26,6 +26,14 @@ export function CartDrawer() {
   // before the customer could hit Send there.
   const reopenWhatsapp = () => {
     if (pendingOrder) window.open(pendingOrder.waUrl, '_blank');
+  };
+
+  // Confirming a send both records the order and empties the basket, so the
+  // same order can't be sent twice by accident. Delivery details are kept —
+  // the next order shouldn't make you retype your address.
+  const handleConfirmSent = () => {
+    confirmPendingOrder();
+    clearCart();
   };
 
   const handleOrder = () => {
@@ -121,7 +129,7 @@ export function CartDrawer() {
           <div className="order-confirm">
             <div className="order-confirm-text">{t('orderConfirmPrompt')}</div>
             <div className="order-confirm-actions">
-              <button className="order-confirm-yes" onClick={confirmPendingOrder}>
+              <button className="order-confirm-yes" onClick={handleConfirmSent}>
                 {t('orderConfirmYes')}
               </button>
               <button className="order-confirm-no" onClick={discardPendingOrder}>

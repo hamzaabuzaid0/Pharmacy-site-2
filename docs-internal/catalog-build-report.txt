@@ -1,4 +1,4 @@
-TOTAL 10405
+TOTAL 10345
 
   6506  medicine
    799  haircare
@@ -18,8 +18,11 @@ TOTAL 10405
     23  intimate
     12  home
 
-rx-flagged: 144
-offers:     333
-out of stock: 48
+rx-flagged: 143
+offers:     321
+out of stock: 30
 arabic-only: 6
-haircolor w/ swatch: 141 / 141
+haircolor w/ swatch: 128 / 141
+activeIngredient set: 47
+similarGroup set:     1078
+duplicate rows merged: 60

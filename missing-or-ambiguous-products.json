@@ -7,10 +7,10 @@
     "what_is_needed": "an authorised export of the InstaShop product images (the pharmacy can pull these from their InstaShop merchant dashboard), OR a folder of photos keyed by product code, OR written permission + API access from InstaShop. Once available, drop the files into public/images/products/<code>.jpg and list their codes in src/data/products.js (CODES_WITH_IMAGE)."
   },
   "counts": {
-    "total_products": 10405,
+    "total_products": 10345,
     "with_image": 0,
-    "without_image": 10405,
-    "hair_colour_with_swatch": 141,
+    "without_image": 10345,
+    "hair_colour_with_swatch": 128,
     "data_quality_flags": 79
   },
   "note": "Every product currently renders a clean fallback (category illustration, or an accurate shade swatch for hair colour) — no product is shown a wrong image. The list below is only rows with a data problem in the source sheet that a human should look at.",
@@ -725,6 +725,368 @@
       "reasons": [
         "product code 0 appears 2x in the sheet"
       ]
+    }
+  ],
+  "merged_duplicate_rows": [
+    {
+      "code": "53130",
+      "name": "PALETTE COLOR CREAM 8-0",
+      "merged_into_code": "70126",
+      "reason": "same product, company and pack as code 70126 (145 vs 116 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "18109",
+      "name": "ALDOMET TAB",
+      "merged_into_code": "82575",
+      "reason": "same product, company and pack as code 82575 (39 vs 111 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "68843",
+      "name": "BIOPREX 7.5 MG 30 TABLETS",
+      "merged_into_code": "81075",
+      "reason": "same product, company and pack as code 81075 (117 vs 153 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "75696",
+      "name": "BIPERIDEN 2 MG 30 TAB",
+      "merged_into_code": "83974",
+      "reason": "same product, company and pack as code 83974 (27 vs 51 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "51966",
+      "name": "BISOCARD 5 MG 30 TAB",
+      "merged_into_code": "81496",
+      "reason": "same product, company and pack as code 81496 (30 vs 63 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "67916",
+      "name": "BUBBLES BEBERON CLASSIC 180ML",
+      "merged_into_code": "91416",
+      "reason": "same product, company and pack as code 91416 (180 vs 165 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "82127",
+      "name": "BUBBLES BEBERON CLASSIC 270 ML",
+      "merged_into_code": "86234",
+      "reason": "same product, company and pack as code 86234 (290 vs 290 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "67918",
+      "name": "BUBBLES BEBERON NATURAL 150ML",
+      "merged_into_code": "84872",
+      "reason": "same product, company and pack as code 84872 (305 vs 265 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "77681",
+      "name": "CLAVIMOX 1 MG 12 TABLETS",
+      "merged_into_code": "80506",
+      "reason": "same product, company and pack as code 80506 (89.5 vs 130 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "90603",
+      "name": "DONE ANTI WRINKLE CREAM 50 GM",
+      "merged_into_code": "72638",
+      "reason": "same product, company and pack as code 72638 (150 vs 120 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "83185",
+      "name": "DOVE NOURISHING OIL HAIR SHAMPOO 360 ML",
+      "merged_into_code": "86556",
+      "reason": "same product, company and pack as code 86556 (155 vs 150 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "80958",
+      "name": "DUPHASTON 10 MG 60 TABLETS",
+      "merged_into_code": "76411",
+      "reason": "same product, company and pack as code 76411 (386 vs 462 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "75478",
+      "name": "EPICROM DROPS",
+      "merged_into_code": "2329",
+      "reason": "same product, company and pack as code 2329 (23 vs 14.5 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "78788",
+      "name": "ERASTAPEX CO 20 MG/5 MG 30 TABLETS",
+      "merged_into_code": "82902",
+      "reason": "same product, company and pack as code 82902 (87 vs 114 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "77297",
+      "name": "ERASTAPEX TRIO 40/5/12.5 MG 30 TAB",
+      "merged_into_code": "83455",
+      "reason": "same product, company and pack as code 83455 (108 vs 144 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "17358",
+      "name": "EVA. SMOKERS TOOTHPOWDER 45GM",
+      "merged_into_code": "18189",
+      "reason": "same product, company and pack as code 18189 (50 vs 50 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "18167",
+      "name": "EVA. SMOKERS TOOTHPOWDER 45GM",
+      "merged_into_code": "18189",
+      "reason": "same product, company and pack as code 18189 (50 vs 50 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "72985",
+      "name": "GARNIER COLOR 6.3",
+      "merged_into_code": "90546",
+      "reason": "same product, company and pack as code 90546 (136.8 vs 128.8 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "67903",
+      "name": "GARNIER COLOR NATURAL 6",
+      "merged_into_code": "62944",
+      "reason": "same product, company and pack as code 62944 (136.8 vs 132 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "53146",
+      "name": "GARNIER COLOR NATURAL 3",
+      "merged_into_code": "91263",
+      "reason": "same product, company and pack as code 91263 (161 vs 132 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "67834",
+      "name": "GARNIER COLOR NATURAL 5",
+      "merged_into_code": "62942",
+      "reason": "same product, company and pack as code 62942 (136.8 vs 132 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "54278",
+      "name": "GARNIER COLOR NATURAL 5.3",
+      "merged_into_code": "90550",
+      "reason": "same product, company and pack as code 90550 (136.8 vs 128.8 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "70043",
+      "name": "GARNIER COLOR NATURAL 6.1",
+      "merged_into_code": "90548",
+      "reason": "same product, company and pack as code 90548 (136.8 vs 132 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "67835",
+      "name": "GARNIER COLOR NATURAL 7.1",
+      "merged_into_code": "90549",
+      "reason": "same product, company and pack as code 90549 (136.8 vs 128.8 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "66491",
+      "name": "GARNIER COLOR NATURAL 7.7",
+      "merged_into_code": "90547",
+      "reason": "same product, company and pack as code 90547 (136.8 vs 129 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "66839",
+      "name": "GARNIER COLOR NATURALS 8.11",
+      "merged_into_code": "68594",
+      "reason": "same product, company and pack as code 68594 (165 vs 136.8 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "61738",
+      "name": "GARNIER COLOR NATURAL 6.7",
+      "merged_into_code": "86720",
+      "reason": "same product, company and pack as code 86720 (161 vs 136.8 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "68001",
+      "name": "GARNIER MICELLAR CLEANSING WATER 100ML",
+      "merged_into_code": "91326",
+      "reason": "same product, company and pack as code 91326 (110 vs 85 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "74095",
+      "name": "GLAPTIVIA PLUS 50/500 MG 30 TABLETS",
+      "merged_into_code": "82018",
+      "reason": "same product, company and pack as code 82018 (114 vs 153 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "82177",
+      "name": "GLUCOPHAGE XR 1000 MG 30 TABLETS",
+      "merged_into_code": "59986",
+      "reason": "same product, company and pack as code 59986 (126 vs 150 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "32542",
+      "name": "GLYSOLID GLYCERIN CREAM 80 ML",
+      "merged_into_code": "89520",
+      "reason": "same product, company and pack as code 89520 (95 vs 60 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "86212",
+      "name": "HALOPROL 3 AMP",
+      "merged_into_code": "27550",
+      "reason": "same product, company and pack as code 27550 (39 vs 26 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "90393",
+      "name": "HAYAH UVEPRO LIGHT CREAM SPF 50+ 50ML",
+      "merged_into_code": "68297",
+      "reason": "same product, company and pack as code 68297 (289 vs 272 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "74904",
+      "name": "IMUTREXATE 10 MG 10 TABLETS",
+      "merged_into_code": "76474",
+      "reason": "same product, company and pack as code 76474 (100 vs 77 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "18769",
+      "name": "KETOFAN 25 MG 30 TAB",
+      "merged_into_code": "85436",
+      "reason": "same product, company and pack as code 85436 (18 vs 33 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "79437",
+      "name": "LIMITLESS C-ZINC 30 LOZENGES",
+      "merged_into_code": "69900",
+      "reason": "same product, company and pack as code 69900 (76 vs 100 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "83993",
+      "name": "LOREAL ELVIV FULL RESIST CONDITIONER 200 ML",
+      "merged_into_code": "91332",
+      "reason": "same product, company and pack as code 91332 (125 vs 109 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "36557",
+      "name": "LOREAL ELVIVE ANTI HAIR FALL SHAMPOO 400 ML",
+      "merged_into_code": "90456",
+      "reason": "same product, company and pack as code 90456 (190 vs 154.5 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "29786",
+      "name": "LOREAL ELVIVE NOURISHING OIL DRY HAIR 300ML",
+      "merged_into_code": "73310",
+      "reason": "same product, company and pack as code 73310 (193 vs 162 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "65448",
+      "name": "LOREAL ELVIVE OIL REPLACE HAIR FALL 300ML",
+      "merged_into_code": "90454",
+      "reason": "same product, company and pack as code 90454 (193 vs 161.5 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "65370",
+      "name": "LOREAL EXCELLENCE COLOR CREME 8.12",
+      "merged_into_code": "88028",
+      "reason": "same product, company and pack as code 88028 (350 vs 315 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "11052",
+      "name": "LOREAL EXCELLENCE COLOR HAIR CREME 8.1",
+      "merged_into_code": "70032",
+      "reason": "same product, company and pack as code 70032 (297 vs 252 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "84629",
+      "name": "LUX SOFT ROSE SHOWER GEL 500 ML NEW",
+      "merged_into_code": "89035",
+      "reason": "same product, company and pack as code 89035 (99 vs 94.5 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "76516",
+      "name": "METROHALER 30 CAPSULES",
+      "merged_into_code": "85687",
+      "reason": "same product, company and pack as code 85687 (130 vs 172 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "73176",
+      "name": "MOLPED MAXI EXTRA LONG 14 PADS",
+      "merged_into_code": "87213",
+      "reason": "same product, company and pack as code 87213 (133 vs 100 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "75265",
+      "name": "MOVIGIT 50 MG 30 TAB",
+      "merged_into_code": "84220",
+      "reason": "same product, company and pack as code 84220 (37.5 vs 60 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "57456",
+      "name": "NIVEA SOFT CREAM 200ML",
+      "merged_into_code": "78829",
+      "reason": "same product, company and pack as code 78829 (154 vs 108 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "89835",
+      "name": "OCTOVENT CR 4MG 20TAB",
+      "merged_into_code": "8673",
+      "reason": "same product, company and pack as code 8673 (24 vs 12 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "70039",
+      "name": "OMNEVORA 8 AMP IM",
+      "merged_into_code": "81465",
+      "reason": "same product, company and pack as code 81465 (84 vs 128 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "82836",
+      "name": "REXONA BAMBOO&ALOE W ROLL ON 50ML",
+      "merged_into_code": "87480",
+      "reason": "same product, company and pack as code 87480 (92 vs 82 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "82969",
+      "name": "REXONA CHARCOAL FRESH SPRAY 150ML",
+      "merged_into_code": "86100",
+      "reason": "same product, company and pack as code 86100 (197 vs 165 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "82835",
+      "name": "REXONA INVISIBL W ROLL ON 50ML",
+      "merged_into_code": "87482",
+      "reason": "same product, company and pack as code 87482 (92 vs 75 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "83143",
+      "name": "REXONA SHOWER FRESH W SPRAY 150ML",
+      "merged_into_code": "86557",
+      "reason": "same product, company and pack as code 86557 (197 vs 172 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "82953",
+      "name": "REXONA XTRA COOL F/M ROLL ON 50ML",
+      "merged_into_code": "87484",
+      "reason": "same product, company and pack as code 87484 (92 vs 82 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "49387",
+      "name": "SIGNAL WHITENING 100 ML",
+      "merged_into_code": "70753",
+      "reason": "same product, company and pack as code 70753 (69 vs 55.5 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "68346",
+      "name": "STARKOPREX 5 MG 30 TABLETS",
+      "merged_into_code": "80972",
+      "reason": "same product, company and pack as code 80972 (187.5 vs 252 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "91095",
+      "name": "VACATION SUNSCREEN SPF+50 CREAM GEL 60ML",
+      "merged_into_code": "86797",
+      "reason": "same product, company and pack as code 86797 (450 vs 450 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "81199",
+      "name": "VASELINE COCOA GLOW BODY LOTION 400 ML",
+      "merged_into_code": "91942",
+      "reason": "same product, company and pack as code 91942 (310 vs 292 EGP) — kept the cheaper line, confirm which price is current"
+    },
+    {
+      "code": "75887",
+      "name": "VASTAREL MR 30TAB",
+      "merged_into_code": "81860",
+      "reason": "same product, company and pack as code 81860 (112.5 vs 175 EGP) — kept the in-stock, cheaper line, confirm which price is current"
+    },
+    {
+      "code": "77202",
+      "name": "ZYROVAZET 10 MG/40 MG 30 TABLETS",
+      "merged_into_code": "82160",
+      "reason": "same product, company and pack as code 82160 (348 vs 456 EGP) — kept the in-stock, cheaper line, confirm which price is current"
     }
   ]
 }
