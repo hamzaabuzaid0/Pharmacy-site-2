@@ -57,6 +57,19 @@ expected, not a classification failure.
 
 ## Images
 
+> **Update 2026-09-13 — first real photos are live.** 17 products now have
+> a real photo, sourced from **chefaa.com** with Scrapling
+> (`scripts/fetch-chefaa-images.py`). Chefaa's robots.txt leaves its product
+> pages open, and its catalog is Egyptian pharmacy stock. Each photo passed
+> two automatic checks (URL slug and the photo's own filename against the
+> catalog name) **and** a visual review. In the 20-item trial, 19 passed
+> both checks; 2 of those were still wrong on inspection and were rejected
+> (recorded in `scripts/image-rejections.json`). Photos are listed in
+> `src/data/productImages.generated.js`, and the trial sheet with every
+> photo embedded is `docs-internal/chefaa-image-trial.xlsx`. The 36 old demo
+> photos have since been deleted. The original notes below are kept for
+> history.
+
 **No product images were imported.** The requested source —
 `instashop.com/en-eg/client/ahmed-maher-pharmacy-1st-dist-6th-of-october` —
 is not available for automated use:
