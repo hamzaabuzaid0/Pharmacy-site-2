@@ -25,8 +25,16 @@ export function ProductGrid() {
   const deferredQuery = useDeferredValue(searchQuery);
   const q = deferredQuery.trim().toLowerCase();
 
+  // Products with a real photo come first, everything else keeps catalog
+  // order. With ~10k items and photos only on a few, catalog order left
+  // every photographed product hundreds of rows down (the nearest was #377),
+  // so the shop looked photo-less even though the photos were live.
+  // Array.prototype.sort is stable, so ties keep their original order.
   const filtered = useMemo(
-    () => products.filter((p) => (activeCat === 'all' || p.cat === activeCat) && matchesSearch(p, q)),
+    () =>
+      products
+        .filter((p) => (activeCat === 'all' || p.cat === activeCat) && matchesSearch(p, q))
+        .sort((a, b) => (b.imageUrl ? 1 : 0) - (a.imageUrl ? 1 : 0)),
     [products, activeCat, q]
   );
 
