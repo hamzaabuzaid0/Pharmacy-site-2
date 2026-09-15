@@ -38,6 +38,7 @@ CATALOG = os.path.join(ROOT, "src", "data", "catalog.generated.js")
 IMG_DIR = os.path.join(ROOT, "public", "images", "products")
 MANIFEST = os.path.join(ROOT, "src", "data", "productImages.generated.js")
 REJECTED = os.path.join(ROOT, "scripts", "image-rejections.json")
+PAGE_CACHE = os.path.join(ROOT, "docs-internal", "chefaa-page-cache.json")
 SITEMAP = "https://chefaa.com/eg-ar/store_sitemap.xml"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36"
 HEADERS = {"User-Agent": UA, "Accept-Language": "ar,en;q=0.8"}
@@ -50,6 +51,9 @@ SYNONYM = {"parfum": "perfume", "fragrance": "perfume", "deodrant": "deodorant",
            "deo": "deodorant", "gm": "g", "gr": "g", "shampo": "shampoo",
            "toothpast": "toothpaste", "lotin": "lotion", "creme": "cream"}
 SIZE_RX = re.compile(r"(\d+(?:\.\d+)?)\s*(ml|l|gm|gr|g|kg|mg)\b", re.I)
+PRODUCT_TYPES = frozenset("""shampoo conditioner cream lotion gel serum oil spray mist soap wash
+mask toner cleanser balm powder wipes deodorant scrub foam stick drops syrup milk
+toothpaste mouthwash toothbrush razor perfume""".split())
 
 
 # ---------------------------------------------------------------- matching
@@ -104,6 +108,15 @@ def score(name, other):
     sa, sb = set(a), set(b)
     hit = sa & sb
     if not hit:
+        return 0.0
+    # Product-type conflict: same brand and line, different product.
+    # "BIONNEX ORGANICA ANTI HAIR LOSS CONDITIONER" scored 0.90 against the
+    # Bionnex *shampoo* because every other word matched. If both names state
+    # a product type and they share none, it is not the same product. This
+    # can occasionally reject a true match worded differently ("shower gel"
+    # vs "body wash"), which only costs a photo — never shows a wrong one.
+    ta, tb = sa & PRODUCT_TYPES, sb & PRODUCT_TYPES
+    if ta and tb and not (ta & tb):
         return 0.0
     recall, precision = len(hit) / len(sa), len(hit) / len(sb)
     f1 = 2 * recall * precision / (recall + precision)
@@ -202,7 +215,15 @@ def main():
     ap.add_argument("--apply", action="store_true")
     ap.add_argument("--xlsx", default="docs-internal/chefaa-image-trial.xlsx")
     ap.add_argument("--urls", default=None, help="local copy of the product URL list")
+    ap.add_argument("--categories", default="retail",
+                    help="'retail' (default), 'all', or a comma list of category ids")
     a = ap.parse_args()
+    if a.categories == "all":
+        wanted = None
+    elif a.categories == "retail":
+        wanted = RETAIL
+    else:
+        wanted = set(a.categories.split(","))
 
     # 1. product URLs from Chefaa's public sitemap
     if a.urls and os.path.exists(a.urls):
@@ -216,7 +237,7 @@ def main():
     print(f"chefaa product urls: {len(urls)}")
 
     # 2. match catalog -> slug, no network
-    catalog = [p for p in load_catalog() if p["cat"] in RETAIL]
+    catalog = [p for p in load_catalog() if wanted is None or p["cat"] in wanted]
     done = load_manifest()
     # Photos a human looked at and turned down (wrong variant, unbranded
     # stock shot, ...). Both automated checks passed for these, which is
@@ -236,26 +257,41 @@ def main():
     # a Chefaa product may only be claimed by one catalog product
     seen, trial = set(), []
     for c in cands:
+        if len(trial) >= a.limit:
+            break
         if c[2] in seen:
             continue
         seen.add(c[2])
         trial.append(c)
-        if len(trial) >= a.limit:
-            break
-    print(f"catalog retail products: {len(catalog)} | confident slug matches: {len(cands)} | trying {len(trial)}\n")
+    print(f"catalog products ({a.categories}): {len(catalog)} | confident slug matches: {len(cands)} "
+          f"| trying {len(trial)}\n", flush=True)
 
     # 3. fetch only those pages, verify title, download + crop
     if a.apply:
         os.makedirs(IMG_DIR, exist_ok=True)
+    # Resumable: page details are cached as they're read, and a photo already
+    # saved by an earlier (stopped) run is reused instead of downloaded again.
+    # A stopped run then costs nothing extra to pick up.
+    cache = {}
+    if os.path.exists(PAGE_CACHE):
+        cache = json.load(io.open(PAGE_CACHE, encoding="utf-8"))
+    preview_dir = IMG_DIR if a.apply else os.path.join(ROOT, "docs-internal", "chefaa-preview")
     rows = []
     for i, (s1, p, url, slug) in enumerate(trial, 1):
         row = {"code": p["code"], "catalog_name": p["en"], "section": p["cat"], "price": p["price"],
                "chefaa_title": "", "slug_score": s1, "title_score": 0, "link": url,
                "image_url": "", "status": "", "file": ""}
-        try:
-            info = product_page(url)
-        except Exception as e:
-            info, row["status"] = None, f"page error: {type(e).__name__}"
+        used_network = False
+        if url in cache:
+            info = cache[url]
+        else:
+            used_network = True
+            try:
+                info = product_page(url)
+                cache[url] = info
+                io.open(PAGE_CACHE, "w", encoding="utf-8").write(json.dumps(cache, ensure_ascii=False))
+            except Exception as e:
+                info, row["status"] = None, f"page error: {type(e).__name__}"
         if info:
             row["chefaa_title"], row["image_url"] = info["title"], info["image"]
             # Second, independent check — against the IMAGE FILE's own name
@@ -272,12 +308,13 @@ def main():
             if row["title_score"] < a.title_threshold:
                 row["status"] = "rejected: photo file name disagrees"
             else:
+                dest = os.path.join(preview_dir, f"{p['code']}.jpg")
                 try:
-                    img = square_crop(download(info["image"]))
-                    dest = os.path.join(IMG_DIR if a.apply else os.path.join(ROOT, "docs-internal", "chefaa-preview"),
-                                        f"{p['code']}.jpg")
-                    os.makedirs(os.path.dirname(dest), exist_ok=True)
-                    img.save(dest, "JPEG", quality=85, optimize=True, progressive=True)
+                    if not os.path.exists(dest):
+                        used_network = True
+                        img = square_crop(download(info["image"]))
+                        os.makedirs(os.path.dirname(dest), exist_ok=True)
+                        img.save(dest, "JPEG", quality=85, optimize=True, progressive=True)
                     row["file"], row["status"] = dest, "matched"
                 except Exception as e:
                     row["status"] = f"image error: {type(e).__name__}"
@@ -285,8 +322,9 @@ def main():
             row["status"] = "no image on page"
         rows.append(row)
         print(f"{i:3}. [{row['status'][:28]:>28}] slug {s1:.2f} title {row['title_score']:.2f}  "
-              f"{p['en'][:40]:40} <- {row['chefaa_title'][:40]}")
-        time.sleep(a.delay)
+              f"{p['en'][:40]:40} <- {row['chefaa_title'][:40]}", flush=True)
+        if used_network:
+            time.sleep(a.delay)
 
     write_xlsx(rows, os.path.join(ROOT, a.xlsx))
     ok = [r for r in rows if r["status"] == "matched"]

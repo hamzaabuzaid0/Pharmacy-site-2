@@ -57,6 +57,23 @@ expected, not a classification failure.
 
 ## Images
 
+> **Update 2026-09-15 — 198 products have real photos.** Chefaa was run
+> across *every* section (medicines included, since Chefaa is Egyptian and
+> shows local packaging): 276 confident matches → 211 passed both automatic
+> checks → a new product-type rule and a photo-by-photo visual review
+> rejected 30 more (wrong variant, strength or pack, foreign packaging, or
+> unreadable). 181 added, 198 total. Chefaa only lists ~1,031 products, so
+> this is close to its ceiling. Full review record with every photo:
+> `docs-internal/chefaa-full-run.xlsx`; every rejection and its reason:
+> `scripts/image-rejections.json`.
+>
+> Other sources checked (robots.txt read first each time): Vezeeta blocks all
+> crawlers; Jumia's product sitemap is password-protected; Yodawy and Misr
+> Pharmacies publish no product list; 9 other candidate domains don't
+> resolve. Nahdi, Al-Dawaa and Life Pharmacy (Gulf pharmacies) allow product
+> pages and together could add ~350 more **retail** products (medicines
+> excluded — their packaging isn't the Egyptian one); not run yet.
+>
 > **Update 2026-09-13 — first real photos are live.** 17 products now have
 > a real photo, sourced from **chefaa.com** with Scrapling
 > (`scripts/fetch-chefaa-images.py`). Chefaa's robots.txt leaves its product

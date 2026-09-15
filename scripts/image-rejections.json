@@ -8,5 +8,155 @@
     "page": "https://chefaa.com/eg-ar/nowProduct/pampers-wipes-fresh-clean-64",
     "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/pampers-wipes-fresh-clean-64-01701336744.png",
     "reason": "photo shows Pampers COMPLETE Clean, a different line from the catalog's FRESH Clean (Chefaa mislabelled it)"
+  },
+  "84418": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/acyclovir-5-cream-10gm-fhqy",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/acyclovir-5-cream-10gm-gzhm-01668630908.png",
+    "reason": "generic name (Acyclovir 5% cream) — the photo shows one maker's box and the catalog line doesn't say whose"
+  },
+  "84459": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/aripiprex-10-mg-30-tab-vr9q",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/aripiprex-10-mg-30-tab-benw-01686656678.png",
+    "reason": "photo too small and angled to read the name or strength"
+  },
+  "86455": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/baloxdot-20-mg-2-8qqx",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/baloxdot-20-mg-2-hy0l-01774352053.png",
+    "reason": "catalog is Baloxdot 20 mg; the photo's box says 10 mg"
+  },
+  "69419": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/care-by-care-100-gm-cream-hjez",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/care-by-care-100-gm-cream-hjez-01723990028.png",
+    "reason": "catalog is Care by Care PLUS cream; photo is the Diaper Rash Cream — can't confirm same product"
+  },
+  "60744": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/durex-performax-intense-3-condoms",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/1591277604durex-performax-intense-3-condoms.jpg",
+    "reason": "Durex Performax photo is a Polish-language pack, not the local packaging"
+  },
+  "67206": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/macro-panthenol-cream-50gm-sjoa",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/macro-panthenol-cream-50gm-sjoa-01680177466.png",
+    "reason": "catalog is a 50 g cream; photo is a pump lotion bottle"
+  },
+  "86189": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/marcal-30-tab",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/marcal-30-tab-01730973883.png",
+    "reason": "catalog is Marcal PLUS; photo and file name are plain Marcal"
+  },
+  "77344": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/u-richi-panthenol-cream-50gm-cuyq",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/u-richi-panthenol-cream-50gm-n9dq-01750341297.png",
+    "reason": "photo is an unbranded Panthenol box — U-Richi isn't visible"
+  },
+  "82297": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/vitamount-women-15-caps-utwe",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/vitamount-women-15-caps-utwe-01670953305.png",
+    "reason": "photo doesn't show that it's the Women formula"
+  },
+  "85943": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/aptamil-1-milk-400-gm",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/aptamil-1-milk-400-gm-01756726791.png",
+    "reason": "catalog is the Aptamil 1 Easy Pack; photo is the tin"
+  },
+  "76694": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/argento-clear-facial-wash-200ml-rq9h",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/argento-clear-facial-wash-200ml-rq9h-01699948250.png",
+    "reason": "product-type rule: catalog says cleanser, source says facial wash"
+  },
+  "18600": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/eva-skin-clinic-collagen-facial-wash-150ml",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/eva-skin-clinic-collagen-facial-wash-150ml-01721488729.png",
+    "reason": "catalog is Vitamin C facial wash; photo is the Collagen facial wash"
+  },
+  "72885": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/hero-baby-nutrasense-1-400gm-5pnv",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/hero-baby-nutrasense-1-400gm-cr1w-01672602566.png",
+    "reason": "catalog is Hero Baby Defense Plus 1; photo is Nutrasense 1 — different line name"
+  },
+  "73291": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/hero-baby-2-milk-400-gm",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/hero-baby-2-milk-400-gm-01724071653.png",
+    "reason": "catalog is Hero Baby Defense Plus 2; photo is a plain follow-on formula 2"
+  },
+  "74191": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/hero-baby-nutrasense-3-400gm-m0ta",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/hero-baby-nutrasense-3-400gm-m0ta-01676892840.png",
+    "reason": "catalog is Hero Baby Defense Plus 3; photo is Nutrasense 3"
+  },
+  "66487": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/hero-baby-ha-milk-400-gm",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/hero-baby-ha-milk-400-gm-01724071888.png",
+    "reason": "catalog is Hero Baby AR; photo is the HA tin"
+  },
+  "50612": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/johnsons-aloe-vera-baby-oil-75ml-ihgy",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/johnsons-aloe-vera-baby-oil-75ml-ihgy-01724579093.png",
+    "reason": "catalog is plain Johnson's baby oil; photo is the Aloe Vera variant"
+  },
+  "34026": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/nivea-soft-tropical-fruit-cream-100-ml",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/nivea-soft-tropical-fruit-cream-100-ml-01655039784.png",
+    "reason": "catalog is plain Nivea Soft; photo is the Tropical Freshies edition"
+  },
+  "59708": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/nivea-gentle-facial-wash-for-dry-and-sensitive-skin-150ml",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/nivea-gentle-facial-wash-for-dry-and-sensitive-skin-150ml-01655301967.png",
+    "reason": "catalog is the Sensitive Skin face wash; photo is the Dry Skin (almond) one"
+  },
+  "77615": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/starville-roll-on-vanilla-60ml-opsw",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/starville-roll-on-vanilla-60ml-opsw-01703080757.png",
+    "reason": "catalog is plain Starville whitening roll-on; photo is the Vanilla variant"
+  },
+  "91118": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/systane-ultra-eye-drops-10-ml",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/systane-ultra-eye-drops-10-ml-01776768687.png",
+    "reason": "catalog is Systane COMPLETE; photo is Systane ULTRA"
+  },
+  "88511": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/always-maxi-extra-long-16-pcs-hhe7",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/always-maxi-extra-long-16-pcs-izhb-01773586044.png",
+    "reason": "catalog is Always Maxi Long 16; photo is Always Protect Plus aloe vera"
+  },
+  "15316": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/cerelac-honey-with-wheat-milk-with-iron-vitamins-probiotics-125gm",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/cerelac-honey-with-wheat-milk-with-iron-vitamins-probiotics-125gm-01723048377.png",
+    "reason": "catalog is Cerelac wheat & milk; photo is the Honey variant"
+  },
+  "67756": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/herbal-essences-biorenew-shampoo-coconut-milk-400ml",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/herbal-essences-biorenew-shampoo-coconut-milk-400ml-01719916002.png",
+    "reason": "catalog is Coconut OIL shampoo; photo is Coconut MILK"
+  },
+  "88449": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/seropipe-hair-mask-300ml-3r2e",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/seropipe-hair-mask-300ml-3r2e-01769438934.png",
+    "reason": "product-type rule: catalog is a shampoo, photo is a hair mask"
+  },
+  "80008": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/super-kids-sunscreen-spf-50-lotion-200ml-tbvz_duR9LGX5",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/super-kids-sunscreen-spf-50-lotion-200ml-tbvz-01719489704.png",
+    "reason": "product-type rule: catalog is a spray, source is the lotion"
+  },
+  "70861": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/eva-conditioner-gold-argan-230ml-ycaw",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/eva-conditioner-gold-argan-230ml-ycaw-01738338237.png",
+    "reason": "catalog is Aloe Eva aloe vera & argan conditioner; photo is Eva Hair Clinic Gold Argan"
+  },
+  "73891": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/grit-men-phantom-splash-200ml-clyn",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/grit-men-phantom-splash-200ml-cc6k-01696954324.png",
+    "reason": "catalog is Grit Black; photo is Grit Phantom"
+  },
+  "90494": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/nivea-fresh-natural-spray-for-women-150ml",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/nivea-fresh-natural-spray-for-women-150ml-01655218078.png",
+    "reason": "catalog is Nivea Natural Radiance; photo is Nivea Fresh Natural"
+  },
+  "58767": {
+    "page": "https://chefaa.com/eg-ar/nowProduct/eva-sun-and-sea-sunscreen-spf-50-200ml-er1v_dunLIMNw",
+    "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/eva-sun-and-sea-sunscreen-spf-50-200ml-er1v-01690267010.png",
+    "reason": "catalog is a kids SPF spray; photo is the tube"
   }
 }

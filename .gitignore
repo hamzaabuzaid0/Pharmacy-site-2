@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# scrape resume cache (regenerable)
+docs-internal/chefaa-page-cache.json
+__pycache__/
