@@ -57,6 +57,33 @@ expected, not a classification failure.
 
 ## Images
 
+> **Update 2026-09-15 (Egyptian stores) — 1,524 products have real photos.**
+> Added 1,186 from nine Egyptian online pharmacies and beauty stores (all
+> priced in EGP, so Egyptian packs — medicines included) via
+> `scripts/fetch-egypt-images.py`: Bloom Pharmacy, Pharmacy Sabry, Al Dawaa
+> Egypt, Dr Ahmed El Ezaby, Lotus, Roots, Feel22, Source Beauty, Loolia Closet.
+> Each store's robots.txt (page host and image host) allows product pages and
+> names no AI agent. Ruled out: Sidalih (Saudi), Tdawi (blocks ClaudeBot),
+> Gardenia (disallows all), Faces (sitemap under a disallowed path), Egyptdwa
+> (no pack photos), Misr Pharmacies (sitemap refused).
+>
+> Matching is stricter than before: brand-first score ≥ 0.9 plus a second
+> independent name check, a *variant* rule (each name having a word the other
+> lacks = different product), abbreviation clean-up (`M.W`, `E.D.PARFUM`,
+> `F/MEN`), exact shade numbers for YOLO nail polish, and no photo at all for
+> brandless names ("BABY CREAM") or medicines named only by their ingredient
+> ("CLOZAPINE 25MG" — list from the CC0 Egyptian drug index).
+> 1,396 double-checked matches → **210 rejected on photo-by-photo review**:
+> 117 were the store's blank placeholder image, the rest wrong variant or
+> strength (e.g. Coveram 10/5 vs 5/10, Pre NAN vs NAN 4), another pharmacy's
+> watermark, promo stickers, lifestyle/coloured backgrounds, or unreadable
+> packs. Hair dyes (Bigen, Garnier, Palette, L'Oréal) show the exact shade
+> number on the box. Review record: `docs-internal/egypt-run.xlsx`; every
+> rejection and reason: `scripts/image-rejections.json`.
+>
+> **Still without a photo: ~8,800 products**, mostly medicines and local or
+> unbranded items no public store lists. Those need the pharmacy's own photos.
+
 > **Update 2026-09-15 (later) — 338 products have real photos.** Added 140
 > from two Gulf pharmacies via `scripts/fetch-gulf-images.py`: **Al-Dawaa 97,
 > Nahdi 43**. **Retail sections only**, because a Saudi/UAE medicine box isn't

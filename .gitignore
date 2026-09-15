@@ -28,3 +28,7 @@ docs-internal/chefaa-page-cache.json
 __pycache__/
 docs-internal/gulf-page-cache.json
 docs-internal/gulf-preview/
+docs-internal/egypt-preview/
+docs-internal/egypt-run.log
+docs-internal/egypt-run2.log
+docs-internal/egypt-run.json
