@@ -57,6 +57,24 @@ expected, not a classification failure.
 
 ## Images
 
+> **Update 2026-09-15 (later) — 338 products have real photos.** Added 140
+> from two Gulf pharmacies via `scripts/fetch-gulf-images.py`: **Al-Dawaa 97,
+> Nahdi 43**. **Retail sections only**, because a Saudi/UAE medicine box isn't
+> the Egyptian pack. Rules: the brand must be the first word of both names,
+> match score ≥ 0.9, and the product-type conflict rule applies. 264 strict
+> matches → 251 photos → **111 rejected on visual review**. The largest group
+> (~80) weren't clean product shots at all (promo banners, lifestyle shots,
+> infographics, backs of packs); the rest were wrong variants, unreadable
+> labels, Saudi baby-formula packs, and one case where the source used the
+> same photo for two variants. Review record: `docs-internal/gulf-run.xlsx`.
+>
+> **Life Pharmacy was deliberately not used.** Its CDN robots.txt blocks
+> ClaudeBot and the other AI crawlers and reserves rights over its content,
+> and I'm an AI agent, so that applies here. Checked the same way before
+> use: Chefaa, Nahdi and Al-Dawaa name no AI agents in either their page or
+> image hosts' robots.txt. Nahdi's image host asks for 5 s between requests,
+> which the script honours.
+>
 > **Update 2026-09-15 — 198 products have real photos.** Chefaa was run
 > across *every* section (medicines included, since Chefaa is Egyptian and
 > shows local packaging): 276 confident matches → 211 passed both automatic

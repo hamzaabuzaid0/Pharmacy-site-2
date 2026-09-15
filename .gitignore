@@ -26,3 +26,5 @@ dist-ssr
 # scrape resume cache (regenerable)
 docs-internal/chefaa-page-cache.json
 __pycache__/
+docs-internal/gulf-page-cache.json
+docs-internal/gulf-preview/

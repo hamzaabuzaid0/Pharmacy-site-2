@@ -158,5 +158,560 @@
     "page": "https://chefaa.com/eg-ar/nowProduct/eva-sun-and-sea-sunscreen-spf-50-200ml-er1v_dunLIMNw",
     "image": "https://cdn.chefaa.com/filters:format(webp)/public/uploads/products/eva-sun-and-sea-sunscreen-spf-50-200ml-er1v-01690267010.png",
     "reason": "catalog is a kids SPF spray; photo is the tube"
+  },
+  "50564": {
+    "page": "https://www.nahdionline.com/en-sa/adidas-victory-league-men-spray-150ml/pdp/102971035",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/102971035_small_image_662a14a67c6220ef9_71422.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "91734": {
+    "page": "https://www.al-dawaa.com/en/p/248337/anua-foam-cleanser-hyaluronic-panthenol-150-ml",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Anua-Foam-Cleanser-With-Hyaluronic-Panthenol-150-Ml_0_515.webp?context=bWFzdGVyfGltYWdlc3wyNjQzOHxpbWFnZS93ZWJwfGFEWmtMMmhpTXk4NU16VTRNamN4TWpnek1qTXdMekkwT0RNek4xOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfDBmYzkwYzQzMzc0ODMwMzRmYWFlZTJjY2M5M2Q3OTgzMTJmODNhOWI3N2Q5MzM3MGUxNDFhMzczOWJjMjI4Yzk",
+    "reason": "label not readable enough to confirm the exact product/variant"
+  },
+  "77530": {
+    "page": "https://www.nahdionline.com/en-sa/bionnex-organica-anti-hair-loss-conditioner-hair-types-300ml/pdp/103143320",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103143320_a2eb0c46ad782c5e2_13510.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "77541": {
+    "page": "https://www.nahdionline.com/en-sa/bionnex-the-nordea-hyaluronic-acid-2-b5-serum-30ml/pdp/103056744",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103056744_afc0e537e167b7372_32220.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "87909": {
+    "page": "https://www.nahdionline.com/en-sa/cerave-resurfacing-retinol-serum-30-ml/pdp/103461993",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103461993_acffdbbdcc6e9b02c_33373.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "75445": {
+    "page": "https://www.nahdionline.com/en-sa/clary-hair-fall-control-conditioner-300ml/pdp/103382494",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103382494_a259cd60d4c5e8806_16953.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "78217": {
+    "page": "https://www.nahdionline.com/en-sa/clary-hair-fall-control-shampoo-300-ml/pdp/103382427",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103382427_ab455a10e76f86d8e_55513.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "81737": {
+    "page": "https://www.nahdionline.com/en-sa/dermactive-acti-glow-night-cream-50-ml/pdp/103549400",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103549400_ac7a127dd5acf60b4_11361.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "81736": {
+    "page": "https://www.nahdionline.com/en-sa/dermactive-acti-glow-day-cream-spf-30-50-ml/pdp/103549397",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103549397_a1992464be069f044_31698.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "84555": {
+    "page": "https://www.nahdionline.com/en-sa/dermactive-acti-repair-urea-foot-cream-60ml/pdp/104086671",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/104086671_a8ed884b06cb72737_47836.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "84554": {
+    "page": "https://www.nahdionline.com/en-sa/dermactive-acti-repair-urea-hand-cream-60-ml/pdp/104008648",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/104008648_a985bfb04cdae2933_77500.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "75964": {
+    "page": "https://www.nahdionline.com/en-sa/dermactive-acti-white-eye-contour-cream-gel-15ml/pdp/103367876",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103367876_a230ca228210a74d6_75101.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "81561": {
+    "page": "https://www.nahdionline.com/en-sa/dermactive-baby-gentle-shampoo-250-ml/pdp/103659086",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103659086_a00725f650ae114d8_20291.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "81562": {
+    "page": "https://www.nahdionline.com/en-sa/dermactive-baby-head-to-toe-wash-250-ml/pdp/103659094",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103659094_a7657881013cce29e_67508.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "81559": {
+    "page": "https://www.nahdionline.com/en-sa/dermactive-baby-body-moisturizing-lotion-250-ml/pdp/103659115",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103659115_a60abef79b06d0ec7_81625.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "75968": {
+    "page": "https://www.nahdionline.com/en-sa/dermactive-tricho-act-hair-repairing-mask-150-ml/pdp/103410441",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103410441_aad26f6e82ceaa3ab_87668.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "D175": {
+    "page": "https://www.nahdionline.com/en-sa/dettol-soap-original-165-gm/pdp/100523095",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100523095_a607728ece131197b_27473.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "91931": {
+    "page": "https://www.al-dawaa.com/en/p/224323/dove-shampoo-daily-care-600-ml",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Dove-Hair-Shampoo-Daily-Hydration-Hyaluronic-Acid-600-Ml_0_515.webp?context=bWFzdGVyfGltYWdlc3wxMDk0MHxpbWFnZS93ZWJwfGFEQXhMMmd4Tnk4NU5UYzJORGN3T0RNNU16STJMekl5TkRNeU0xOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfDJiNDI4ZjVhNGVjNzQzZTlhNGZhMTUwMDk0NmUwYmRmODc5YTg4MzY4ZTE3MzQwNzI0OTllZTBlMTg1ZjNjYTA",
+    "reason": "catalog is Dove Daily CARE shampoo; photo is the Hyaluronic Daily HYDRATION one"
+  },
+  "15185": {
+    "page": "https://www.nahdionline.com/en-sa/dove-cream-intensive-150-ml/pdp/100571311",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100571311_extraimage.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "86919": {
+    "page": "https://www.nahdionline.com/en-sa/enchanteur-hand-body-lotion-charming-500-ml/pdp/100898997",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/e/n/enchanteur-hand-amp-body-lotion-charming-500-ml-5vjpg.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "76233": {
+    "page": "https://www.nahdionline.com/en-sa/eucerin-dermo-purifyer-toner-200-ml/pdp/100673341",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100673341_a0e88b6e39231278f_353.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "84551": {
+    "page": "https://www.nahdionline.com/en-sa/eucerin-even-pigment-perfector-dual-serum-30-ml/pdp/101485473",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101485473_a24132ab069623aac_67868.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "86009": {
+    "page": "https://www.nahdionline.com/en-sa/fino-premium-touch-hair-oil-70ml/pdp/103220698",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103220698.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "label not readable enough to confirm the exact product/variant"
+  },
+  "47796": {
+    "page": "https://www.al-dawaa.com/en/p/300666/hero-baby-baby-milk-stage-1-400-gm",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Hero-Baby-Baby-Milk-Stage-1-400-Gm_0_515.webp?context=bWFzdGVyfGltYWdlc3wxMzM4NDB8aW1hZ2Uvd2VicHxhREptTDJneFppODVOREUxTlRjMU16Y3hPREEyTHpNd01EWTJObDh3WDJWdVh6VXhOVmQ0TlRFMVNGOVhSVUpRTG5kbFluQXxjOGYwMjQxZDdkZTE5NDQzOGE4NmM0MzczZGNiY2ViNmY4MzMxN2FkOTNjZjYyYWUzNTVjZTAxMjNhZGQ2Y2Q3",
+    "reason": "catalog is Hero Baby Milk 1; photo is the Saudi Hero Baby INSPIRE 1 line"
+  },
+  "73535": {
+    "page": "https://www.nahdionline.com/en-sa/lifebuoy-hand-wash-cool-fresh-450-ml/pdp/103610629",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103610629_a93e5224625d3d613_23654.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "70141": {
+    "page": "https://www.nahdionline.com/en-sa/loreal-hyaluron-expert-night-cream-mask-50-ml/pdp/101573203",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101573203_small_image_5ee1f1dcc76a12dce_18503.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "73193": {
+    "page": "https://www.nahdionline.com/en-sa/lux-shower-gel-magical-orchid-250ml-puff/pdp/101823647",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101823647_a823d3aa1955152b4_77356.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "62234": {
+    "page": "https://www.nahdionline.com/en-sa/lux-shower-gel-magical-orchid-500ml/pdp/101823621",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101823621_abb33d70e8928165a_11049.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "73447": {
+    "page": "https://www.nahdionline.com/en-sa/nan-milk-3-800-gm-new/pdp/101855817",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101855817_ac694cc006d438a1e_88843.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "Saudi-market baby formula/medicine packaging, not the pack sold in Egypt"
+  },
+  "74460": {
+    "page": "https://www.nahdionline.com/en-sa/neutrogena-bright-boost-serum-30-ml/pdp/101858680",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101858680_small_image_613f33c588044a535_25156.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "60628": {
+    "page": "https://www.nahdionline.com/en-sa/nivea-men-sensitive-after-shave-balm-100ml/pdp/100468612",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100468612_a98e2c668c42d1604_90055.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "8344": {
+    "page": "https://www.nahdionline.com/en-sa/nivea-men-sensitive-shaving-gel-200ml/pdp/100468356",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100468356_abddc5b85e4f2e6bc_84390.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "26215": {
+    "page": "https://www.nahdionline.com/en-sa/nivea-men-deep-cleansing-face-beard-wash-100ml/pdp/101255740",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101255740_small_image_645cf1e177ff3b77d_27362.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "89528": {
+    "page": "https://www.al-dawaa.com/en/p/240424/nivea-deodorant-roll-on-pearl-beauty-black-50-ml",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Nivea-Deodorant-Roll-On-Pearl-Beauty-Black-50-Ml_0_515.webp?context=bWFzdGVyfGltYWdlc3wxNTM1NHxpbWFnZS93ZWJwfGFESTRMMmd4Tnk4NU5qQTJNakU0TlRjNU9UazRMekkwTURReU5GOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfDNlOWU2ODA1YWJjNzI2ZjhhYmU1MDA2OWFiZWMxYjhmY2ZjYWEyY2VkNzc2Y2FiZmY1ZGM3MjIxN2MxMGY0Zjk",
+    "reason": "catalog is Nivea Pearl & Beauty BLACK; photo doesn't show the Black variant"
+  },
+  "57184": {
+    "page": "https://www.nahdionline.com/en-sa/nivea-cream-soft-300-ml/pdp/100573789",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100573789_ae237de83714ab5aa_46564.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "56727": {
+    "page": "https://www.nahdionline.com/en-sa/nivea-cream-soft-50-ml/pdp/100570457",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100570457_a90eef030a3af1af1_36554.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "86811": {
+    "page": "https://www.nahdionline.com/en-sa/old-spice-original-deodorant-stick-50ml/pdp/102701633",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/o/l/old-spice-original-deodorant-stick-50ml-5fjpg.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "83573": {
+    "page": "https://www.nahdionline.com/en-sa/pantene-oil-replacement-smooth-silky-275ml/pdp/101942654",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101942654_ad9c9a6142aa67dc0_20656.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "67472": {
+    "page": "https://www.al-dawaa.com/en/p/218645/sensodyne-multi-care-toothbrush-soft-1-pc",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Sensodyne-Multi-Care-Toothbrush-Soft-1-Pc_0_515.webp?context=bWFzdGVyfGltYWdlc3w5MDA4fGltYWdlL3dlYnB8YUdZd0wyZ3dNQzg1TXpBMU9UZzBPRFl3TVRrd0x6SXhPRFkwTlY4d1gyVnVYelV4TlZkNE5URTFTRjlYUlVKUUxuZGxZbkF8NWU2NDY5NmI0NzRkYWVmNzJmOTVjYWI4NDkzOWY4OTU3OWM2N2I1YjY1YTY3NTgyYjYzMWQ2MWY3ZWJlNmZhMQ",
+    "reason": "pack differs (single item shown for a multipack, or a duo pack shown for a single)"
+  },
+  "85196": {
+    "page": "https://www.nahdionline.com/en-sa/sunsilk-shampoo-stunning-black-shine-400-ml/pdp/100733261",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100733261_a8b00e628d04ab45b_74707.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "86096": {
+    "page": "https://www.nahdionline.com/en-sa/tresemme-shampoo-keratin-smooth-400ml/pdp/101695737",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101695737_small_image_5fd652194d0835c81_45679.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "91942": {
+    "page": "https://www.nahdionline.com/en-sa/vaseline-body-lotion-cocoa-glow-400-ml/pdp/100513719",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100513719_a5fe622e57f2b9ca9_28940.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "71670": {
+    "page": "https://www.al-dawaa.com/en/p/208578/vaseline-body-lotion-essential-healing-200-ml",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Vaseline-Body-Lotion-Essential-Healing-200-Ml_0_515.webp?context=bWFzdGVyfGltYWdlc3w2Mzg5MnxpbWFnZS93ZWJwfGFEZGlMMmd4TVM4NU5EYzJOVE14TURJM09UazRMekl3T0RVM09GOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfDc3ZGJhOWVlMjcwZWM0NDE0ZDcwZDc4NmQ5NzMzOTQ4MTkwODgwMDBjOTIyOTAwY2FmNjY1NzczNDg5NDhkOTU",
+    "reason": "catalog is Vaseline Essential HEALING; photo is Intensive Care Nourishing Moisture"
+  },
+  "14173": {
+    "page": "https://www.al-dawaa.com/en/p/208745/vichy-dercos-anti-dandruff-shampoo-dry-hair-200-ml",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Vichy-Dercos-AntiDandruff-Shampoo-Dry-Hair-200-Ml_0_515.webp?context=bWFzdGVyfGltYWdlc3wxODk5NnxpbWFnZS93ZWJwfGFEQXhMMmcxTVM4NU5UWTJNelkzT1RRd05qTTRMekl3T0RjME5WOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfDdiYWQyNGJmNzk0MmFhYTYwNGJjZWQ5MzQyOTU2YTZmZjQwZTkyOGQxOGIxNDdhMGFiYjZiZTZiYzA2YTk2OTA",
+    "reason": "the source returned the SAME photo for two different variants (dry vs oily), so it can't be trusted for either"
+  },
+  "91004": {
+    "page": "https://www.nahdionline.com/en-sa/avene-cleanance-gel-400-ml/pdp/101363601",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101363601_ad3af97cce313a093_93323.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "15057": {
+    "page": "https://www.nahdionline.com/en-sa/nan-baby-milk-1-400-gm-new/pdp/101855788",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101855788_acb594831714d54a6_46949.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "Saudi-market baby formula/medicine packaging, not the pack sold in Egypt"
+  },
+  "56909": {
+    "page": "https://www.nahdionline.com/en-sa/nan-baby-milk-3-400-gm-new/pdp/101855761",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101855761_ab12dd49aa40d4245_76932.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "Saudi-market baby formula/medicine packaging, not the pack sold in Egypt"
+  },
+  "14340": {
+    "page": "https://www.nahdionline.com/en-sa/nivea-cream-soft-medium-100-ml/pdp/100574087",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100574087_adb0837a9a7c9c6be_95486.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "67096": {
+    "page": "https://www.nahdionline.com/en-sa/vaseline-petroleumjelly-cocoa-butter-250ml/pdp/103476546",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103476546_a1424f82b5344b51f_28047.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "87246": {
+    "page": "https://www.nahdionline.com/en-sa/cerave-am-facial-moisturizing-lotion-spf-30-52-ml/pdp/102514627",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/102514627_small_image_65ae23f4446d06b2b_27270.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "14178": {
+    "page": "https://www.al-dawaa.com/en/p/208744/vichy-dercos-anti-dandruff-shampoo-normal-oily-hair-200-ml",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Vichy-Dercos-AntiDandruff-Shampoo-Normal-Oily-Hair-200-Ml_0_515.webp?context=bWFzdGVyfGltYWdlc3wyMDM3MHxpbWFnZS93ZWJwfGFEQTFMMmd3T1M4NU5UYzFNekF5TmpreU9EazBMekl3T0RjME5GOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfGE4ZDBiYTkwMzJiNzkyZjUyMDJhNGM3YWQ1NDVlYzA1NjUwYjQ5MWQ4ZmI2MzUxNGIwZGFlYjgzZjFjY2M1ZDc",
+    "reason": "the source returned the SAME photo for two different variants (dry vs oily), so it can't be trusted for either"
+  },
+  "77527": {
+    "page": "https://www.nahdionline.com/en-sa/bionnex-organica-anti-hair-loss-shampoo-oily-hair-300ml/pdp/103143282",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103143282_a0002dd12980f7869_40625.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "84471": {
+    "page": "https://www.nahdionline.com/en-sa/bodylicious-24h-moisture-body-lotion-jasmine-bloom-236ml/pdp/103290397",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103290397_a9bd39206eb74d47f_85427.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "label not readable enough to confirm the exact product/variant"
+  },
+  "84503": {
+    "page": "https://www.nahdionline.com/en-sa/bodylicious-24h-moisture-body-lotion-pink-vanilla-236ml/pdp/103290400",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103290400_a58d33a03b83a5d43_61409.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "label not readable enough to confirm the exact product/variant"
+  },
+  "84504": {
+    "page": "https://www.nahdionline.com/en-sa/bodylicious-24h-moisture-body-lotion-rose-vanilla-236ml/pdp/103290418",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103290418_a0111c2b47eaed55d_35976.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "label not readable enough to confirm the exact product/variant"
+  },
+  "78583": {
+    "page": "https://www.nahdionline.com/en-sa/bodylicious-24h-moisture-body-lotion-violet-patchouli-236ml/pdp/103290434",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103290434_aea56b1361d073727_2088.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "label not readable enough to confirm the exact product/variant"
+  },
+  "88381": {
+    "page": "https://www.nahdionline.com/en-sa/dabur-vatika-shampoo-nourishing-oil-natural-hibiscus-425ml/pdp/101905642",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101905642_smallimage_3.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "91405": {
+    "page": "https://www.nahdionline.com/en-sa/dermactive-acti-solaire-spf-50-ultra-fluid-50ml/pdp/103367753",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103367753_a15297557e4ab0c8b_55213.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "69913": {
+    "page": "https://www.nahdionline.com/en-sa/garnier-micellar-cleansing-water-in-oil-100-ml/pdp/101279418",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/e/n/enadditional_images_s101279418_1.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "73893": {
+    "page": "https://www.nahdionline.com/en-sa/grit-for-men-body-mist-in-the-deep-200ml/pdp/103290661",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103290661_abf0ab8e3ff0f10e3_56081.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "37871": {
+    "page": "https://www.nahdionline.com/en-sa/nivea-men-deep-shaving-foam-black-carbon-200ml/pdp/101255723",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101255723_ae333cd32f41a7d95_55160.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "67810": {
+    "page": "https://www.nahdionline.com/en-sa/nivea-men-deep-shaving-gel-black-carbon-200ml/pdp/101255715",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101255715_ac68f681d39af6079_84723.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "54528": {
+    "page": "https://www.nahdionline.com/en-sa/nivea-body-lotion-moisturizing-for-dry-skin-250-ml/pdp/100511650",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100511650_aabc4f4ace968e0f5_79263.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "61860": {
+    "page": "https://www.nahdionline.com/en-sa/nivea-men-deodorant-silver-protect-spray-150ml/pdp/100603917",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100603917_a433edb060c451dac_17945.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "85827": {
+    "page": "https://www.nahdionline.com/en-sa/pantene-pro-v-milky-damage-repair-shampoo-200-ml/pdp/100674299",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100674299_af48499cb76bba5ce_67760.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "91572": {
+    "page": "https://www.nahdionline.com/en-sa/parachute-gold-coconut-avocado-hair-cream-140-ml/pdp/103771351",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103771351_aaa8d7baa040bb312_77796.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "54503": {
+    "page": "https://www.nahdionline.com/en-sa/vaseline-body-lotion-ice-cool-hydration-400ml/pdp/101886648",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101886648_a950b93494ff49e58_15268.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "84246": {
+    "page": "https://www.nahdionline.com/en-sa/adidas-dynamic-pulse-men-spray-150ml/pdp/102970913",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/102970913_small_image_662a05e8ccb2add8f_18184.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "84244": {
+    "page": "https://www.al-dawaa.com/en/p/244899/adidas-deodorant-spray-fresh-endurance-150-ml",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Adidas-Deodorant-Spray-Fresh-Endurance-150-Ml_0_515.webp?context=bWFzdGVyfGltYWdlc3w1MzU4NHxpbWFnZS93ZWJwfGFERXlMMmhpWlM4NU16VXdNall4TlRNNE9EUTJMekkwTkRnNU9WOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfGU2NmVlYzA0OGNkYjNkMzYxOTg3MGVlYmI0OTI1NzkxMmMzNmQ5MjdiOWUyMDg1Nzc4ZmYzNWQ3M2E2OTJmYjQ",
+    "reason": "catalog is Adidas Fresh Endurance BODY SPRAY; photo is the 72h anti-perspirant can"
+  },
+  "84245": {
+    "page": "https://www.nahdionline.com/en-sa/adidas-ice-dive-men-spray-150ml/pdp/102970964",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/102970964_small_image_662a0a009103c18a4_90175.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "84243": {
+    "page": "https://www.nahdionline.com/en-sa/adidas-pro-invisible-men-spray-150ml/pdp/102970981",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/102970981_small_image_662a11bdb3cf95fdb_48481.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "68669": {
+    "page": "https://www.nahdionline.com/en-sa/bioderma-hydrabio-h2o-micellar-water-100-ml/pdp/103985631",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103985631_a03a1112127d5c677_12805.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "90358": {
+    "page": "https://www.nahdionline.com/en-sa/dermedic-capilarte-anti-dandruff-shampoo-300-ml/pdp/103598341",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103598341_a40edc36e5782962f_52009.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "83274": {
+    "page": "https://www.al-dawaa.com/en/p/224314/dove-conditioner-nutritive-daily-care-350-ml",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Dove-Hair-Conditioner-Daily-Hydration-Hyaluronic-Acid-350-Ml_0_515.webp?context=bWFzdGVyfGltYWdlc3wxMDA0NHxpbWFnZS93ZWJwfGFEYzVMMmd5Tmk4NU5UYzJORFEyTURZMk56RTRMekl5TkRNeE5GOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfGUwOTJjYzIzZTRkN2I5YWM0ZDZlYjc3YjUwM2UyOTVlZTE0NThlZTUwMmE4YTk0NDExZDRkNjBlMGU1NDMzZGY",
+    "reason": "catalog is Dove Daily CARE conditioner; photo is the Hyaluronic Daily HYDRATION one"
+  },
+  "74082": {
+    "page": "https://www.al-dawaa.com/en/p/244061/eucerin-hyaluron-filler-night-cream-50-ml",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Eucerin-HyaluronFiller-Night-Cream-50-Ml_0_515.webp?context=bWFzdGVyfGltYWdlc3wxODkxMHxpbWFnZS93ZWJwfGFETm1MMmc1Wmk4NU5UY3lOemMwTmpReE5qazBMekkwTkRBMk1WOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfDE2YzdjZTYzMTQ5YWZiNDVmNDZlODJlN2UzMzQzYWQ4Zjc1ODMxZTlmMTI0YzE4OTRiOGQxMDYxZjAwYWQ1MDQ",
+    "reason": "catalog is Eucerin Hyaluron-Filler NIGHT cream; photo is the + Elasticity cream"
+  },
+  "74329": {
+    "page": "https://www.nahdionline.com/en-sa/eucerin-sun-cream-spf-50-50ml/pdp/102509617",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/102509617_small_image_646c7998adc81d3c7_31317.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "91326": {
+    "page": "https://www.nahdionline.com/en-sa/garnier-skin-active-micellar-cleansing-water-100-ml/pdp/101277236",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/s/m/small_image101277236.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "54292": {
+    "page": "https://www.nahdionline.com/en-sa/garnier-skin-active-micellar-cleansing-water-400-ml/pdp/100980632",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/a/r/arsmall_image100980632_1.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "73892": {
+    "page": "https://www.nahdionline.com/en-sa/grit-for-men-body-mist-raptor-200ml/pdp/103290709",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103290709_a869759655ad3c0c1_7504.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "73935": {
+    "page": "https://www.nahdionline.com/en-sa/grit-for-men-body-mist-warrior-200ml/pdp/103290717",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103290717_a0fd6200114faae6e_37778.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "88828": {
+    "page": "https://www.nahdionline.com/en-sa/neutrogena-fresh-clear-facial-wash-200-ml/pdp/100579101",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100579101_small_image_645a4520090c159f9_84368.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "85914": {
+    "page": "https://www.nahdionline.com/en-sa/nivea-fresh-powerfruit-shower-gel-250ml/pdp/100645148",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100645148_adf6751829b758fa8_26026.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "catalog is Nivea Fresh ALOE shower gel; photo is Fresh POWERFRUIT"
+  },
+  "64869": {
+    "page": "https://www.nahdionline.com/en-sa/ogx-brazilian-keratin-therapy-shampoo-385-ml/pdp/101040183",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/o/g/ogx-brazilian-keratin-therapy-defrizzant-shampoo-385-ml-5vjpg.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "67694": {
+    "page": "https://www.nahdionline.com/en-sa/ogx-conditioner-nourishing-coconut-milk-385ml/pdp/101040175",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101040175_small_image_642adc6b0cf3c697d_21454.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "14198": {
+    "page": "https://www.nahdionline.com/en-sa/pears-bar-soap-pure-and-gentle-125-gm/pdp/103106633",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103106633_a12237798d9c08072_78652.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "70850": {
+    "page": "https://www.nahdionline.com/en-sa/radian-ice-cooling-roll-on-75-ml/pdp/102784803",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/r/a/radian-ice-cooling-roll-on-75-ml-5vjpg.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "82970": {
+    "page": "https://www.al-dawaa.com/en/p/228972/rexona-deodorant-spray-antibacterial-invisible-for-women-150-ml",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Rexona-Deodorant-Spray-Antibacterial-Invisible-For-Women-150-Ml_0_515.webp?context=bWFzdGVyfGltYWdlc3wzOTc5NHxpbWFnZS93ZWJwfGFHSmpMMmcwWmk4NU5UQXhNelUzTmpjd05ETXdMekl5T0RrM01sOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfDhiM2FkYmEyNGNlM2VhMzU5YmQwODBkMDY4ZDBhZDI3Y2UzOGM5M2YwM2UwNWUxY2NjMmJiZDA1ZWJhNGE1ZGU",
+    "reason": "catalog is Rexona ANTIBACTERIAL invisible; photo doesn't confirm antibacterial"
+  },
+  "90514": {
+    "page": "https://www.nahdionline.com/en-sa/sensodyne-multi-care-whitening-100-ml-33extra-volume-free/pdp/103064656",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103064656_a4367973f67d49325.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "70213": {
+    "page": "https://www.nahdionline.com/en-sa/similac-gold-milk-infant-formula-2-400-gm/pdp/101282191",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101282191_thumbnail_5f97d8be6886cb7d0_66671.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "88194": {
+    "page": "https://www.nahdionline.com/en-sa/uriage-cica-daily-serum-30-ml/pdp/103562065",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103562065_a6c63e6d054c79021_53654.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "77529": {
+    "page": "https://www.nahdionline.com/en-sa/bionnex-organica-anti-dandruff-shampoo-all-hair-types-300ml/pdp/103143311",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103143311_aa17f601afe022723_71179.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "91261": {
+    "page": "https://www.nahdionline.com/en-sa/garnier-color-naturals-toffee-blonde-7-31/pdp/104081693",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/104081693_a741ab0d2a018a003_15902.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "hair dye: photo is a model banner; hair colour keeps its shade swatch"
+  },
+  "91348": {
+    "page": "https://www.al-dawaa.com/en/p/224441/sensodyne-advanced-repair-protect-toothbrush-soft-1-pc",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Sensodyne-Advanced-Repair-Protect-Toothbrush-Soft-1-Pc_0_515.webp?context=bWFzdGVyfGltYWdlc3wxMTA2MnxpbWFnZS93ZWJwfGFHUm1MMmhrWkM4NU16TXlOVFEzT1RRME5EYzRMekl5TkRRME1WOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfDViMTVmODQ2YjJiYTRkOTYxNWUxY2Q4MzQ4MzM2YTIzZmE0MDQ2Nzk0YTUyZmY5YzRjZGY4OWViZTJiNGVlYzQ",
+    "reason": "pack differs (single item shown for a multipack, or a duo pack shown for a single)"
+  },
+  "68551": {
+    "page": "https://www.nahdionline.com/en-sa/essence-8h-matte-liquid-lipstick-05/pdp/102844183",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/102844183_a76901c931e40ca5c_38054.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "55234": {
+    "page": "https://www.nahdionline.com/en-sa/avene-cicalfate-plus-repair-cream-40-ml-bundle/pdp/103154993",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103154993_aef13ca9aa3eb3a4a_6939.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "pack differs (single item shown for a multipack, or a duo pack shown for a single)"
+  },
+  "77526": {
+    "page": "https://www.nahdionline.com/en-sa/bionnex-organica-anti-hair-loss-shampoo-dry-hair-300ml/pdp/103143303",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103143303_a6dc0e25e6324c6ba_98123.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "84625": {
+    "page": "https://www.nahdionline.com/en-sa/bodylicious-fine-body-mist-floral-fantasy-217ml/pdp/103290522",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103290522_a04a6a9b4c49f453b_23231.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "label not readable enough to confirm the exact product/variant"
+  },
+  "67619": {
+    "page": "https://www.nahdionline.com/en-sa/bodylicious-fine-body-mist-tropical-twist-217ml/pdp/103290611",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103290611_a9d5b44f1b897c0df_78474.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "label not readable enough to confirm the exact product/variant"
+  },
+  "73647": {
+    "page": "https://www.nahdionline.com/en-sa/cantu-avocado-hydrating-conditioner-400ml/pdp/101760615",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101760615_afd9346bbdbf6dc6a_93924.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "75967": {
+    "page": "https://www.nahdionline.com/en-sa/dermactive-tricho-act-anti-dandruff-ds-shampoo-200ml/pdp/103410432",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103410432_a1e530e86be0fa00b_79073.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "80511": {
+    "page": "https://www.nahdionline.com/en-sa/dermactive-sweat-control-triple-effect-roll-on-60ml/pdp/103605432",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103605432_a152be0513d4bba51_91850.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "88073": {
+    "page": "https://www.nahdionline.com/en-sa/dove-deo-roll-on-even-tone-blossom-50ml/pdp/101856828",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/101856828_a8d6397dfa850a6d4_8093.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "84652": {
+    "page": "https://www.nahdionline.com/en-sa/eucerin-even-pigment-perfector-illuminating-eye-care-15ml/pdp/102828010",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/102828010_thumbnail_665430453d7d25038_9440.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "60027": {
+    "page": "https://www.nahdionline.com/en-sa/mustela-stelatopia-cleansing-gel-500ml/pdp/103488766",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/103488766_a7bfd1ce7b20b554d_52956.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "15094": {
+    "page": "https://www.nahdionline.com/en-sa/nan-baby-milk-comfort-2-400-gm/pdp/101055123",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/e/n/enbase_image101055123_1.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "catalog is NAN 2; photo is NAN COMFORT 2"
+  },
+  "13976": {
+    "page": "https://www.nahdionline.com/en-sa/nivea-men-sensitive-shaving-cream-100ml/pdp/100621349",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100621349_adf73e72e49df47a9_50256.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "91808": {
+    "page": "https://www.nahdionline.com/en-sa/panadol-baby-infant-suspension-100ml/pdp/100620004",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100620004_aa0cc57a05decf351_26890.png?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "Saudi-market baby formula/medicine packaging, not the pack sold in Egypt"
+  },
+  "82931": {
+    "page": "https://www.nahdionline.com/en-sa/rexona-spray-women-invisible-150-ml/pdp/101030057",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/r/e/rexona-deo-spray-women-antibacteria-invisible-150-ml_1.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "catalog is Rexona Invisible (women); photo is the Antibacterial + Invisible can"
+  },
+  "49390": {
+    "page": "https://www.nahdionline.com/en-sa/signal-toothpaste-cavity-fighter-120-ml/pdp/100594838",
+    "image": "https://ecombe.nahdionline.com/media/catalog/product/1/0/100594838_a0e015e708e474893_5778.jpg?width=1000&height=1000&canvas=1000,1000&optimize=high&bg-color=255,255,255&fit=bounds",
+    "reason": "not a clean product photo — marketing banner, lifestyle shot, infographic, texture swatch or back of the pack"
+  },
+  "83232": {
+    "page": "https://www.al-dawaa.com/en/p/208314/sunsilk-hair-conditioner-for-hair-fall-350-ml",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Sunsilk-Hair-Conditioner-Hair-Fall-Solution-350-Ml_0_515.webp?context=bWFzdGVyfGltYWdlc3wxMTUzMnxpbWFnZS93ZWJwfGFHRmtMMmcyTUM4NU5UYzJNelE0T0RFeE1qazBMekl3T0RNeE5GOHdYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfDcxY2RlZWZmYzhjMzdhMGE4ZmIzMjA2Yjk1ZThjMzkxMDM3YTUyYmZlNDQ4ZGFmMjA1Mjg5NTIxNjIzZmRhYWI",
+    "reason": "label not readable enough to confirm the exact product/variant"
+  },
+  "86430": {
+    "page": "https://www.al-dawaa.com/en/p/235257/vichy-liftactiv-night-face-cream-collagen-specialist-50-ml",
+    "image": "https://stgprevapi.al-dawaa.com/medias/Vichy-Liftactiv-Night-Face-Cream-Collagen-Specialist-50-Ml_1_515.webp?context=bWFzdGVyfGltYWdlc3wzMTA4NnxpbWFnZS93ZWJwfGFESTNMMmhrTkM4NU16TTROamt3TXpjeE5qRTBMekl6TlRJMU4xOHhYMlZ1WHpVeE5WZDROVEUxU0Y5WFJVSlFMbmRsWW5BfGU0YWI2YjZhOWNiOWExNjA1OWU2N2U3MjhhOTRmNjgwMGVmZjgyNDhiOTVkZmM4Y2RlYWE3YjcxZTIxNTk0MWU",
+    "reason": "catalog is Vichy Liftactiv Specialist B3 night cream; photo is Collagen Specialist Nuit"
   }
 }
