@@ -44,9 +44,15 @@ SHOPIFY = {  # source id -> (sitemap file prefix, host)
     "feel22": ("eg.feel22.com", "eg.feel22.com"),
     "sourcebeauty": ("sourcebeauty.com", "sourcebeauty.com"),
     "loolia": ("eg.looliacloset.com", "eg.looliacloset.com"),
+    # brand-owned Egyptian shops (round 2) — the local brands no pharmacy lists
+    "eva": ("www.shop.eva-cosmetics.com", "shop.eva-cosmetics.com"),
+    "zada": ("zada.beauty", "zada.beauty"),
+    "hayah": ("hayahlaboratories.com", "hayahlaboratories.com"),
+    "avuva": ("avuva.com", "avuva.com"),
 }
 # on an equal score, prefer pharmacies (cleaner pack shots) over beauty shops
-PRIORITY = ["bloom", "sabry", "aldawaaegy", "lotus", "ezaby", "roots", "feel22", "sourcebeauty", "loolia"]
+PRIORITY = ["eva", "hayah", "avuva", "evapharma", "bloom", "sabry", "aldawaaegy", "lotus", "ezaby",
+            "zada", "roots", "feel22", "sourcebeauty", "loolia"]
 DELAY = {"ezaby": 2.0}
 DEFAULT_DELAY = 1.0
 
@@ -103,11 +109,14 @@ def parse_ezaby(d):
 
 
 # Words whose presence on only one side says nothing about the variant.
-HARMLESS = frozenset("""with for by in to on from scent baby babies kids kid child children hair face facial
-body skin female male women woman men man ladies f w m spf cleansing moisturizing moisturising
-moisturizer moisturiser vaginal contour glowing shaping s c x pro plus intimate eye oral
+# NOTE: gender and sub-line words (men, women, kids, maxi, premium...) are
+# deliberately NOT harmless — "Kolagra whitening rose" matched "Kolagra men"
+# and "Pampers 4 Maxi" matched "Pampers PC 4" while they were.
+HARMLESS = frozenset("""with for by in to on from scent hair face facial
+body skin spf cleansing moisturizing moisturising
+moisturizer moisturiser contour glowing shaping s c x pro
 jar tablet tablets capsule capsules cap caps tab tabs sachet sachets ampoule ampoules amp
-vial vials syrup susp suspension drops drop cream gel lotion ml gm g mg""".split())
+vial vials syrup susp suspension drops drop ml gm g mg""".split())
 
 
 GENERIC_FIRST = frozenset("""baby babies kids kid pure white black blue green red pink gold golden silver
@@ -127,6 +136,37 @@ GENERIC_DRUGS = frozenset(
 # also real brands on this sheet stay usable.
 MEDICAL = frozenset("medicine vitamins pain cold digestive firstaid devices intimate home".split())
 BRAND_EXEMPT = frozenset("vaseline clear banana essence polytar derma".split())
+
+
+# dosage forms the shared list doesn't carry: an ointment is not a cream
+TYPES = C["PRODUCT_TYPES"] | frozenset(
+    "ointment suppository suppositories pessary ovule emulsion paste tonic elixir sachet effervescent".split())
+
+
+def contained(name, other, slack=4):
+    """One name's words all appear in the other, with the numbers and pack
+    size identical. Brand shops write long marketing titles ("Eva Recipe
+    Quenching Blend Shower Cream For Normal Skin Berries Scent 370 Ml") that
+    the F1 score can't clear, even though every catalog word is present. The
+    variant rule still applies, and these matches are reviewed by eye like
+    every other."""
+    a, b = tokens(name), tokens(other)
+    if len(a) < 3 or not b:
+        return False
+    if a[0] != b[0]:                                   # same brand, first word
+        return False
+    sa, sb = set(a) - HARMLESS, set(b) - HARMLESS
+    if not (sa <= sb or sb <= sa):
+        return False
+    if len(sa ^ sb) > slack:
+        return False
+    if {t for t in sa if t.isdigit()} != {t for t in sb if t.isdigit()}:
+        return False
+    za, zb = C["size_of"](name), C["size_of"](other)
+    if za != zb:
+        return False
+    ta, tb = sa & TYPES, sb & TYPES
+    return not (ta and tb and not (ta & tb))
 
 
 def variant_conflict(name, other):
@@ -193,10 +233,26 @@ def yolo_shade_source(text):
     return nums[0] if len(nums) == 1 else None
 
 
+def parse_evapharma(d):
+    """Eva Pharma's own medicine pages (evapharma.com). Its robots.txt names
+    AI crawlers explicitly and allows them; the pages were collected once into
+    this file, one every 2 s, so the run itself fetches no page."""
+    f = os.path.join(d, "evapharma-products.json")
+    if not os.path.exists(f):
+        return {}
+    out = {}
+    for r in json.load(io.open(f, encoding="utf-8")):
+        slug = r["page"].rstrip("/").rsplit("/", 1)[-1]
+        out[slug] = {"source": "evapharma", "id": slug, "text": r["title"] or words(slug),
+                     "check": r["title"], "page": r["page"], "image": r["image"]}
+    return out
+
+
 def load_sources(d, wanted):
     items = {}
     for s in wanted:
-        parsed = parse_ezaby(d) if s == "ezaby" else parse_shopify(d, s)
+        parsed = (parse_ezaby(d) if s == "ezaby" else
+                  parse_evapharma(d) if s == "evapharma" else parse_shopify(d, s))
         print(f"{s:12}: {len(parsed):6} products with a photo URL", flush=True)
         items.update({(s, k): v for k, v in parsed.items()})
     return items
@@ -251,10 +307,13 @@ def main():
         best = None
         for it in index.get(t[0], []):
             s = score(name, it["text"])
-            if s < a.threshold or variant_conflict(name, it["text"]):
+            if s < a.threshold and not contained(name, it["text"]):
+                continue
+            if variant_conflict(name, it["text"]):
                 continue
             s2 = max(score(name, it["check"]), score(name, file_words(it["image"])))
-            if s2 < a.title_threshold:
+            if s2 < a.title_threshold and not (
+                    contained(name, it["check"]) or contained(name, file_words(it["image"]))):
                 continue
             key = (s, s2, -PRIORITY.index(it["source"]))
             if best is None or key > best[0]:

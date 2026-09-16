@@ -1763,5 +1763,370 @@
   "page": "https://drahmedelezaby.com/product/terminal-spray-lotion-110ml/",
   "image": "https://drahmedelezaby.com/wp-content/uploads/2025/03/TERMINAL-SPRAY-LOTION-110Ml.webp",
   "reason": "washed-out photo, pack barely visible"
+ },
+ "90407": {
+  "page": "https://www.bloompharmacy.com/products/crestolip-10-mg-30-tablets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/crestolip-10-mg-30-tablets-921864.jpg?v=1715232088&width=1000",
+  "reason": "wrong product: photo is Crestolip 10, catalog is Crestolip Plus 10/10"
+ },
+ "86710": {
+  "page": "https://www.bloompharmacy.com/products/hairtonic-60-capsules",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/hairtonic-60-capsules-829546.jpg?v=1695314866&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "71434": {
+  "page": "https://www.bloompharmacy.com/products/hayah-melatex-lightening-cream-50ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/hayah-melatex-lightening-cream-50ml-105855.jpg?v=1710189755&width=1000",
+  "reason": "photo does not show the SPF 50 version named in the catalog"
+ },
+ "73623": {
+  "page": "https://www.bloompharmacy.com/products/maxical-30-tablets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/maxical-30-tablets-498450.jpg?v=1687637219&width=1000",
+  "reason": "wrong product: photo is Maxical, catalog is Maxical Plus"
+ },
+ "84266": {
+  "page": "https://www.bloompharmacy.com/ar/products/nerhasilda-75-mg-8-oro-dispersible-film",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/nerhasilda-75-mg-8-oro-dispersible-film-2059045.jpg?v=1765353966&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "62538": {
+  "page": "https://zada.beauty/ar/products/yolo-blush-nail-polish-pack-of-3-pieces",
+  "image": "https://cdn.shopify.com/s/files/1/0673/0140/8925/files/YOLO_Blush_Nail_Polish_Pack_of_3_Pieces_-_ZaDa_beauty-3118104.jpg?v=1725629996&width=1000",
+  "reason": "wrong product: photo is a YOLO Blush 3-piece pack, not shade 3"
+ },
+ "90730": {
+  "page": "https://www.bloompharmacy.com/products/lacritears-eye-drops-15-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/lacritears-eye-drops-15-ml-9447649.jpg?v=1752861744&width=1000",
+  "reason": "photo does not clearly show the Forte variant"
+ },
+ "81282": {
+  "page": "https://www.bloompharmacy.com/products/concor-5-mg-30-tablets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/concor-5-mg-30-tablets-868718.jpg?v=1687635266&width=1000",
+  "reason": "wrong product: photo is Concor 5 mg, catalog is Concor AMLO 5/5"
+ },
+ "85492": {
+  "page": "https://www.bloompharmacy.com/products/rotahelex-syrup-120-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/rotahelex-syrup-120-ml-173400.jpg?v=1725270474&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "58554": {
+  "page": "https://pharmacysabry.com/products/clear-shampoo-men-360-ml-deep-cleanse",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/6221155058546.jpg?v=1748862927&width=1000",
+  "reason": "photo is Clear MEN deep cleanse; catalog names no gender line"
+ },
+ "84063": {
+  "page": "https://www.bloompharmacy.com/products/starville-acne-prone-skin-cream-60gm",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/starville-acne-prone-skin-cream-60gm-836717.jpg?v=1708358025&width=1000",
+  "reason": "catalog is cream + free soap; photo shows the cream only"
+ },
+ "82856": {
+  "page": "https://roots-pharmacy.com/products/bath-body-mist-236-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0788/6336/8440/files/IMG-5081.jpg?v=1771017061&width=1000",
+  "reason": "wrong variant: photo is the Poppy mist, catalog is Paris Amour"
+ },
+ "91682": {
+  "page": "https://eg.feel22.com/ar/products/luna-shower-gel-2l",
+  "image": "https://cdn.shopify.com/s/files/1/0570/3745/5528/files/luna-shower-gel-2l-4535336.png?v=1757762354&width=1000",
+  "reason": "wrong variant: photo is Luna glycerin & olive, catalog is rose & milk"
+ },
+ "72656": {
+  "page": "https://drahmedelezaby.com/product/ventamor-whitening-night-cream-gel-60-gm/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2025/11/VENTAMOR-WHITENING-NIGHT-CREAM-GEL-60-GM.webp",
+  "reason": "photo is the night cream gel; catalog names the plain whitening cream"
+ },
+ "84066": {
+  "page": "https://pharmacysabry.com/products/clary-shampoo-conditioner-hair-mask-offer",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/WhatsAppImage2024-10-09at7.22.18PM.webp?v=1753098568&width=1000",
+  "reason": "photo is a 3-product offer bundle, not the single item"
+ },
+ "85359": {
+  "page": "https://pharmacysabry.com/products/clary-shampoo-hair-serum-offer-bundle",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/NewProject_38.jpg?v=1753792575&width=1000",
+  "reason": "Offer sticker on photo"
+ },
+ "64507": {
+  "page": "https://aldawaaegy.com/ar/products/loreal-excellence-creme-7",
+  "image": "https://cdn.shopify.com/s/files/1/0566/6779/9603/products/loreal-excellence-creme-7-3550374.jpg?v=1762439460&width=1000",
+  "reason": "wrong shade: photo is L'Oreal Excellence 7, catalog is 7.7"
+ },
+ "90098": {
+  "page": "https://drahmedelezaby.com/product/my-vi-energy-60-pieces/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2025/12/MY-VI-ENERGY-60-PIECES.webp",
+  "reason": "decorative splash background, not a clean pack photo"
+ },
+ "90099": {
+  "page": "https://drahmedelezaby.com/product/my-vi-immune-60-pieces/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2025/12/MY-VI-IMMUNE-60-PIECES.webp",
+  "reason": "decorative splash background, not a clean pack photo"
+ },
+ "81923": {
+  "page": "https://www.bloompharmacy.com/products/one-two-three-20-tablets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/one-two-three-20-tablets-135159.jpg?v=1687731304&width=1000",
+  "reason": "photo is plain One Two Three; catalog is the Extra version"
+ },
+ "80019": {
+  "page": "https://pharmacysabry.com/products/ginipin-collagen-10-sachets",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/2025-04-23T170226.100.png?v=1752845537&width=1000",
+  "reason": "promo gift-bow styling on photo"
+ },
+ "91088": {
+  "page": "https://www.bloompharmacy.com/products/hayah-melatex-jasmine-lightening-roll-on-deodorant-40ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/52783.jpg?v=1777885136&width=1000",
+  "reason": "photo is the Jasmine variant; catalog names no variant"
+ },
+ "70063": {
+  "page": "https://pharmacysabry.com/products/loreal-hyaluron-expert-night-cream-mask-50ml",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/3600523823604.jpg?v=1748871281&width=1000",
+  "reason": "wrong product: photo is the night cream mask, catalog is the moisturizing cream"
+ },
+ "34884": {
+  "page": "https://drahmedelezaby.com/product/nivea-men-moisturizing-shaving-gel-200ml/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2022/08/NIVEA-Men-Moisturizing-Shaving-Gel-200ml.webp",
+  "reason": "wrong variant: photo is Nivea Men Protect & Care shaving gel, catalog is Fresh Kick"
+ },
+ "85361": {
+  "page": "https://pharmacysabry.com/products/starville-acne-prone-skin-facial-cleanser-200-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/StarvilleAcneProneSkinFacialCleanser200ml.png?v=1784197045&width=1000",
+  "reason": "catalog is a cleanser + acne pack; photo shows one item"
+ },
+ "66905": {
+  "page": "https://pharmacysabry.com/products/starville-cleanser-200ml-acne-cream-micellar-water",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/Untitled-design-33.webp?v=1753793132&width=1000",
+  "reason": "photo shows a three-item bundle; catalog lists two"
+ },
+ "79587": {
+  "page": "https://pharmacysabry.com/products/bless-satin-bonnet",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/111111.jpg?v=1756228033&width=1000",
+  "reason": "bonnet colour on the photo does not match the catalog's blue"
+ },
+ "78980": {
+  "page": "https://www.bloompharmacy.com/products/cal-mag-30-tablets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/cal-mag-30-tablets-640583.jpg?v=1687635243&width=1000",
+  "reason": "photo is Cal-Mag; catalog is Cal-Mag-Joint"
+ },
+ "58396": {
+  "page": "https://pharmacysabry.com/products/gillette-fusion-4-pcs",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/1cba112aabea31e506e983c7b4f1700b.jpg?v=1748974218&width=1000",
+  "reason": "wrong product: photo is Gillette Fusion5, catalog is Fusion ProGlide"
+ },
+ "78637": {
+  "page": "https://www.bloompharmacy.com/ar/products/hi-potency-30-cap",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/hi-potency-30-cap-7373937.jpg?v=1786296134&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "86187": {
+  "page": "https://drahmedelezaby.com/product/inofolic-combi-hp-30-cap/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2025/09/INOFOLIC-COMBI-HP-30-CAP.webp",
+  "reason": "photo is Inofolic Combi HP; catalog is Inofolic HP"
+ },
+ "64361": {
+  "page": "https://pharmacysabry.com/products/pampers-pc-4-58-pcs",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/8006540726419.jpg?v=1749121106&width=1000",
+  "reason": "wrong line: catalog Pampers Maxi, photo is Premium Care"
+ },
+ "90599": {
+  "page": "https://www.bloompharmacy.com/products/sideral-folic-20-sachets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/sideral-folic-20-sachets-352741.jpg?v=1749683444&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "82786": {
+  "page": "https://pharmacysabry.com/products/axe-spray-150-ml-offer-15-le-recharge",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/515dKQjpJEL._AC_SL1500.jpg?v=1753793537&width=1000",
+  "reason": "wrong variant: photo is Axe Sport Fresh, catalog is Dark Temptation"
+ },
+ "77345": {
+  "page": "https://www.bloompharmacy.com/products/bronchicum-s-syrup-100-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/bronchicum-s-syrup-100-ml-393475.jpg?v=1687635122&width=1000",
+  "reason": "wrong variant: photo is Bronchicum S, catalog is Bronchicum Ivy"
+ },
+ "47259": {
+  "page": "https://www.bloompharmacy.com/products/brufen-flu-suspension-60-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/brufen-flu-suspension-60-ml-926956.jpg?v=1707748630&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "10484": {
+  "page": "https://drahmedelezaby.com/product/dentinox-infant-colic-drops-100-ml/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2024/10/Dentinox-Infant-Colic-Drops-100-ml.webp",
+  "reason": "another pharmacy's watermark (Dr Ahmed El Ezaby logo) on photo"
+ },
+ "81592": {
+  "page": "https://drahmedelezaby.com/product/eva-recipe-anti-aging-lotion-for-normal-skin-mocha-scent-370-ml/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2024/09/Eva-Recipe-Anti-Aging-Lotion-for-Normal-Skin-Mocha-Scent-370-ml.webp",
+  "reason": "another pharmacy's watermark (Dr Ahmed El Ezaby logo) on photo"
+ },
+ "19886": {
+  "page": "https://www.bloompharmacy.com/products/kalobin-oral-drops-20-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/kalobin-oral-drops-20-ml-782036.jpg?v=1727831535&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "47206": {
+  "page": "https://www.bloompharmacy.com/products/ringers-injection-iv-infusion-500-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/ringers-injection-iv-infusion-500-ml-7650430.jpg?v=1786296136&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "78381": {
+  "page": "https://www.bloompharmacy.com/products/trileptal-60-mg-ml-suspension-100-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/trileptal-60-mg-ml-suspension-100-ml-672043.jpg?v=1691501977&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "89319": {
+  "page": "https://pharmacysabry.com/products/always-ultra-extra-long-24-pcs",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/Screenshot2025-08-17at20-46-45BuyAlwaysUltraThinPads-ExtraLong-24padsOnlineCarrefourEgypt.png?v=1755452831&width=1000",
+  "reason": "promo pack (+4 free) and thin-vs-slim variant unclear"
+ },
+ "85329": {
+  "page": "https://drahmedelezaby.com/product/limitless-hydrate-kids-watermelon-flav-6-stick/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2025/04/LIMITLESS-HYDRATE-KIDS-WATERMELON-FLAV-6-STICK.webp",
+  "reason": "product shown on a decorative pedestal, not a clean pack photo"
+ },
+ "68838": {
+  "page": "https://drahmedelezaby.com/product/dove-original-spray-250ml/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2024/10/Dove-Original-Spray-250Ml.webp",
+  "reason": "another pharmacy's watermark (Dr Ahmed El Ezaby logo) on photo"
+ },
+ "83112": {
+  "page": "https://aldawaaegy.com/ar/products/eva-body-lotion-240ml",
+  "image": "https://cdn.shopify.com/s/files/1/0566/6779/9603/files/eva-body-lotion-240ml-8372173.webp?v=1762435925&width=1000",
+  "reason": "photo is a plain Eva body lotion; catalog is the In The Clouds variant"
+ },
+ "77462": {
+  "page": "https://drahmedelezaby.com/product/jackodan-facial-wash-for-acne-prone-skin-150-ml/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2024/09/Jackodan-Facial-Wash-for-Acne-Prone-Skin-150-ml.webp",
+  "reason": "another pharmacy's watermark (Dr Ahmed El Ezaby logo) on photo"
+ },
+ "85360": {
+  "page": "https://drahmedelezaby.com/product/clary-spf-50-mist/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2023/01/CLARY-SPF-50-Mist.webp",
+  "reason": "photo shows only the mist; catalog is a serum + mist pack"
+ },
+ "83465": {
+  "page": "https://www.bloompharmacy.com/products/cold-free-20-tablets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/cold-free-20-tablets-305794.jpg?v=1728192210&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "82040": {
+  "page": "https://www.bloompharmacy.com/ar/products/epifasi-5000-iu-1-ampoule",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/epifasi-5000-iu-1-ampoule-566431.jpg?v=1691500814&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "80007": {
+  "page": "https://www.bloompharmacy.com/products/levanox-20-capsules",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/levanox-20-capsules-394393.jpg?v=1687635950&width=1000",
+  "reason": "photo is a loose blister, not the pack"
+ },
+ "88236": {
+  "page": "https://www.bloompharmacy.com/products/ocuguard-30-capsules",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/ocuguard-30-capsules-6700886.jpg?v=1752100298&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "78835": {
+  "page": "https://pharmacysabry.com/products/starville-whitening-gel-cleanser-offer",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/STARVILLE-WHITENING-CLEANSERWHITENING-GEL-OFF.webp?v=1753793129&width=1000",
+  "reason": "promo gift-bow styling on photo"
+ },
+ "79942": {
+  "page": "https://www.lotusonline.com/products/flyon-f908-xl-neoprene-quick-strap-ankle-brace",
+  "image": "https://cdn.shopify.com/s/files/1/0697/1188/8449/files/1001334_processed.jpg?v=1767614389&width=1000",
+  "reason": "wrong size: photo is the XL brace, catalog is L"
+ },
+ "76576": {
+  "page": "https://www.bloompharmacy.com/products/carnitol-30-syrup-60-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/carnitol-30-syrup-60-ml-663742.jpg?v=1729744491&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "85738": {
+  "page": "https://pharmacysabry.com/products/clear-shampoo-180ml-7-l-e-off-hair-fall-defence",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/6221155060679.jpg?v=1748862546&width=1000",
+  "reason": "photo is Clear MEN hair fall defence; catalog names no gender line"
+ },
+ "87476": {
+  "page": "https://pharmacysabry.com/products/clear-shampoo-600ml-13l-e-off-woman-anti-hairfall",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/6221155060624.jpg?v=1748862634&width=1000",
+  "reason": "variant on the photo does not clearly read Ultra Hydro Boost"
+ },
+ "74933": {
+  "page": "https://www.bloompharmacy.com/products/dear-facial-cleanser-200ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/dear-facial-cleanser-200ml-171948.jpg?v=1743970617&width=1000",
+  "reason": "catalog names the oily-skin variant; photo is the plain facial cleanser"
+ },
+ "80624": {
+  "page": "https://www.bloompharmacy.com/products/digenorm-syrup-120-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/digenorm-syrup-120-ml-929886.jpg?v=1717499381&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "2797": {
+  "page": "https://www.bloompharmacy.com/products/epicogel-suspension-180-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/epicogel-suspension-180-ml-988809.jpg?v=1700654001&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "79737": {
+  "page": "https://pharmacysabry.com/products/hairoots-lotion-75ml",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/MytYcMr2qywMdVOPdsxN73QdfctGVre4gUWwHw4y.webp?v=1755344408&width=1000",
+  "reason": "grey background, not clean"
+ },
+ "90605": {
+  "page": "https://aldawaaegy.com/ar/products/mikids-hair-lotion-110-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0566/6779/9603/files/mikids-hair-lotion-110-ml-3252367.jpg?v=1769034367&width=1000",
+  "reason": "wrong product: photo is MiKids hair lotion, catalog is skin lotion"
+ },
+ "32607": {
+  "page": "https://www.lotusonline.com/products/nivea-shaving-cream-protect-care-60ml",
+  "image": "https://cdn.shopify.com/s/files/1/0697/1188/8449/files/2002760_1.jpg?v=1767617556&width=1000",
+  "reason": "wrong product: photo is Nivea Men shaving cream, catalog is Nivea Cream"
+ },
+ "76769": {
+  "page": "https://www.bloompharmacy.com/products/septazole-suspension-100-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/septazole-suspension-100-ml-104255.jpg?v=1707747918&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "66467": {
+  "page": "https://www.bloompharmacy.com/products/accu-chek-instant-monitoring-device",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/accu-chek-instant-monitoring-device-3557174.jpg?v=1787697668&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "79006": {
+  "page": "https://aldawaaegy.com/ar/products/tola-hair-shampoo-250ml",
+  "image": "https://cdn.shopify.com/s/files/1/0566/6779/9603/files/tola-hair-shampoo-250ml-7751135.jpg?v=1762435717&width=1000",
+  "reason": "photo is Tola hair shampoo, not the baby shampoo & body wash"
+ },
+ "80002": {
+  "page": "https://www.lotusonline.com/products/zofran-8mg-ampoule-3x4ml",
+  "image": "https://cdn.shopify.com/s/files/1/0697/1188/8449/files/3002718_1.jpg?v=1767615175&width=1000",
+  "reason": "wrong pack: photo shows 5 ampoules, catalog is 8"
+ },
+ "91349": {
+  "page": "https://www.bloompharmacy.com/products/caldin-c-30-tablets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/caldin-c-30-tablets-462198.jpg?v=1687635245&width=1000",
+  "reason": "photo is Caldin C; catalog is Caldin-CK"
+ },
+ "86275": {
+  "page": "https://www.bloompharmacy.com/products/sanso-c-plus-28-tablets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/sanso-c-plus-28-tablets-2341914.jpg?v=1762872593&width=1000",
+  "reason": "wrong product: photo is Sanso C Plus, catalog is Sanso B12"
+ },
+ "77987": {
+  "page": "https://aldawaaegy.com/ar/products/vee-skin-30-caps",
+  "image": "https://cdn.shopify.com/s/files/1/0566/6779/9603/files/vee-skin-30-caps-4559910.jpg?v=1764266767&width=1000",
+  "reason": "wrong product: photo is Vee Skin, catalog is Vee Hair"
+ },
+ "72132": {
+  "page": "https://aldawaaegy.com/ar/products/alejon-facial-moisturizer-gel-75-ml",
+  "image": "https://cdn.shopify.com/s/files/1/0566/6779/9603/files/alejon-facial-moisturizer-gel-75-ml-9784497.png?v=1762437523&width=1000",
+  "reason": "wrong product: photo is Alejon facial moisturizer gel, catalog is the sunscreen"
+ },
+ "90960": {
+  "page": "https://www.bloompharmacy.com/products/sanso-c-plus-14-tablets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/files/sanso-c-plus-14-tablets-850267.jpg?v=1731318732&width=1000",
+  "reason": "source photo is the store's blank placeholder image"
+ },
+ "87679": {
+  "page": "https://evapharma.com/science-medicine/products/genuphil-410",
+  "image": "https://evawebsite.blob.core.windows.net/strapi-v5/assets/imresizer-1727598277731.jpg",
+  "reason": "wrong product: photo is Genuphil Original, catalog is Genuphil Woman"
+ },
+ "72130": {
+  "page": "https://drahmedelezaby.com/product/vee-hair-60-capsules/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2025/07/VEE-HAIR-60-capsules.webp",
+  "reason": "wrong product: photo is Vee Hair 60 capsules, catalog is Vee Care Biotin-Collagen 30"
  }
 }

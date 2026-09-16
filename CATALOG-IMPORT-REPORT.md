@@ -57,6 +57,27 @@ expected, not a classification failure.
 
 ## Images
 
+> **Update 2026-09-16 (round 2) — 1,756 products have real photos.** Added 232
+> more from the same Egyptian stores plus four brand-owned shops
+> (shop.eva-cosmetics.com, zada.beauty, hayahlaboratories.com, avuva.com — all
+> EGP) and **evapharma.com**, whose robots.txt names AI crawlers and allows
+> them. New matching rule: a name whose words are *entirely contained* in the
+> other side's, with identical numbers and pack size, is allowed through to
+> review — brand shops write long marketing titles the score alone can't clear.
+> Gender and sub-line words (men/women/kids/maxi) are no longer treated as
+> interchangeable, after "Kolagra whitening rose" matched "Kolagra men".
+> 305 matches → **73 rejected on review** (blank placeholders, wrong variant or
+> line — Pampers Maxi vs Premium Care, Nivea Men shaving cream vs Nivea Cream,
+> Gillette Fusion5 vs ProGlide — offer bundles, promo styling, watermarks).
+> Most of the hair-dye section now shows the exact shade box (Garnier 2.1–8.11,
+> Palette, L'Oreal Excellence and Casting, Bigen). Review record:
+> `docs-internal/egypt-run2.xlsx`.
+>
+> **InstaShop remains off-limits to automated collection**: its robots.txt
+> disallows /product/* and /search/* for every crawler and the store returns
+> 403 to non-browser requests. The pharmacy's own merchant-dashboard export is
+> the supported route, and would cover what no public store lists.
+
 > **Update 2026-09-15 (Egyptian stores) — 1,524 products have real photos.**
 > Added 1,186 from nine Egyptian online pharmacies and beauty stores (all
 > priced in EGP, so Egyptian packs — medicines included) via
