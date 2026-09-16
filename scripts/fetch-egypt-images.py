@@ -51,9 +51,9 @@ SHOPIFY = {  # source id -> (sitemap file prefix, host)
     "avuva": ("avuva.com", "avuva.com"),
 }
 # on an equal score, prefer pharmacies (cleaner pack shots) over beauty shops
-PRIORITY = ["eva", "hayah", "avuva", "evapharma", "bloom", "sabry", "aldawaaegy", "lotus", "ezaby",
-            "zada", "roots", "feel22", "sourcebeauty", "loolia"]
-DELAY = {"ezaby": 2.0}
+PRIORITY = ["talabat", "orchidia", "eva", "hayah", "avuva", "evapharma", "bloom", "sabry",
+            "aldawaaegy", "lotus", "ezaby", "zada", "roots", "feel22", "sourcebeauty", "loolia"]
+DELAY = {"ezaby": 2.0, "talabat": 1.0}
 DEFAULT_DELAY = 1.0
 
 
@@ -153,7 +153,9 @@ def contained(name, other, slack=4):
     a, b = tokens(name), tokens(other)
     if len(a) < 3 or not b:
         return False
-    if a[0] != b[0]:                                   # same brand, first word
+    # The catalog's brand must appear in the other name, though not
+    # necessarily first: talabat writes "Sanofi Doliprane 1000mg".
+    if a[0] not in b[:4]:
         return False
     sa, sb = set(a) - HARMLESS, set(b) - HARMLESS
     if not (sa <= sb or sb <= sa):
@@ -248,11 +250,38 @@ def parse_evapharma(d):
     return out
 
 
+def _json_source(path, source, width=None):
+    """Sources collected page-by-page into a JSON file (see
+    fetch-talabat-catalog.py and the Eva Pharma / Orchidia collectors)."""
+    if not os.path.exists(path):
+        return {}
+    out = {}
+    for r in json.load(io.open(path, encoding="utf-8")):
+        key = str(r.get("sku") or r["page"].rstrip("/").rsplit("/", 1)[-1])
+        img = r["image"]
+        if width and "width=" not in img:
+            img = img + ("&" if "?" in img else "?") + f"width={width}"
+        name = r.get("name") or r.get("title") or ""
+        out[key] = {"source": source, "id": key, "text": name, "check": name,
+                    "page": r["page"], "image": img}
+    return out
+
+
+def parse_talabat(d):
+    return _json_source(os.path.join(ROOT, "docs-internal", "talabat-products.json"), "talabat", 800)
+
+
+def parse_orchidia(d):
+    return _json_source(os.path.join(d, "orchidia-products.json"), "orchidia")
+
+
 def load_sources(d, wanted):
     items = {}
     for s in wanted:
         parsed = (parse_ezaby(d) if s == "ezaby" else
-                  parse_evapharma(d) if s == "evapharma" else parse_shopify(d, s))
+                  parse_evapharma(d) if s == "evapharma" else
+                  parse_talabat(d) if s == "talabat" else
+                  parse_orchidia(d) if s == "orchidia" else parse_shopify(d, s))
         print(f"{s:12}: {len(parsed):6} products with a photo URL", flush=True)
         items.update({(s, k): v for k, v in parsed.items()})
     return items
@@ -275,8 +304,10 @@ def main():
     for it in items.values():
         it["text"], it["check"] = norm(it["text"]), norm(it["check"])
         t = tokens(it["text"])
-        if t:
-            index[t[0]].append(it)
+        # index under the first two words, since some sources lead with the
+        # manufacturer rather than the brand
+        for key in dict.fromkeys(t[:2]):
+            index[key].append(it)
         shade = yolo_shade_source(it["text"])
         if shade and yolo_shade_source(it["check"] or it["text"]) == shade:
             yolo[shade.lstrip("0") or "0"].append(it)

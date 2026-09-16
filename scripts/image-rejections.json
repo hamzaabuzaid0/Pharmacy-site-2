@@ -2128,5 +2128,105 @@
   "page": "https://drahmedelezaby.com/product/vee-hair-60-capsules/",
   "image": "https://drahmedelezaby.com/wp-content/uploads/2025/07/VEE-HAIR-60-capsules.webp",
   "reason": "wrong product: photo is Vee Hair 60 capsules, catalog is Vee Care Biotin-Collagen 30"
+ },
+ "83507": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1104180/alfa-pharmacy-6th-of-october-4th-district-1/personal-care/haircare?aid=10047&page=7",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/678df0cd00004c2d29f1a4f5.JPG?width=800",
+  "reason": "photo variant does not clearly match Vatika almond oil"
+ },
+ "82840": {
+  "page": "https://www.talabat.com/egypt/pharmacy/692312/saidlity-6th-of-october-5th-district/personal-care/bath-body-care?aid=10047&page=2",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/68c2bafdf468f74e607c912a.jpg?width=800",
+  "reason": "photo is a marketing banner with claims, not a pack shot"
+ },
+ "83914": {
+  "page": "https://drahmedelezaby.com/product/aloe-eva-hair-mask-pouch-with-aloe-vera-250gm/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2024/10/Aloe-Eva-Hair-Mask-Pouch-with-Aloe-Vera-250gm.webp",
+  "reason": "another pharmacy's watermark (Dr Ahmed El Ezaby logo) on photo"
+ },
+ "84179": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1102091/ziadah-pharmacy-6th-of-october-8th-district/personal-care/haircare?aid=10047&page=21",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/68e55ee90f8f8247ce937fa4.jpg?width=800",
+  "reason": "photo is a shampoo + conditioner bundle; catalog is the shampoo"
+ },
+ "83046": {
+  "page": "https://drahmedelezaby.com/product/chocolate-xl-spray-for-men-150ml/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2024/10/Chocolate-XL-spray-for-men-150ml.webp",
+  "reason": "another pharmacy's watermark (Dr Ahmed El Ezaby logo) on photo"
+ },
+ "89520": {
+  "page": "https://drahmedelezaby.com/product/burnus-glysolid-glycerin-cream-pack-80-ml/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2023/03/Burnus-Glysolid-Glycerin-Cream-Pack-80-ml.webp",
+  "reason": "photo shows a two-tin pack; catalog is a single 80 ml cream"
+ },
+ "88893": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1118982/better-health-pharmacy-6th-of-october-3rd-district-1/skincare/facial-care?aid=10047&page=14",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/65f886f4023211ee3b8ff842.jpg?width=800",
+  "reason": "photo is a 3-tube tri-pack; catalog is a single balm"
+ },
+ "76927": {
+  "page": "https://www.talabat.com/egypt/grocery/720810/alserafy-pharmacy-6th-of-october-4th-district-1/personal-care/haircare?aid=7925&page=8",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/67377c36672fe4fb8b5d3237.jpg?width=800",
+  "reason": "photo is an Arabic advert banner, not a pack shot"
+ },
+ "87473": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1118982/better-health-pharmacy-6th-of-october-3rd-district-1/personal-care/haircare?aid=10047&page=7",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/689b28b16a3f6461a68c8ba0.jpg?width=800",
+  "reason": "photo is Clear MEN with a promo band; catalog names no gender line"
+ },
+ "71196": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1102091/ziadah-pharmacy-6th-of-october-8th-district/vitamins-supplements/herbal?aid=10047&page=1",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6902368464d3b816f63a496f.JPG?width=800",
+  "reason": "photo is unreadable (barcode strip), not a clean pack shot"
+ },
+ "76461": {
+  "page": "https://pharmacysabry.com/products/clary-shampoo-conditioner-hair-mask-offer",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/WhatsAppImage2024-10-09at7.22.18PM.webp?v=1753098568&width=1000",
+  "reason": "photo is a 3-product offer bundle"
+ },
+ "91013": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1104180/alfa-pharmacy-6th-of-october-4th-district-1/women-care/feminine-products?aid=10047&page=2",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6902389064d3b816f63ad791.JPG?width=800",
+  "reason": "promo pack (+6 pads free) on photo"
+ },
+ "86515": {
+  "page": "https://pharmacysabry.com/products/bless-satin-bonnet",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/111111.jpg?v=1756228033&width=1000",
+  "reason": "bonnet colour on photo does not match the catalog's silver"
+ },
+ "86619": {
+  "page": "https://www.bloompharmacy.com/products/cal-mag-30-tablets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/cal-mag-30-tablets-640583.jpg?v=1687635243&width=1000",
+  "reason": "photo is Cal-Mag; catalog is Cal-Mag-D"
+ },
+ "86898": {
+  "page": "https://pharmacysabry.com/products/axe-spray-150-ml-offer-15-le-recharge",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/515dKQjpJEL._AC_SL1500.jpg?v=1753793537&width=1000",
+  "reason": "photo variant does not clearly read Dark Temptation"
+ },
+ "85078": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1118982/better-health-pharmacy-6th-of-october-3rd-district-1/personal-care/bath-body-care?aid=10047&page=8",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6996f48c7f1197fd6fbc3cba.jpg?width=800",
+  "reason": "photo is the women's Anarchy variant; catalog names no variant"
+ },
+ "87477": {
+  "page": "https://pharmacysabry.com/products/clear-shampoo-180ml-7-l-e-off-hair-fall-defence",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/6221155060679.jpg?v=1748862546&width=1000",
+  "reason": "photo is Clear MEN hair fall defence; catalog names no gender line"
+ },
+ "85382": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1104180/alfa-pharmacy-6th-of-october-4th-district-1/vitamins-supplements/vitamins?aid=10047&page=1",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/695ba79cc216514954d7360c.jpg?width=800",
+  "reason": "photo is blank or near-blank"
+ },
+ "74147": {
+  "page": "https://www.talabat.com/egypt/grocery/720810/alserafy-pharmacy-6th-of-october-4th-district-1/vitamins-supplements/vitamins?aid=7925&page=1",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/67c184eef3540497c5a00fba.JPG?width=800",
+  "reason": "wrong product: photo is Centrum Women, catalog is Centrum Adult"
+ },
+ "60479": {
+  "page": "https://www.bloompharmacy.com/products/lakme-k-therapy-bio-argan-shampoo-300ml",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/lakme-ktherapy-bio-argan-shampoo-300ml-931142.jpg?v=1696874089&width=1000",
+  "reason": "wrong brand: photo is Lakme K.Therapy, catalog is G.K"
  }
 }

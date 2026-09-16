@@ -57,6 +57,27 @@ expected, not a classification failure.
 
 ## Images
 
+> **Update 2026-09-16 (talabat) — 2,314 products have real photos.** Added 558,
+> **350+ of them medicines**, from **talabat Egypt** pharmacy vendors.
+> `https://www.talabat.com/robots.txt` is `User-agent: *` with **no Disallow
+> lines** and two public sitemaps; the image host (talabat.dhmedia.io) serves no
+> robots.txt and names no AI agent. Pages are server-rendered, so
+> `scripts/fetch-talabat-catalog.py` reads each category page's own embedded
+> JSON (one page every 2 s, resumable) — no internal API is touched. Six
+> pharmacy vendors share one Egyptian product catalog: **15,136 unique products
+> with pack photos and full names** ("Cataflam 50mg Diclofenac Potassium,
+> 20 Tablets"). Vendor URLs only resolve with their area id (`?aid=`).
+> 578 matches → **20 rejected on review** (promo/value packs, marketing
+> banners, tri-packs, Centrum Women vs Adult, one blank). Two automated nets
+> now run before the eye check: identical-image detection and a blank-image
+> test (brightness stddev < 6), which caught the blank.
+>
+> Also added this round: Orchidia (its own product pages) and the brand shops
+> from the previous update. **InstaShop stays excluded** — same corporate group
+> as talabat since March 2026, but its own robots.txt disallows /product/* for
+> every crawler and it returns 403 to non-browser requests. Different site,
+> different rules.
+
 > **Update 2026-09-16 (round 2) — 1,756 products have real photos.** Added 232
 > more from the same Egyptian stores plus four brand-owned shops
 > (shop.eva-cosmetics.com, zada.beauty, hayahlaboratories.com, avuva.com — all

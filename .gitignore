@@ -1,34 +1,35 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
+!.vscode/extensions.json
+# Editor directories and files
+# Logs
+# scrape resume cache (regenerable)
+*.local
+*.log
+*.njsproj
+*.ntvs*
+*.sln
+*.suo
+*.sw?
+.DS_Store
+.idea
+.vscode/*
+__pycache__/
 dist
 dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# scrape resume cache (regenerable)
 docs-internal/chefaa-page-cache.json
-__pycache__/
-docs-internal/gulf-page-cache.json
-docs-internal/gulf-preview/
 docs-internal/egypt-preview/
+docs-internal/egypt-run*.log
+docs-internal/egypt-run.json
 docs-internal/egypt-run.log
 docs-internal/egypt-run2.log
-docs-internal/egypt-run.json
+docs-internal/gulf-page-cache.json
+docs-internal/gulf-preview/
+docs-internal/talabat-crawl*.log
+docs-internal/talabat-page-cache.json
+lerna-debug.log*
+logs
+node_modules
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
