@@ -14,7 +14,7 @@ function formatDate(iso, lang) {
 export function OrdersPage({ active }) {
   const { lang, t } = useLanguage();
   const { orders } = useOrderHistory();
-  const { changeQty, markSubstitute, setSelectedBranch } = useCart();
+  const { changeQty, markSubstitute, chooseBranch } = useCart();
   const { openCart } = useDrawer();
 
   const reorder = (order) => {
@@ -22,7 +22,8 @@ export function OrdersPage({ active }) {
       changeQty(item.id, item.qty);
       if (item.substituteFor) markSubstitute(item.id, item.substituteFor.id, item.substituteFor.matchType);
     });
-    setSelectedBranch(order.branchId);
+    // A past order names its branch, so reordering is itself a branch choice.
+    chooseBranch(order.branchId);
     openCart();
   };
 

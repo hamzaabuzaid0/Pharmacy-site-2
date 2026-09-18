@@ -21,6 +21,7 @@ import { Overlay } from './components/Overlay';
 import { CartDrawer } from './components/Cart/CartDrawer';
 import { AccountDrawer } from './components/Account/AccountDrawer';
 import { AlternativeModal } from './components/Shop/AlternativeModal';
+import { BranchPicker } from './components/Shop/BranchPicker';
 import { StaffPage } from './components/Staff/StaffPage';
 
 // Only the active page is mounted — previously all 8 pages (including
@@ -75,6 +76,7 @@ function AppShell() {
       <CartDrawer />
       <AccountDrawer />
       <AlternativeModal />
+      <BranchPicker />
     </>
   );
 }

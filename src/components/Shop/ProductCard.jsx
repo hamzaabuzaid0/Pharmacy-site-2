@@ -6,16 +6,18 @@ import { displayName } from '../../utils/displayName';
 import { ProductVisual } from '../../utils/ProductVisual';
 import { Ltr } from '../../utils/Ltr';
 import { findAlternatives } from '../../utils/findAlternatives';
-import { isInStock } from '../../utils/stock';
+import { isInStock, isInStockAnywhere } from '../../utils/stock';
 
 export function ProductCard({ product }) {
   const { t } = useLanguage();
-  const { cart, changeQty, selectedBranch } = useCart();
+  const { cart, changeQty, selectedBranch, needsBranch, requireBranch } = useCart();
   const { products } = useCatalog();
   const { openAltModal } = useDrawer();
   const qty = cart[product.id] || 0;
   const name = displayName(product);
-  const inStock = isInStock(product, selectedBranch);
+  // Before a branch is chosen, don't label everything "out of stock" — show
+  // whether any branch has it; the picker then narrows it to the real branch.
+  const inStock = needsBranch ? isInStockAnywhere(product) : isInStock(product, selectedBranch);
   const hasAlternative = !inStock && !product.rx && findAlternatives(product, products, selectedBranch).matches.length > 0;
 
   const brand = product.company && !/غير معرفة|^unknown$/i.test(product.company) ? product.company : null;
@@ -65,7 +67,7 @@ export function ProductCard({ product }) {
           <button className="qty-btn" onClick={() => changeQty(product.id, 1)}>+</button>
         </div>
       ) : (
-        <button className="add-btn" onClick={() => changeQty(product.id, 1)}>{t('add')}</button>
+        <button className="add-btn" onClick={() => requireBranch(() => changeQty(product.id, 1))}>{t('add')}</button>
       )}
     </div>
   );

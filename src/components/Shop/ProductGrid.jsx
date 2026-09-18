@@ -2,6 +2,8 @@ import { useMemo, useState, useEffect, useRef, useDeferredValue } from 'react';
 import { useLanguage } from '../../i18n/LanguageContext';
 import { useNavigation } from '../../context/NavigationContext';
 import { useCatalog } from '../../context/CatalogContext';
+import { useCart } from '../../context/CartContext';
+import { isCarried, isInStock } from '../../utils/stock';
 import { ProductCard } from './ProductCard';
 
 // How many cards to render at once. The catalog is ~10k items — rendering
@@ -22,25 +24,28 @@ export function ProductGrid() {
   const { t } = useLanguage();
   const { activeCat, searchQuery } = useNavigation();
   const { products, loading } = useCatalog();
+  const { selectedBranch, needsBranch } = useCart();
+  const branchId = needsBranch ? null : selectedBranch;
   const deferredQuery = useDeferredValue(searchQuery);
   const q = deferredQuery.trim().toLowerCase();
 
-  // Products with a real photo come first, everything else keeps catalog
-  // order. With ~10k items and photos only on a few, catalog order left
-  // every photographed product hundreds of rows down (the nearest was #377),
-  // so the shop looked photo-less even though the photos were live.
-  // Array.prototype.sort is stable, so ties keep their original order.
-  const filtered = useMemo(
-    () =>
-      products
-        .filter((p) => (activeCat === 'all' || p.cat === activeCat) && matchesSearch(p, q))
-        .sort((a, b) => (b.imageUrl ? 1 : 0) - (a.imageUrl ? 1 : 0)),
-    [products, activeCat, q]
-  );
+  // The shop shows the chosen branch's range: only what that branch
+  // carries, with what it has in stock first, then products with a real
+  // photo (catalog order had every photographed product hundreds of rows
+  // down, so the shop looked photo-less). Sort is stable, so ties keep
+  // catalog order. Before a branch is chosen the picker is covering the
+  // shop, so nothing is filtered out underneath it.
+  const filtered = useMemo(() => {
+    const rank = (p) => (branchId && isInStock(p, branchId) ? 2 : 0) + (p.imageUrl ? 1 : 0);
+    return products
+      .filter((p) => (!branchId || isCarried(p, branchId))
+        && (activeCat === 'all' || p.cat === activeCat) && matchesSearch(p, q))
+      .sort((a, b) => rank(b) - rank(a));
+  }, [products, activeCat, q, branchId]);
 
   const [count, setCount] = useState(PAGE);
-  // Reset the visible window whenever the filter changes.
-  useEffect(() => { setCount(PAGE); }, [activeCat, q]);
+  // Reset the visible window whenever the filter or branch changes.
+  useEffect(() => { setCount(PAGE); }, [activeCat, q, branchId]);
 
   const sentinelRef = useRef(null);
   useEffect(() => {

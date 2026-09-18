@@ -4,10 +4,12 @@ import { useCatalog } from '../../context/CatalogContext';
 import { displayName } from '../../utils/displayName';
 import { ProductVisual } from '../../utils/ProductVisual';
 import { Ltr } from '../../utils/Ltr';
+import { isInStock } from '../../utils/stock';
 
 export function CartItemRow({ productId, product, qty }) {
   const { t } = useLanguage();
-  const { changeQty, removeItem, substitutes } = useCart();
+  const { changeQty, removeItem, substitutes, selectedBranch, needsBranch } = useCart();
+  const unavailable = !needsBranch && !isInStock(product, selectedBranch);
   const { products } = useCatalog();
   const name = displayName(product);
   const lineTotal = product.price * qty;
@@ -21,6 +23,7 @@ export function CartItemRow({ productId, product, qty }) {
       </div>
       <div className="cart-item-info">
         <div className="cart-item-name">{name}</div>
+        {unavailable && <div className="cart-item-unavailable">{t('notAtBranch')}</div>}
         {original && (
           <div className="cart-item-sub-note">{t('substituteNoteLabel')}: {displayName(original)}</div>
         )}

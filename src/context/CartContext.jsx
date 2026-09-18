@@ -1,12 +1,7 @@
-import { createContext, useContext, useState, useCallback, useMemo, useEffect } from 'react';
+import { createContext, useContext, useState, useCallback, useMemo, useEffect, useRef } from 'react';
 import { useCatalog } from './CatalogContext';
 
 const CartContext = createContext(null);
-
-// Both the live Supabase branches and the static-fallback ones use the same
-// 'b1'/'b2' ids (see supabase/schema.sql) specifically so a fixed default
-// here works either way, without waiting on the catalog to finish loading.
-const DEFAULT_BRANCH_ID = 'b1';
 
 // The basket survives a refresh, a closed tab, and coming back tomorrow.
 // It used to live in memory only, which on a patchy phone connection meant
@@ -14,6 +9,12 @@ const DEFAULT_BRANCH_ID = 'b1';
 // filling. Stored per-browser, same as order history.
 const STORAGE_KEY = 'pharmacy_cart';
 
+// There is deliberately NO default branch. The site used to start everyone
+// on branch 1 silently, so a customer near the other branch could order
+// without ever seeing which branch would fill it. Now the branch stays empty
+// until the customer picks one in the branch picker (BranchPicker.jsx), and
+// `branchConfirmed` records that they did. Older saved baskets carry a
+// branch but no confirmation — those customers are asked once.
 function loadCart() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -22,7 +23,8 @@ function loadCart() {
     if (!saved || typeof saved !== 'object') return null;
     return {
       cart: saved.cart && typeof saved.cart === 'object' ? saved.cart : {},
-      selectedBranch: typeof saved.selectedBranch === 'string' ? saved.selectedBranch : DEFAULT_BRANCH_ID,
+      selectedBranch: typeof saved.selectedBranch === 'string' ? saved.selectedBranch : null,
+      branchConfirmed: saved.branchConfirmed === true,
       substitutes: saved.substitutes && typeof saved.substitutes === 'object' ? saved.substitutes : {},
     };
   } catch {
@@ -34,7 +36,13 @@ export function CartProvider({ children }) {
   const { products, branches } = useCatalog();
   const saved = useMemo(loadCart, []);
   const [cart, setCart] = useState(() => saved?.cart ?? {}); // productId -> qty
-  const [selectedBranch, setSelectedBranch] = useState(() => saved?.selectedBranch ?? DEFAULT_BRANCH_ID);
+  const [selectedBranch, setSelectedBranch] = useState(() => saved?.selectedBranch ?? null);
+  const [branchConfirmed, setBranchConfirmed] = useState(() => saved?.branchConfirmed ?? false);
+  const [branchPickerOpen, setBranchPickerOpen] = useState(false);
+  // Something the customer tried to do before choosing a branch (e.g. add
+  // to cart). Run right after they confirm, so picking a branch doesn't
+  // make them tap "Add" a second time.
+  const afterBranchRef = useRef(null);
   // substituteProductId -> { originalId, matchType }. Only set for cart
   // lines added via an "alternative for X" suggestion (see AlternativeModal
   // / findAlternatives.js) — used to disclose the swap to the pharmacist in
@@ -46,12 +54,29 @@ export function CartProvider({ children }) {
 
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ cart, selectedBranch, substitutes }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ cart, selectedBranch, branchConfirmed, substitutes }));
     } catch {
       // localStorage unavailable (private browsing, quota) — the cart just
       // goes back to being in-memory for this visit
     }
-  }, [cart, selectedBranch, substitutes]);
+  }, [cart, selectedBranch, branchConfirmed, substitutes]);
+
+  // The only way a branch gets set: an explicit choice by the customer (the
+  // picker, or reordering a past order, which names its branch).
+  const chooseBranch = useCallback((id) => {
+    setSelectedBranch(id);
+    setBranchConfirmed(true);
+    setBranchPickerOpen(false);
+    const next = afterBranchRef.current;
+    afterBranchRef.current = null;
+    if (next) next();
+  }, []);
+
+  const openBranchPicker = useCallback(() => setBranchPickerOpen(true), []);
+  const closeBranchPicker = useCallback(() => {
+    afterBranchRef.current = null;
+    setBranchPickerOpen(false);
+  }, []);
 
   const clearSubstitute = useCallback((id) => {
     setSubstitutes((prev) => {
@@ -102,10 +127,25 @@ export function CartProvider({ children }) {
     setSubstitutes((prev) => ({ ...prev, [substituteId]: { originalId, matchType } }));
   }, []);
 
+  // `branches` is a dependency too: with Supabase the branch list arrives
+  // after first render, and without it `branch` stayed undefined until the
+  // customer happened to change branch.
   const branch = useMemo(
     () => branches.find((b) => b.id === selectedBranch),
-    [selectedBranch]
+    [selectedBranch, branches]
   );
+  const needsBranch = !branchConfirmed || !branch;
+
+  // Run `action` now if a branch is chosen; otherwise ask for the branch
+  // first and run it straight after the customer confirms.
+  const requireBranch = useCallback((action) => {
+    if (!needsBranch) {
+      action?.();
+      return;
+    }
+    afterBranchRef.current = action || null;
+    setBranchPickerOpen(true);
+  }, [needsBranch]);
 
   const { itemsTotal, itemCount } = useMemo(() => {
     let itemsTotal = 0;
@@ -117,7 +157,7 @@ export function CartProvider({ children }) {
       itemCount += qty;
     });
     return { itemsTotal, itemCount };
-  }, [cart]);
+  }, [cart, products]);
 
   const deliveryFee = branch ? branch.deliveryFee : 0;
   const grandTotal = itemCount === 0 ? 0 : itemsTotal + deliveryFee;
@@ -130,8 +170,13 @@ export function CartProvider({ children }) {
     substitutes,
     markSubstitute,
     selectedBranch,
-    setSelectedBranch,
+    chooseBranch,
     branch,
+    needsBranch,
+    requireBranch,
+    branchPickerOpen,
+    openBranchPicker,
+    closeBranchPicker,
     itemsTotal,
     itemCount,
     deliveryFee,

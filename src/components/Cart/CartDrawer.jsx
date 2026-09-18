@@ -5,14 +5,18 @@ import { useCustomer } from '../../context/CustomerContext';
 import { useDrawer } from '../../context/DrawerContext';
 import { useOrderHistory } from '../../context/OrderHistoryContext';
 import { buildWhatsappMessage } from '../../utils/buildWhatsappMessage';
-import { branchName } from '../../utils/branchText';
+import { branchName, branchAddr } from '../../utils/branchText';
+import { isInStock } from '../../utils/stock';
 import { Ltr } from '../../utils/Ltr';
 import { WhatsAppIcon } from '../WhatsAppIcon';
 import { CartItemRow } from './CartItemRow';
 
 export function CartDrawer() {
   const { lang, t } = useLanguage();
-  const { cart, branch, itemsTotal, deliveryFee, grandTotal, itemCount, substitutes, clearCart } = useCart();
+  const {
+    cart, branch, selectedBranch, needsBranch, requireBranch, openBranchPicker,
+    itemsTotal, deliveryFee, grandTotal, itemCount, substitutes, clearCart,
+  } = useCart();
   const { products } = useCatalog();
   const { customer } = useCustomer();
   const { openDrawer, closeCart, openAccount } = useDrawer();
@@ -36,7 +40,22 @@ export function CartDrawer() {
     clearCart();
   };
 
+  // Items the chosen branch can't supply — possible after switching branch
+  // once each branch has its own stock. Ordering stays blocked until they're
+  // removed or the branch is changed back, so the pharmacy never receives an
+  // order it can't fill.
+  const unavailable = needsBranch
+    ? []
+    : ids.filter((id) => {
+        const p = products.find((pp) => pp.id === id);
+        return p && !isInStock(p, selectedBranch);
+      });
+
   const handleOrder = () => {
+    if (needsBranch) {
+      requireBranch(null);
+      return;
+    }
     if (!customer) {
       // Require delivery info before an order can be sent — open the
       // account drawer instead of sending. Marking this a pending checkout
@@ -79,10 +98,6 @@ export function CartDrawer() {
     window.open(url, '_blank');
   };
 
-  const branchNote = branch
-    ? (lang === 'ar' ? 'سيتم إرسال الطلب إلى: ' : 'Order will be sent to: ') + branchName(branch, lang)
-    : '';
-
   return (
     <div className={'cart-drawer' + (isOpen ? ' show' : '')}>
       <div className="cart-header">
@@ -102,6 +117,29 @@ export function CartDrawer() {
       </div>
 
       <div className="cart-footer">
+        {/* Which branch prepares this order — always shown, never assumed. */}
+        {needsBranch ? (
+          <div className="cart-branch cart-branch-missing">
+            <span className="cart-branch-text">{t('selectBranchFirst')}</span>
+            <button type="button" className="cart-branch-btn" onClick={openBranchPicker}>
+              {t('chooseBranchBtn')}
+            </button>
+          </div>
+        ) : (
+          <div className="cart-branch">
+            <span className="cart-branch-pin" aria-hidden="true">📍</span>
+            <span className="cart-branch-text">
+              <span className="cart-branch-label">{t('deliveringFrom')}</span>
+              <strong>{branchName(branch, lang)}</strong>
+              <span className="cart-branch-addr">{branchAddr(branch, lang)}</span>
+            </span>
+            <button type="button" className="cart-branch-change" onClick={openBranchPicker}>
+              {t('changeBranch')}
+            </button>
+          </div>
+        )}
+        {unavailable.length > 0 && <div className="cart-unavailable">{t('cartHasUnavailable')}</div>}
+
         <div
           className="total-row"
           style={{ fontWeight: 600, fontSize: '0.85rem', color: 'var(--muted)', marginBottom: 4 }}
@@ -142,11 +180,14 @@ export function CartDrawer() {
           </div>
         ) : (
           <>
-            <button className="wa-order-btn" disabled={itemCount === 0 || !branch} onClick={handleOrder}>
+            <button
+              className="wa-order-btn"
+              disabled={itemCount === 0 || unavailable.length > 0}
+              onClick={handleOrder}
+            >
               <WhatsAppIcon size={18} />
               <span>{t('orderViaWhatsapp')}</span>
             </button>
-            <div className="branch-note">{branchNote}</div>
           </>
         )}
       </div>
