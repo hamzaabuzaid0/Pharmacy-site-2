@@ -151,7 +151,10 @@ def contained(name, other, slack=4):
     variant rule still applies, and these matches are reviewed by eye like
     every other."""
     a, b = tokens(name), tokens(other)
-    if len(a) < 3 or not b:
+    # Two words are enough ("CHOLINOBEL 20 CAPSULES") as long as one is a
+    # number: the exact-number rule below then pins the pack. A bare
+    # two-word name with no number stays too vague to trust.
+    if not b or len(a) < 2 or (len(a) == 2 and not any(t.isdigit() for t in a)):
         return False
     # The catalog's brand must appear in the other name, though not
     # necessarily first: talabat writes "Sanofi Doliprane 1000mg".
@@ -195,6 +198,8 @@ def variant_conflict(name, other):
 # The pharmacy sheet abbreviates; store listings spell things out. These only
 # rewrite spelling so the same words meet — they never relax the thresholds.
 NORMALIZE = [
+    (r"\bnew\s*pric?e?\s*\d*\b", " "),                  # "NEW PRICE3", "NEW PRIC" sheet notes
+    (r"\beff\b\.?", " effervescent "), (r"\bsyp\b\.?", " syrup "), (r"\bsusp\b\.?", " suspension "),
     (r"\b\d+(?:\.\d+)?\s*l\.?\s?e\b.*$", " "),          # "... 35 L.E", "... 10 L.E OF" price leftovers
     (r"\b(offer|offr|promo|price|u\.?s\.?a)\b\.?", " "),
     (r"\be\.?\s?d\.?\s?p(?:arfum)?\b|\beau de parfum\b|\bbody parfum\b|\bparfum\b", " perfume "),
@@ -268,7 +273,10 @@ def _json_source(path, source, width=None):
 
 
 def parse_talabat(d):
-    return _json_source(os.path.join(ROOT, "docs-internal", "talabat-products.json"), "talabat", 800)
+    # read a snapshot when one exists, so matching can run while a crawl is still writing
+    snap = os.path.join(ROOT, "docs-internal", "talabat-snapshot.json")
+    live = os.path.join(ROOT, "docs-internal", "talabat-products.json")
+    return _json_source(snap if os.path.exists(snap) else live, "talabat", 800)
 
 
 def parse_orchidia(d):

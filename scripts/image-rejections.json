@@ -2228,5 +2228,190 @@
   "page": "https://www.bloompharmacy.com/products/lakme-k-therapy-bio-argan-shampoo-300ml",
   "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/lakme-ktherapy-bio-argan-shampoo-300ml-931142.jpg?v=1696874089&width=1000",
   "reason": "wrong brand: photo is Lakme K.Therapy, catalog is G.K"
+ },
+ "91396": {
+  "page": "https://www.talabat.com/egypt/pharmacy/753098/dr-amir-el-najar-pharmacy-wadi-el-nile/personal-care/bath-body-care?aid=7097&page=4",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914bd74676bbcd4df84f197.JPG?width=800",
+  "reason": "promo sticker (10 EGP off) on photo"
+ },
+ "87830": {
+  "page": "https://www.talabat.com/egypt/pharmacy/693319/al-ain-pharmacies-abbassia/personal-care/haircare?aid=7773&page=7",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6a09b1bb5dc85dbef1ee4a0f.jpg?width=800",
+  "reason": "photo is Clear MEN with a promo band; catalog names no gender line"
+ },
+ "83506": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1104180/alfa-pharmacy-6th-of-october-4th-district-1/personal-care/haircare?aid=10047&page=7",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/678df0cd00004c2d29f1a4f5.JPG?width=800",
+  "reason": "photo variant does not clearly match Vatika coconut"
+ },
+ "73682": {
+  "page": "https://www.talabat.com/egypt/pharmacy/798249/sg-pharmacies-el-obour-eskan-el-shabab/skincare/sun-care?aid=8037&page=1",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914c1c82a167ae6c40134a5.JPG?width=800",
+  "reason": "pack size unclear: catalog is the 140 ml free-size pack"
+ },
+ "89990": {
+  "page": "https://www.talabat.com/egypt/pharmacy/724154/sabry-pharmacy-roushdy/vitamins-supplements/minerals?aid=7178&page=3",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914c2892a167ae6c4018a98.JPG?width=800",
+  "reason": "photo is P-Iron; catalog is P-Iron Plus"
+ },
+ "85210": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1101222/dr-mostafa-el-essawy-pharmacy-manshayt-el-bakry/personal-care/haircare?aid=10768&page=2",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/61e97cdf9adea4c298942bf9.jpg?width=800",
+  "reason": "promo sticker (20% off) on photo"
+ },
+ "74028": {
+  "page": "https://www.talabat.com/egypt/grocery/720810/alserafy-pharmacy-6th-of-october-4th-district-1/medicines/allergy?aid=7925&page=1",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/67efd7c99b296d37d0ae9c8e.jpeg?width=800",
+  "reason": "photo is Twit-Tear; catalog is Twit-Tear XP"
+ },
+ "62172": {
+  "page": "https://www.talabat.com/egypt/pharmacy/798249/sg-pharmacies-el-obour-eskan-el-shabab/skincare/facial-care?aid=8037&page=1",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914c1f42a167ae6c40148d0.jpg?width=800",
+  "reason": "promo sticker (20% off) on photo"
+ },
+ "88376": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1118982/better-health-pharmacy-6th-of-october-3rd-district-1/vitamins-supplements/health-concerns?aid=10047&page=7",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6a9fc6f55487b0aa6e91d63c.JPG?width=800",
+  "reason": "wrong form: photo is Thiodio capsules, catalog is Thiodio Comb tablets"
+ },
+ "85445": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1104180/alfa-pharmacy-6th-of-october-4th-district-1/sensual-wellness/performance-enhancers?aid=10047&page=2",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/67f5041db6d43da9163137fa.jpg?width=800",
+  "reason": "photo taken on a shop shelf, not a clean pack shot"
+ },
+ "83432": {
+  "page": "https://www.talabat.com/egypt/pharmacy/788864/dramr-ahmed-masoud-pharmacy-semouha-modereyt-el-amn-el-gadeda/personal-care/haircare?aid=7178&page=10",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/69e0b0651aa1455a69a3e65e.JPG?width=800",
+  "reason": "wrong variant: photo is Bio Soft argan oil, catalog is coconut"
+ },
+ "82941": {
+  "page": "https://www.talabat.com/egypt/pharmacy/516888/el-hay-el-teby-pharmacy-mostafa-kamel/personal-care/bath-body-care?aid=7178&page=5",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914c24b2a167ae6c4016be5.JPG?width=800",
+  "reason": "promo sticker (20% off) on photo"
+ },
+ "91573": {
+  "page": "https://www.talabat.com/egypt/pharmacy/798249/sg-pharmacies-el-obour-eskan-el-shabab/personal-care/haircare?aid=8037&page=11",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/673f0695b7d94e056176a5c6.jpg-1200Wx1200H?width=800",
+  "reason": "wrong variant: photo is coconut & almond, catalog is coconut & lemon"
+ },
+ "54874": {
+  "page": "https://www.talabat.com/egypt/pharmacy/750194/gamal-el-din-pharmacy-lauran/vitamins-supplements/herbal?aid=7178&page=1",
+  "image": "https://talabat.dhmedia.io/image/nv-eg/OTC/12823.png?width=800",
+  "reason": "photo shows three different Sekem boxes"
+ },
+ "91478": {
+  "page": "https://www.talabat.com/egypt/pharmacy/779465/tarshoubi-pharmacy-camp-chezar/personal-care/bath-body-care?aid=7178&page=10",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6a7c4ac8054fcbf1589f9fc3.jpeg?width=800",
+  "reason": "promo sticker (25% off) on photo"
+ },
+ "84064": {
+  "page": "https://pharmacysabry.com/products/clary-shampoo-conditioner-hair-mask-offer",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/WhatsAppImage2024-10-09at7.22.18PM.webp?v=1753098568&width=1000",
+  "reason": "photo is a 3-product offer bundle; catalog is a 2-item pack"
+ },
+ "87129": {
+  "page": "https://www.talabat.com/egypt/pharmacy/753098/dr-amir-el-najar-pharmacy-wadi-el-nile/personal-care/bath-body-care?aid=7097&page=2",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914c24b2a167ae6c4016bc9.jpg?width=800",
+  "reason": "promo sticker (20% off) on photo"
+ },
+ "87790": {
+  "page": "https://www.talabat.com/egypt/pharmacy/779465/tarshoubi-pharmacy-camp-chezar/first-aid/safety-supplies?aid=7178&page=1",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914c1d72a167ae6c4013be9.JPG?width=800",
+  "reason": "catalog item is generic; photo is one specific glove brand"
+ },
+ "84868": {
+  "page": "https://www.talabat.com/egypt/grocery/720810/alserafy-pharmacy-6th-of-october-4th-district-1/mother-baby/feeding-accessories?aid=7925&page=1",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914bdb1676bbcd4df851330.JPG?width=800",
+  "reason": "bottle colour on photo is not the catalog's white"
+ },
+ "81709": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1104180/alfa-pharmacy-6th-of-october-4th-district-1/mother-baby/baby-food?aid=10047&page=1",
+  "image": "https://talabat.dhmedia.io/image/talabat-nv/Netscribe%20Images%28don%27t%20touch%29/Front%20Images/6221007023135.jpg?width=800",
+  "reason": "wrong variant: photo is Cerelac Rice, catalog is Rice and Vegetable"
+ },
+ "83599": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1102091/ziadah-pharmacy-6th-of-october-8th-district/women-care/contraceptives?aid=10047&page=2",
+  "image": "https://talabat.dhmedia.io/image/talabat-nv/SSC_PIM_2/6221088021303.jpg?width=800",
+  "reason": "grey background, not clean"
+ },
+ "88186": {
+  "page": "https://drahmedelezaby.com/product/hepta-panthenol-cream-50-gm/",
+  "image": "https://drahmedelezaby.com/wp-content/uploads/2025/03/Hepta-panthenol-cream-50-gm.webp",
+  "reason": "wrong product: photo is regular Hepta cream, catalog is the pink sensitive-area cream"
+ },
+ "57855": {
+  "page": "https://www.talabat.com/egypt/pharmacy/805026/omran-pharmacies-el-obour-el-hay-5/skincare/cleansers?aid=8037&page=1",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/688399448b4d17c9361c5817.jpg?width=800",
+  "reason": "promo sticker on photo"
+ },
+ "84436": {
+  "page": "https://www.bloompharmacy.com/products/adol-extra-24-tablets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/adol-extra-24-tablets-767963.jpg?v=1687634950&width=1000",
+  "reason": "wrong product: photo is Adol Extra, catalog is plain Adol"
+ },
+ "80380": {
+  "page": "https://www.talabat.com/egypt/grocery/720810/alserafy-pharmacy-6th-of-october-4th-district-1/medicines/common-symptoms?aid=7925&page=2",
+  "image": "https://talabat.dhmedia.io/image/nv-eg/37697.jpg?width=800",
+  "reason": "wrong product: photo is Coloverin D, catalog is Coloverin A"
+ },
+ "87134": {
+  "page": "https://www.talabat.com/egypt/grocery/720810/alserafy-pharmacy-6th-of-october-4th-district-1/vitamins-supplements/health-concerns?aid=7925&page=5",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/690235b964d3b816f639fc0d.jpg?width=800",
+  "reason": "photo is plain Moventor; catalog is Moventor Advance"
+ },
+ "80201": {
+  "page": "https://www.bloompharmacy.com/products/pravotin-30-sachets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/pravotin-30-sachets-842653.jpg?v=1687731422&width=1000",
+  "reason": "wrong product: photo is Pravotin sachets, catalog is Pravotin Plus capsules"
+ },
+ "88474": {
+  "page": "https://www.talabat.com/egypt/pharmacy/712400/el-amawy-pharmacies-el-obour-eskan-el-shabab/women-care/feminine-products?aid=8037&page=2",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6870c47a8e5796c4283d0d30.JPG?width=800",
+  "reason": "promo pack (+2 pads free) on photo"
+ },
+ "84204": {
+  "page": "https://www.talabat.com/egypt/pharmacy/712400/el-amawy-pharmacies-el-obour-eskan-el-shabab/skincare/cleansers?aid=8037&page=6",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914bdef676bbcd4df85327f.JPG?width=800",
+  "reason": "catalog names the oily-skin variant; photo is the plain facial cleanser"
+ },
+ "88112": {
+  "page": "https://www.talabat.com/egypt/pharmacy/764191/dr-nabil-eltarshouby-pharmacies-moheb/personal-care/bath-body-care?aid=7033&page=20",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6924960a2f59151ac8dd3a3f.jpg?width=800",
+  "reason": "wrong product: photo is Karites body butter, catalog is leave-in conditioner"
+ },
+ "67246": {
+  "page": "https://www.talabat.com/egypt/pharmacy/724154/sabry-pharmacy-roushdy/skincare/facial-care?aid=7178&page=11",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914c1c72a167ae6c401349e.JPG?width=800",
+  "reason": "photo is the gold-particle serum; catalog names the vitamin C serum"
+ },
+ "80592": {
+  "page": "https://www.lotusonline.com/products/feldene-20mg-ml-ampoule-3x1ml",
+  "image": "https://cdn.shopify.com/s/files/1/0697/1188/8449/files/3000727_1.jpg?v=1767616962&width=1000",
+  "reason": "wrong form: photo is Feldene injection ampoules, catalog is capsules"
+ },
+ "62750": {
+  "page": "https://pharmacysabry.com/products/garnier-color-7-7",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/3610340025549.jpg?v=1748868424&width=1000",
+  "reason": "wrong shade: photo is Garnier 7.7, catalog is 7"
+ },
+ "88443": {
+  "page": "https://pharmacysabry.com/products/clear-shampoo-180ml-7-l-e-off-hair-fall-defence",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/6221155060679.jpg?v=1748862546&width=1000",
+  "reason": "photo is not the Erling Haaland edition named in the catalog"
+ },
+ "80798": {
+  "page": "https://www.bloompharmacy.com/products/power-cold-and-flu-20-tablets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/power-cold-and-flu-20-tablets-326581.jpg?v=1710537565&width=1000",
+  "reason": "wrong form: photo is Power tablets, catalog is capsules"
+ },
+ "90336": {
+  "page": "https://www.talabat.com/egypt/grocery/720810/alserafy-pharmacy-6th-of-october-4th-district-1/vitamins-supplements/vitamins?aid=7925&page=3",
+  "image": "https://talabat.dhmedia.io/image/nv-eg/OTC/80263.jpeg?width=800",
+  "reason": "photo is plain Neurovit; catalog is Neurovit Power B Complex"
+ },
+ "91486": {
+  "page": "https://www.bloompharmacy.com/products/sanso-c-plus-28-tablets",
+  "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/sanso-c-plus-28-tablets-2341914.jpg?v=1762872593&width=1000",
+  "reason": "wrong product: photo is Sanso C Plus, catalog is Sanso Perfecto"
  }
 }
