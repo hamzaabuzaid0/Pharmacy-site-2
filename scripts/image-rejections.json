@@ -2413,5 +2413,70 @@
   "page": "https://www.bloompharmacy.com/products/sanso-c-plus-28-tablets",
   "image": "https://cdn.shopify.com/s/files/1/0774/7151/4932/products/sanso-c-plus-28-tablets-2341914.jpg?v=1762872593&width=1000",
   "reason": "wrong product: photo is Sanso C Plus, catalog is Sanso Perfecto"
+ },
+ "89987": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1104180/alfa-pharmacy-6th-of-october-4th-district-1/personal-care/haircare?aid=10047&page=7",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/678df0cd00004c2d29f1a4f5.JPG?width=800",
+  "reason": "wrong variant: photo is Vatika black seed, catalog is rosemary"
+ },
+ "88714": {
+  "page": "https://www.talabat.com/egypt/pharmacy/770957/cure-pharmacy-el-shorouk-8th-district/beauty-cosmetics/fragrance?aid=8118&page=3",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/692497372f59151ac8ddb4b8.JPG?width=800",
+  "reason": "photo is XL 1 Billion; catalog names XL Gold"
+ },
+ "84648": {
+  "page": "https://www.talabat.com/egypt/pharmacy/712400/el-amawy-pharmacies-el-obour-eskan-el-shabab/medicines/creams-ointments?aid=8037&page=4",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/68cbf3497abf5f357fff074a.JPG?width=800",
+  "reason": "wrong product: photo is Tri-Betapronate, catalog is Betapronate Plus"
+ },
+ "90415": {
+  "page": "https://www.talabat.com/egypt/pharmacy/804842/nour-pharmacies-shobra-el-kheima-second-police-station-shobra/mother-baby/baby-food?aid=7444&page=1",
+  "image": "https://talabat.dhmedia.io/image/talabat-nv/Netscribe%20Images%28don%27t%20touch%29/Front%20Images/6221007023111.jpg?width=800",
+  "reason": "wrong variant: photo is Cerelac wheat, catalog is prunes & wheat"
+ },
+ "89929": {
+  "page": "https://www.talabat.com/egypt/pharmacy/693319/al-ain-pharmacies-abbassia/personal-care/haircare?aid=7773&page=7",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6a09b1bb5dc85dbef1ee4a0f.jpg?width=800",
+  "reason": "photo is Clear MEN with a promo band; catalog names no gender line"
+ },
+ "81663": {
+  "page": "https://www.talabat.com/egypt/pharmacy/763273/h-f-pharmacy-heliopolis-maqreezi/medicines/common-symptoms?aid=7773&page=3",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/68cbf3417abf5f357fff03a9.JPG?width=800",
+  "reason": "wrong form: photo is Nexicure sachets, catalog is tablets"
+ },
+ "91574": {
+  "page": "https://www.talabat.com/egypt/pharmacy/798249/sg-pharmacies-el-obour-eskan-el-shabab/personal-care/haircare?aid=8037&page=11",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/673f0695b7d94e056176a5c6.jpg-1200Wx1200H?width=800",
+  "reason": "wrong variant: photo is coconut & almond, catalog is coconut & cactus"
+ },
+ "84374": {
+  "page": "https://www.talabat.com/egypt/pharmacy/1102091/ziadah-pharmacy-6th-of-october-8th-district/personal-care/haircare?aid=10047&page=19",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6894790563b0f14209d0e271.JPG?width=800",
+  "reason": "wrong variant: photo is apple castor oil, catalog is lemon"
+ },
+ "87524": {
+  "page": "https://www.talabat.com/egypt/pharmacy/715102/el-naggar-pharmacy-zagazig-university/mother-baby/baby-care?aid=7097&page=2",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914c2532a167ae6c4017033.jpg?width=800",
+  "reason": "photo does not show the rose variant named in the catalog"
+ },
+ "84067": {
+  "page": "https://pharmacysabry.com/products/clary-shampoo-conditioner-hair-mask-offer",
+  "image": "https://cdn.shopify.com/s/files/1/0668/6044/9972/files/WhatsAppImage2024-10-09at7.22.18PM.webp?v=1753098568&width=1000",
+  "reason": "photo is a 3-product offer bundle"
+ },
+ "53688": {
+  "page": "https://www.talabat.com/egypt/pharmacy/805026/omran-pharmacies-el-obour-el-hay-5/personal-care/haircare?aid=8037&page=15",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914c6422a167ae6c40271b4.JPG?width=800",
+  "reason": "catalog names no variant; photo is the cactus & honey one"
+ },
+ "88037": {
+  "page": "https://www.talabat.com/egypt/pharmacy/724393/al-qahera-pharmacy-shobra-el-kheima-masaken-ain-shams/personal-care/bath-body-care?aid=7444&page=1",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914c24b2a167ae6c4016be4.jpg?width=800",
+  "reason": "promo sticker (save 10 EGP) on photo"
+ },
+ "69443": {
+  "page": "https://www.talabat.com/egypt/pharmacy/764191/dr-nabil-eltarshouby-pharmacies-moheb/vitamins-supplements/health-concerns?aid=7033&page=5",
+  "image": "https://talabat.dhmedia.io/image/product-information-management/6914c2fd2a167ae6c401bda5.JPG?width=800",
+  "reason": "photo is plain Tigint; catalog is Tigint Plus"
  }
 }
